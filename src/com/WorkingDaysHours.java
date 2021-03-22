@@ -84,9 +84,9 @@ public class WorkingDaysHours extends javax.swing.JFrame {
          
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         }
           
             
@@ -723,9 +723,9 @@ public class WorkingDaysHours extends javax.swing.JFrame {
             
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Subjects.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Subjects.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
         else{
@@ -757,9 +757,9 @@ public class WorkingDaysHours extends javax.swing.JFrame {
             }
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_btnClearActionPerformed
@@ -809,9 +809,9 @@ public class WorkingDaysHours extends javax.swing.JFrame {
             }
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -924,9 +924,9 @@ public class WorkingDaysHours extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this,"No of Working days are not equal to thecount of selected Working days");
                 }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Subjects.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Subjects.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_btnUpdateActionPerformed
