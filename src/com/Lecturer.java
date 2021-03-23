@@ -82,6 +82,7 @@ public class Lecturer extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(2259, 816));
         setSize(new java.awt.Dimension(0, 0));
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -169,7 +170,6 @@ public class Lecturer extends javax.swing.JFrame {
 
         btn_addlec.setBackground(new java.awt.Color(0, 51, 0));
         btn_addlec.setForeground(new java.awt.Color(255, 255, 255));
-        btn_addlec.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\add.png")); // NOI18N
         btn_addlec.setText(" New Emplyee");
         btn_addlec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,7 +179,6 @@ public class Lecturer extends javax.swing.JFrame {
 
         btnedit.setBackground(new java.awt.Color(0, 51, 102));
         btnedit.setForeground(new java.awt.Color(255, 255, 255));
-        btnedit.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\edit.png")); // NOI18N
         btnedit.setText("Edit");
         btnedit.setAlignmentY(0.8F);
         btnedit.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +189,6 @@ public class Lecturer extends javax.swing.JFrame {
 
         btndelete.setBackground(new java.awt.Color(153, 0, 51));
         btndelete.setForeground(new java.awt.Color(255, 255, 255));
-        btndelete.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\delete.png")); // NOI18N
         btndelete.setText("Delete");
         btndelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -258,7 +256,6 @@ public class Lecturer extends javax.swing.JFrame {
 
         btnrank.setBackground(new java.awt.Color(0, 102, 204));
         btnrank.setForeground(new java.awt.Color(255, 255, 255));
-        btnrank.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\gen 1 white.png")); // NOI18N
         btnrank.setText("Generate ");
         btnrank.setAlignmentY(0.8F);
         btnrank.addActionListener(new java.awt.event.ActionListener() {
@@ -291,10 +288,10 @@ public class Lecturer extends javax.swing.JFrame {
                         .addComponent(btnrank)
                         .addGap(18, 18, 18)
                         .addComponent(txtrank, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(showMsg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(locboxLayout.createSequentialGroup()
-                            .addGap(8, 8, 8)
+                    .addGroup(locboxLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(showMsg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(locboxLayout.createSequentialGroup()
                                     .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,7 +367,6 @@ public class Lecturer extends javax.swing.JFrame {
 
         clear_employee.setBackground(new java.awt.Color(204, 0, 0));
         clear_employee.setForeground(new java.awt.Color(255, 255, 255));
-        clear_employee.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\clear.png")); // NOI18N
         clear_employee.setText("Clear History");
         clear_employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -391,7 +387,6 @@ public class Lecturer extends javax.swing.JFrame {
 
         btn_search.setBackground(new java.awt.Color(102, 0, 102));
         btn_search.setForeground(new java.awt.Color(255, 255, 255));
-        btn_search.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\search white.png")); // NOI18N
         btn_search.setBorder(null);
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -470,16 +465,13 @@ public class Lecturer extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ABC Institute Timetable Management System");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\va.jpg")); // NOI18N
-
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\home.png")); // NOI18N
         jButton1.setPreferredSize(new java.awt.Dimension(20, 20));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

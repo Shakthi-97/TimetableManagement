@@ -214,6 +214,11 @@ public class Dashbord extends javax.swing.JFrame {
         jButton12.setText("Registered Lecturers");
 
         jButton13.setText("Registered Rooms");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -369,6 +374,11 @@ public class Dashbord extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:rooms ststistic
+        
+    }//GEN-LAST:event_jButton13ActionPerformed
 
     
     
