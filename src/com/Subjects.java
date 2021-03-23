@@ -553,19 +553,23 @@ public class Subjects extends javax.swing.JFrame {
         if(cmb_yr.getSelectedItem().toString().equals(" "))
         {
             JOptionPane.showMessageDialog(this,"Select the Year");
+            cmb_yr.requestFocus();
             
             return false;
         }
         if( rd_seme1.isSelected()==false && rd_seme2.isSelected()==false )
         {
             JOptionPane.showMessageDialog(this,"Select the Semester");
-            
+            rd_seme1.requestFocus();
+           // rd_seme2.requestFocus();
+                 
             return false;
         }
  
         if(txtsubname.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this,"Enter the Subject Name");
+            txtsubname.requestFocus();
             
             return false;
         }
@@ -573,6 +577,7 @@ public class Subjects extends javax.swing.JFrame {
         if(txtsubcode.getText().isEmpty())
         {
             JOptionPane.showMessageDialog(this,"Enter the Subject Code");
+            txtsubcode.requestFocus();
             
             return false;
         }
