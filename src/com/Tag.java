@@ -364,32 +364,32 @@ public class Tag extends javax.swing.JFrame {
             int a;
             
             try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            insert = con.prepareStatement("select * From tag");
-            
-            ResultSet rs = insert.executeQuery();
-            ResultSetMetaData Rss = rs.getMetaData();
-            a = Rss.getColumnCount();
-            
-            DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
-            Df.setRowCount(0);
-            
-                while(rs.next()) {
-                
-                Vector vec = new Vector();
-                
-                for(int i=1; i<=a; i++) {
-                    
-                    vec.add(rs.getString("id"));
-                    vec.add(rs.getString("tagName"));
-                    vec.add(rs.getString("tagCode"));
-                    vec.add(rs.getString("relateTag"));
-                    
-                }
-                
-                Df.addRow(vec);
+                Class.forName("com.mysql.cj.jdbc.Driver");
+
+                con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                insert = con.prepareStatement("select * From tag");
+
+                ResultSet rs = insert.executeQuery();
+                ResultSetMetaData Rss = rs.getMetaData();
+                a = Rss.getColumnCount();
+
+                DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
+                Df.setRowCount(0);
+
+                    while(rs.next()) {
+
+                    Vector vec = new Vector();
+
+                    for(int i=1; i<=a; i++) {
+
+                        vec.add(rs.getString("id"));
+                        vec.add(rs.getString("tagName"));
+                        vec.add(rs.getString("tagCode"));
+                        vec.add(rs.getString("relateTag"));
+
+                    }
+
+                    Df.addRow(vec);
                   
             }
             
@@ -402,6 +402,32 @@ public class Tag extends javax.swing.JFrame {
             Logger.getLogger(Tag.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
+        
+        //validation
+    private boolean validateFields(){
+        if(tag_Name.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter TAG NAME");
+            
+            return false;
+        }
+        if(tag_Code.getSelectedItem().toString().equals(""))
+        {
+            JOptionPane.showMessageDialog(this,"Select TAG CODE");
+            
+            return false;
+        }
+       if(Relate_Tag.getSelectedItem().toString().equals(""))
+        {
+            JOptionPane.showMessageDialog(this,"Select RELACTED TAG");
+            
+            return false;
+        }
+       return true; 
+    }
+    
+        
+    
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
 
         try {
@@ -503,7 +529,7 @@ public class Tag extends javax.swing.JFrame {
         String tagName = tag_Name.getText();
         String tagCode = tag_Code.getSelectedItem().toString();
         String relateTag = Relate_Tag.getSelectedItem().toString();
-
+        if(validateFields()){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -533,7 +559,7 @@ public class Tag extends javax.swing.JFrame {
             Logger.getLogger(Tag.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
