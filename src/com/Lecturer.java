@@ -82,7 +82,6 @@ public class Lecturer extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(2259, 816));
         setSize(new java.awt.Dimension(0, 0));
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -170,7 +169,8 @@ public class Lecturer extends javax.swing.JFrame {
 
         btn_addlec.setBackground(new java.awt.Color(0, 51, 0));
         btn_addlec.setForeground(new java.awt.Color(255, 255, 255));
-        btn_addlec.setText(" New Emplyee");
+        btn_addlec.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\add.png")); // NOI18N
+        btn_addlec.setText(" New Employee");
         btn_addlec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addlecActionPerformed(evt);
@@ -179,6 +179,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         btnedit.setBackground(new java.awt.Color(0, 51, 102));
         btnedit.setForeground(new java.awt.Color(255, 255, 255));
+        btnedit.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\edit.png")); // NOI18N
         btnedit.setText("Edit");
         btnedit.setAlignmentY(0.8F);
         btnedit.addActionListener(new java.awt.event.ActionListener() {
@@ -189,6 +190,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         btndelete.setBackground(new java.awt.Color(153, 0, 51));
         btndelete.setForeground(new java.awt.Color(255, 255, 255));
+        btndelete.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\delete.png")); // NOI18N
         btndelete.setText("Delete");
         btndelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -256,6 +258,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         btnrank.setBackground(new java.awt.Color(0, 102, 204));
         btnrank.setForeground(new java.awt.Color(255, 255, 255));
+        btnrank.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\gen 1 white.png")); // NOI18N
         btnrank.setText("Generate ");
         btnrank.setAlignmentY(0.8F);
         btnrank.addActionListener(new java.awt.event.ActionListener() {
@@ -273,23 +276,9 @@ public class Lecturer extends javax.swing.JFrame {
             locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(locboxLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(locboxLayout.createSequentialGroup()
-                        .addComponent(btn_addlec, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnedit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(locboxLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel13)
                         .addGap(18, 18, 18)
-                        .addComponent(btnrank)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtrank, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(locboxLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
                         .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(showMsg_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -315,7 +304,21 @@ public class Lecturer extends javax.swing.JFrame {
                                     .addGroup(locboxLayout.createSequentialGroup()
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(26, 26, 26)
-                                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addGroup(locboxLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnrank)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtrank, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(locboxLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(btn_addlec, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnedit, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btndelete, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         locboxLayout.setVerticalGroup(
@@ -367,6 +370,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         clear_employee.setBackground(new java.awt.Color(204, 0, 0));
         clear_employee.setForeground(new java.awt.Color(255, 255, 255));
+        clear_employee.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\clear.png")); // NOI18N
         clear_employee.setText("Clear History");
         clear_employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -387,6 +391,8 @@ public class Lecturer extends javax.swing.JFrame {
 
         btn_search.setBackground(new java.awt.Color(102, 0, 102));
         btn_search.setForeground(new java.awt.Color(255, 255, 255));
+        btn_search.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\search white.png")); // NOI18N
+        btn_search.setText("Search");
         btn_search.setBorder(null);
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -415,7 +421,7 @@ public class Lecturer extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                                 .addComponent(txtfilter, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(8, 8, 8))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -426,10 +432,10 @@ public class Lecturer extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtfilter)
-                    .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtfilter, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane3)
                     .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -465,13 +471,16 @@ public class Lecturer extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ABC Institute Timetable Management System");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\va.jpg")); // NOI18N
+
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\home (1).png")); // NOI18N
         jButton1.setPreferredSize(new java.awt.Dimension(20, 20));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -481,7 +490,7 @@ public class Lecturer extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(jLabel9)))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -522,13 +531,24 @@ public class Lecturer extends javax.swing.JFrame {
         String EmployeeID = txtid.getText().toString();
         String Levl = cmb_lvl.getSelectedItem().toString();
         String Rank = txtrank.getText().toString();
-
+        
+        if(txtid.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the Employee ID");
+            txtid.requestFocus();
+            
+        }
+        else if (cmb_lvl.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Enter the Employee Level");
+            cmb_lvl.requestFocus();
+            
+        }  
+        else
+            
         Rank = cmb_lvl.getSelectedItem().toString() + "." + txtid.getText().toString();
 
         txtrank.setText(Rank);
-
-        //  System.out.println(Rank);
-        //  Levl.concat(EmployeeID);
 
     }//GEN-LAST:event_btnrankActionPerformed
 
@@ -648,6 +668,76 @@ public class Lecturer extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btneditActionPerformed
 
+    
+    private boolean Employee_validateFields(){
+       
+        if(txtname.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the Employee Name");
+            txtname.requestFocus();
+            
+            return false;
+        }
+        
+        if(txtid.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the Employee ID");
+             txtid.requestFocus();
+            
+            return false;
+        }
+        
+         if(cmb_fac.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Faculty");
+            cmb_fac.requestFocus();
+            
+            return false;
+        }
+         
+         if(cmb_dep.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Department");
+            cmb_dep.requestFocus();
+            
+            return false;
+        }
+        
+        if(cmb_cen.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Center");
+            cmb_cen.requestFocus();
+            
+            return false;
+        } 
+        
+        if(cmb_build.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Building");
+            cmb_build.requestFocus();
+            
+            return false;
+        }
+        
+        if(cmb_lvl.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Employee Level");
+            cmb_lvl.requestFocus();
+            
+            return false;
+        }
+       
+        if(txtrank.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Generate the Rank ");
+            txtrank.requestFocus();
+            
+            return false;
+        }
+        
+       return true; 
+    }
+    
     private void btn_addlecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addlecActionPerformed
         // TODO add your handling code here:
 
@@ -660,6 +750,8 @@ public class Lecturer extends javax.swing.JFrame {
         String Levl = cmb_lvl.getSelectedItem().toString();
         String Rank = txtrank.getText();
 
+        if(Employee_validateFields()) {
+        
         try {
 
             Class.forName("com.mysql.jdbc.Driver");
@@ -697,7 +789,9 @@ public class Lecturer extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+     
+      }   
+    
     }//GEN-LAST:event_btn_addlecActionPerformed
 
     private void txtidKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtidKeyPressed
@@ -969,8 +1063,29 @@ public class Lecturer extends javax.swing.JFrame {
 
     private void txtfilterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtfilterKeyReleased
         // TODO add your handling code here:
+           
+    }//GEN-LAST:event_txtfilterKeyReleased
+
+    private void txtfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfilterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtfilterActionPerformed
+
+    private boolean validate_Search (){
         
-     try {
+        if(txtfilter.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the Employee name to Search");   
+            return false;
+        }
+        
+       return true; 
+    }
+    
+    private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
+      
+        if(validate_Search ()) {
+        
+        try {
        
             Class.forName("com.mysql.jdbc.Driver");
             
@@ -993,56 +1108,20 @@ public class Lecturer extends javax.swing.JFrame {
                 txtrank.setText(rs.getString("rank"));
             }
             
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_txtfilterKeyReleased
-
-    private void txtfilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtfilterActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtfilterActionPerformed
-
-    private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
-       
-        
-        try {
-       
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            
-            insert = con1.prepareStatement("select * From lecturer where emp_name=? ");
-            
-            insert.setString(1, txtfilter.getText());
-            ResultSet rs = insert.executeQuery();  
-            
-            if(rs.next()){
-                
-                txtname.setText(rs.getString("emp_name"));   
-                txtid.setText(rs.getString("emp_id"));
-                cmb_fac.setSelectedItem(rs.getString("faculty"));    
-                cmb_dep.setSelectedItem(rs.getString("department")); 
-                cmb_cen.setSelectedItem(rs.getString("center")); 
-                cmb_build.setSelectedItem(rs.getString("building")); 
-                cmb_lvl.setSelectedItem(rs.getString("level")); 
-                txtrank.setText(rs.getString("rank"));
-            }
-            
             else {  
-                JOptionPane.showMessageDialog(null, "Lecturer not Found");  
+                JOptionPane.showMessageDialog(null, "Employee not Found");  
             }  
                       
-             txtfilter.setText("");     
+             txtfilter.setText("");   
+            
+             
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+    }    
         
     }//GEN-LAST:event_btn_searchActionPerformed
 
