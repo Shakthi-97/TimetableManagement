@@ -426,7 +426,6 @@ public class Tag extends javax.swing.JFrame {
        return true; 
     }
     
-        
     
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
 
