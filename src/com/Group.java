@@ -23,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
 public class Group extends javax.swing.JFrame {
 
     /**
-     * Creates new form grp
+     * Creates new form Group
      */
     public Group() {
         initComponents();
@@ -219,7 +219,8 @@ public class Group extends javax.swing.JFrame {
         gID.setBackground(new java.awt.Color(102, 0, 153));
         gID.setForeground(new java.awt.Color(255, 255, 255));
         gID.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\icons\\icons8-settings-20.png")); // NOI18N
-        gID.setText("OK");
+        gID.setText("Gen");
+        gID.setToolTipText("Click OK to Generate Group ID");
         gID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 gIDActionPerformed(evt);
@@ -229,7 +230,8 @@ public class Group extends javax.swing.JFrame {
         sID.setBackground(new java.awt.Color(102, 0, 153));
         sID.setForeground(new java.awt.Color(255, 255, 255));
         sID.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\icons\\icons8-settings-20.png")); // NOI18N
-        sID.setText("OK");
+        sID.setText("Gen");
+        sID.setToolTipText("Click OK to Generate Sub-group ID");
         sID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sIDActionPerformed(evt);
@@ -259,7 +261,7 @@ public class Group extends javax.swing.JFrame {
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -443,6 +445,38 @@ public class Group extends javax.swing.JFrame {
         groID.setText(res);
     }//GEN-LAST:event_gIDActionPerformed
 
+    private boolean validateFields(){
+        if(semis.getSelectedItem().toString().equals(""))
+        {
+            JOptionPane.showMessageDialog(this,"Select your SEMESTER and Click Gen Buttons");
+            
+            return false;
+        }
+        if(txtprogramme.getSelectedItem().toString().equals(""))
+        {
+            JOptionPane.showMessageDialog(this,"Select your PROGRAMME and Click Gen Buttons");
+            
+            return false;
+        }
+        
+        if(groID.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Click Gen Button");
+            
+            return false;
+        }
+        
+        if(subID.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Click Gen Button");
+            
+            return false;
+        }
+        
+        
+       return true; 
+    }
+    
     private void delButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delButActionPerformed
         // TODO add your handling code here:
 
@@ -560,6 +594,7 @@ public class Group extends javax.swing.JFrame {
 
         String subGroupID = subID.getText();
 
+        if(validateFields()){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -597,7 +632,7 @@ public class Group extends javax.swing.JFrame {
             Logger.getLogger(Group.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_AddButActionPerformed
-
+    }
     private void groupTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_groupTableMouseClicked
         // TODO add your handling code here:
         DefaultTableModel Df = (DefaultTableModel)groupTable.getModel();
