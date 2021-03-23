@@ -547,8 +547,38 @@ public class Subjects extends javax.swing.JFrame {
         }
           
         }
-    
-    
+
+        
+        private boolean Subjects_validateFields(){
+        if(cmb_yr.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Year");
+            
+            return false;
+        }
+        if( rd_seme1.isSelected()==false && rd_seme2.isSelected()==false )
+        {
+            JOptionPane.showMessageDialog(this,"Select the Semester");
+            
+            return false;
+        }
+ 
+        if(txtsubname.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the Subject Name");
+            
+            return false;
+        }
+        
+        if(txtsubcode.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the Subject Code");
+            
+            return false;
+        }
+        
+       return true; 
+    }
     
     private void btn_addsubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addsubActionPerformed
         // TODO add your handling code here:
@@ -570,7 +600,8 @@ public class Subjects extends javax.swing.JFrame {
             Integer LabHrs = (Integer)spinner_lab.getValue();
             Integer EvaluationHrs = (Integer)spinner_eval.getValue();
    
-                    
+            if(Subjects_validateFields()) {
+            
         try {
            
             Class.forName("com.mysql.jdbc.Driver");
@@ -592,6 +623,7 @@ public class Subjects extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(this,"New Subject Added");
             table_update();
+          
             
             
             cmb_yr.setSelectedIndex(0); 
@@ -602,15 +634,13 @@ public class Subjects extends javax.swing.JFrame {
             cmb_yr.requestFocus(); 
             
             
-        } catch (ClassNotFoundException ex) {
+        }  catch (ClassNotFoundException ex) {
             Logger.getLogger(Subjects.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(Subjects.class.getName()).log(Level.SEVERE, null, ex);
         }
-            
-
-
-        
+      
+     } 
 
     }//GEN-LAST:event_btn_addsubActionPerformed
 
