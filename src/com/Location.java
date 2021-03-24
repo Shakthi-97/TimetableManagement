@@ -262,14 +262,16 @@ public class Location extends javax.swing.JFrame {
                                     .addComponent(jLabel5))
                                 .addGap(43, 43, 43)))
                         .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(BN)
-                                .addComponent(cap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                                .addComponent(RN))
                             .addGroup(locboxLayout.createSequentialGroup()
-                                .addComponent(Typelec, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Typelab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(BN)
+                                    .addComponent(cap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                                    .addComponent(RN))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(locboxLayout.createSequentialGroup()
+                                .addComponent(Typelab)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Typelec, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(locboxLayout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -317,10 +319,16 @@ public class Location extends javax.swing.JFrame {
             }
         });
 
-        filter.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        filter.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        filter.setForeground(new java.awt.Color(102, 0, 102));
         filter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 filterActionPerformed(evt);
+            }
+        });
+        filter.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                filterKeyReleased(evt);
             }
         });
 
@@ -337,7 +345,7 @@ public class Location extends javax.swing.JFrame {
         jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(locbox, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(clear, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(filter, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(filter, javax.swing.JLayeredPane.PALETTE_LAYER);
         jLayeredPane1.setLayer(jButton5, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -824,59 +832,21 @@ public class Location extends javax.swing.JFrame {
     
     
     
-//************************************search**********************************************************
+
  
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
-        if(validate_Search ()) {
-        
-        try {
-       
-            Class.forName("com.mysql.jdbc.Driver");
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            insert = con.prepareStatement("select * From room where building_name=?");
-            insert.setString(1, filter.getText());
-            ResultSet rs = insert.executeQuery();  
-            
-            if(rs.next()){
-                
-                BN.setText(rs.getString("building_name"));   
-                RN.setText(rs.getString("room_name"));
-                
-                 //Typelec.setSelected(false);
-            //Typelab.setSelected(false);
-                //cap.setValue(rs.getString("capacity")); 
-                
-            }
-            
-            else {  
-                JOptionPane.showMessageDialog(null, "Building Name not Found");  
-            }  
-                      
-             filter.setText("");   
-            
-             
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }    
+          
     }//GEN-LAST:event_jButton5ActionPerformed
-//************************************search**********************************************************
- 
-    
-    
-    
-    
+
     
     
     private void filterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filterActionPerformed
         
     }//GEN-LAST:event_filterActionPerformed
 
-     private boolean validate_Search (){
+    
+    
+    private boolean validate_Search (){
         
         if(filter.getText().isEmpty())
         {
@@ -886,6 +856,57 @@ public class Location extends javax.swing.JFrame {
         
        return true; 
     }
+    
+    
+//************************************search**********************************************************
+ 
+    private void filterKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_filterKeyReleased
+        //search
+        
+          if(validate_Search ()) {
+        
+        
+        try {
+       
+            Class.forName("com.mysql.jdbc.Driver");
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            insert = con.prepareStatement("select * From room where room_name =?");
+            insert.setString(1, filter.getText());
+            ResultSet rs = insert.executeQuery();  
+            
+            if(rs.next()){
+                
+                BN.setText(rs.getString("building_name"));   
+                RN.setText(rs.getString("room_name"));
+                if (room_type == "LectureHall"){
+                    Typelec.setText(rs.getString("room_type"));
+                }
+                else{
+                    Typelab.setText(rs.getString("room_type"));
+                }
+                /*String room_type = rs.getString("room_type");
+                if(Typelec.isSelected()){
+                    room_type = "Lecture Hall";
+                   }
+                if(Typelab.isSelected()){
+                    room_type = "Laboratory";
+                   }*/
+                cap.setValue(rs.getInt("capacity"));
+        
+            }
+            
+         
+      
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          }
+    }//GEN-LAST:event_filterKeyReleased
+
+     
+//************************************search**********************************************************
     
     
     
