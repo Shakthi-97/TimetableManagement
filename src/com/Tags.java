@@ -87,9 +87,6 @@ public class Tags extends javax.swing.JFrame {
         clear.setForeground(new java.awt.Color(255, 255, 255));
         clear.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Desktop\\icons\\clear.png")); // NOI18N
         clear.setText("Clear History");
-        clear.setMaximumSize(new java.awt.Dimension(109, 23));
-        clear.setMinimumSize(new java.awt.Dimension(109, 23));
-        clear.setPreferredSize(new java.awt.Dimension(109, 23));
         clear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clearActionPerformed(evt);
@@ -282,7 +279,7 @@ public class Tags extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(clear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(clear))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -396,7 +393,6 @@ public class Tags extends javax.swing.JFrame {
                   
             }
             
-           
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Tags.class.getName()).log(Level.SEVERE, null, ex);
         }
