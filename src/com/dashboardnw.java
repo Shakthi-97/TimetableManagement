@@ -104,6 +104,11 @@ public class dashboardnw extends javax.swing.JFrame {
         jButton6.setText("Student Registration");
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 12, 99), 5));
         jButton6.setBorderPainted(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setBackground(new java.awt.Color(15, 19, 71));
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -167,6 +172,11 @@ public class dashboardnw extends javax.swing.JFrame {
         jButton2.setToolTipText("");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 102), 5));
         jButton2.setBorderPainted(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(15, 19, 71));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -205,7 +215,7 @@ public class dashboardnw extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setText("Registered Employees");
+        jButton12.setText("Registered Employe");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton12ActionPerformed(evt);
@@ -333,151 +343,226 @@ public class dashboardnw extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
       Connection con;
-        PreparedStatement insert;
+      PreparedStatement insert;
     
         
     
     
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
+        //location registration
+        Location loc = new Location();
+        loc.show();
+        dispose();
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        
-   
-        
+        // employee registration
+        Lecturer lec = new Lecturer();
+        lec.show();
+        dispose(); 
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    
+    
+    
+    
+    
+    
+    
+    //student statistics
+    
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-                                             
+                                            
        try
       {
           
-                    Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-         final String SQL = ("SELECT  semester, COUNT(*) FROM student GROUP BY semester");
-         final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
-         JFreeChart chart = ChartFactory.createBarChart("students count based on semester year","semester","No of students", dataset, PlotOrientation.VERTICAL, false, false, false);
-        CategoryPlot catplot = chart.getCategoryPlot();
-             catplot.setRangeGridlinePaint(Color.BLUE);
-       //ChartFrame frame = new ChartFrame("title",chart);
-      //frame.setVisible(true);
-      //frame.setSize(450,350);
-        ChartPanel panel = new ChartPanel(chart);
-      bp.removeAll();
-      bp.add(panel,BorderLayout.CENTER);
-      bp.validate();
+            final String SQL = ("SELECT  semester, COUNT(*) FROM student GROUP BY semester");
+            final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
+            JFreeChart chart = ChartFactory.createBarChart("students count based on semester year","semester","No of students", dataset, PlotOrientation.VERTICAL, false, false, false);
+            CategoryPlot catplot = chart.getCategoryPlot();
+            catplot.setRangeGridlinePaint(Color.BLUE);
+            //ChartFrame frame = new ChartFrame("title",chart);
+            //frame.setVisible(true);
+            //frame.setSize(450,350);
+            ChartPanel panel = new ChartPanel(chart);
+            bp.removeAll();
+            bp.add(panel,BorderLayout.CENTER);
+            bp.validate();
       }
-    catch(Exception e){
-        JOptionPane.showMessageDialog(null, e);
-      
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
     }   
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    
+    
+    
+    
+    //subject statistics
+    
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+       
          try
       {
           
-                    Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-         final String SQL = ("SELECT  offered_seme, COUNT(*) FROM subjects GROUP BY offered_seme");
-         final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
-         JFreeChart chart = ChartFactory.createBarChart("subjects count based on semester year","semester","No of subjects", dataset, PlotOrientation.VERTICAL, false, false, false);
-        CategoryPlot catplot = chart.getCategoryPlot();
-             catplot.setRangeGridlinePaint(Color.BLUE);
-       //ChartFrame frame = new ChartFrame("title",chart);
-      //frame.setVisible(true);
-      //frame.setSize(450,350);
-        ChartPanel panel = new ChartPanel(chart);
-      bp.removeAll();
-      bp.add(panel,BorderLayout.CENTER);
-      bp.validate();
+            final String SQL = ("SELECT  offered_seme, COUNT(*) FROM subjects GROUP BY offered_seme");
+            final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
+            JFreeChart chart = ChartFactory.createBarChart("subjects count based on semester year","semester","No of subjects", dataset, PlotOrientation.VERTICAL, false, false, false);
+            CategoryPlot catplot = chart.getCategoryPlot();
+            catplot.setRangeGridlinePaint(Color.BLUE);
+            //ChartFrame frame = new ChartFrame("title",chart);
+            //frame.setVisible(true);
+            //frame.setSize(450,350);
+            ChartPanel panel = new ChartPanel(chart);
+            bp.removeAll();
+            bp.add(panel,BorderLayout.CENTER);
+            bp.validate();
       }
-    catch(Exception e){
-        JOptionPane.showMessageDialog(null, e);
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
       
     }                                        
-                                    
-
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    
+    
+    
+    
+    
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+        // subject registartion
+        Subjects sub = new Subjects();
+        sub.show();
+        dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
+    
+    
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // working days and hours
+        WorkingDaysHours whd = new WorkingDaysHours();
+        whd.show();
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
+    
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
+        // tag registration
+        Tag tg = new Tag();
+        tg.show();
+        dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
 
+    
+    
+    
+    //location statistics
+    
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
+       
            try
       {
           
-                    Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-         final String SQL = ("SELECT  room_name, capacity FROM room GROUP BY room_name");
-         final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
-         JFreeChart chart = ChartFactory.createBarChart("Report","room_type","No of rooms", dataset, PlotOrientation.VERTICAL, false, false, false);
-        CategoryPlot catplot = chart.getCategoryPlot();
-             catplot.setRangeGridlinePaint(Color.BLUE);
-      // ChartFrame frame = new ChartFrame("title",chart);
-      //frame.setVisible(true);
-      //frame.setSize(450,350);
-        ChartPanel panel = new ChartPanel(chart);
-      bp.removeAll();
-      bp.add(panel,BorderLayout.CENTER);
-      bp.validate();
+                Class.forName("com.mysql.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                final String SQL = ("SELECT  room_name, capacity FROM room GROUP BY room_name");
+                final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
+                JFreeChart chart = ChartFactory.createBarChart("Capacity of rooms","room_type","capacity", dataset, PlotOrientation.VERTICAL, false, false, false);
+                CategoryPlot catplot = chart.getCategoryPlot();
+                catplot.setRangeGridlinePaint(Color.BLUE);
+                // ChartFrame frame = new ChartFrame("title",chart);
+                //frame.setVisible(true);
+                //frame.setSize(450,350);
+                ChartPanel panel = new ChartPanel(chart);
+                bp.removeAll();
+                bp.add(panel,BorderLayout.CENTER);
+                bp.validate();
       }
-    catch(Exception e){
-        JOptionPane.showMessageDialog(null, e);
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
       
     }                                         
-
     }//GEN-LAST:event_jButton13ActionPerformed
 
+    
+    
+    
+    
+    
+    
+    
+    //Employee statistics
+    
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+        
            try
       {
           
-                    Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-         final String SQL = ("SELECT  faculty, COUNT(*) FROM lecturer GROUP BY faculty");
-         final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
-         JFreeChart chart = ChartFactory.createBarChart("Employees count based on faculty","Faculty","No of employees", dataset, PlotOrientation.VERTICAL, false, false, false);
-        CategoryPlot catplot = chart.getCategoryPlot();
-             catplot.setRangeGridlinePaint(Color.BLUE);
-       //ChartFrame frame = new ChartFrame("title",chart);
-      //frame.setVisible(true);
-      //frame.setSize(450,350);
-      ChartPanel panel = new ChartPanel(chart);
-      bp.removeAll();
-      bp.add(panel,BorderLayout.CENTER);
-      bp.validate();
-        
+                Class.forName("com.mysql.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                final String SQL = ("SELECT  faculty, COUNT(*) FROM lecturer GROUP BY faculty");
+                final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
+                JFreeChart chart = ChartFactory.createBarChart("Employees count based on faculty","Faculty","No of employees", dataset, PlotOrientation.VERTICAL, false, false, false);
+                CategoryPlot catplot = chart.getCategoryPlot();
+                catplot.setRangeGridlinePaint(Color.BLUE);
+                //ChartFrame frame = new ChartFrame("title",chart);
+                //frame.setVisible(true);
+                //frame.setSize(450,350);
+                ChartPanel panel = new ChartPanel(chart);
+                bp.removeAll();
+                bp.add(panel,BorderLayout.CENTER);
+                bp.validate();
       }
-    catch(Exception e){
-        JOptionPane.showMessageDialog(null, e);
+           
+          catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
       
     }                                         
 
     }//GEN-LAST:event_jButton12ActionPerformed
 
+    
+    
+    
+    
+    
+    
+
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton10MouseClicked
+
+    
+    
+    
+    
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // student registration
+        Group grp = new Group();
+        grp.show();
+        dispose();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    
+    
+    
+    
+    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     
     
@@ -555,6 +640,6 @@ public class dashboardnw extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
-   private String room_type;
+   
 }
 
