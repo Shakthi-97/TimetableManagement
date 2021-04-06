@@ -85,6 +85,11 @@ public class Group extends javax.swing.JFrame {
         home_btn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         home_btn.setBorderPainted(false);
         home_btn.setPreferredSize(new java.awt.Dimension(20, 20));
+        home_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                home_btnActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
@@ -393,10 +398,9 @@ public class Group extends javax.swing.JFrame {
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(10, 10, 10))
-                    .addComponent(home_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(home_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
         );
@@ -484,6 +488,10 @@ public class Group extends javax.swing.JFrame {
         DefaultTableModel Df = (DefaultTableModel)groupTable.getModel();
         int SelectedIndex = groupTable.getSelectedRow();
 
+        if(SelectedIndex == -1){
+            JOptionPane.showMessageDialog(this, "Select the Group you want to Delete");
+        }
+        else
         try {
 
             int id = Integer.parseInt(Df.getValueAt(SelectedIndex, 0).toString());
@@ -528,6 +536,10 @@ public class Group extends javax.swing.JFrame {
         DefaultTableModel Df = (DefaultTableModel)groupTable.getModel();
         int SelectedIndex = groupTable.getSelectedRow();
 
+        if(SelectedIndex == -1){
+            JOptionPane.showMessageDialog(this, "Select the Group you want to Edit");
+        }
+        else
         try {
             int id = Integer.parseInt(Df.getValueAt(SelectedIndex, 0).toString());
 
@@ -761,6 +773,14 @@ public class Group extends javax.swing.JFrame {
             Logger.getLogger(Group.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_clearActionPerformed
+
+    private void home_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_btnActionPerformed
+        // TODO add your handling code here:
+        dashboardnw dbn = new dashboardnw();
+        dbn.show();
+        
+        dispose();
+    }//GEN-LAST:event_home_btnActionPerformed
 
     Connection con;
         PreparedStatement insert;
