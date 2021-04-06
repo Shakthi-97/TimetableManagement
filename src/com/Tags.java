@@ -310,6 +310,11 @@ public class Tags extends javax.swing.JFrame {
         home_btn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         home_btn.setBorderPainted(false);
         home_btn.setPreferredSize(new java.awt.Dimension(20, 20));
+        home_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                home_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -524,6 +529,10 @@ public class Tags extends javax.swing.JFrame {
         DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
         int SelectedIndex = jTable1.getSelectedRow();
 
+        if(SelectedIndex == -1){
+            JOptionPane.showMessageDialog(this, "Select the Tag you want to Delete");
+        }
+        else
         try {
 
             int id = Integer.parseInt(Df.getValueAt(SelectedIndex, 0).toString());
@@ -565,6 +574,10 @@ public class Tags extends javax.swing.JFrame {
         DefaultTableModel Df = (DefaultTableModel)jTable1.getModel();
         int SelectedIndex = jTable1.getSelectedRow();
 
+        if(SelectedIndex == -1){
+            JOptionPane.showMessageDialog(this, "Select the Tag you want to Edit");
+        }
+        else
         try {
 
             int id = Integer.parseInt(Df.getValueAt(SelectedIndex, 0).toString());
@@ -647,6 +660,14 @@ public class Tags extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tag_NameActionPerformed
 
+    private void home_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_btnActionPerformed
+        // TODO add your handling code here:
+        dashboardnw dbn = new dashboardnw();
+        dbn.show();
+        
+        dispose();
+    }//GEN-LAST:event_home_btnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -672,67 +693,6 @@ public class Tags extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Tags.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
