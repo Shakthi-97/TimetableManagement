@@ -16,6 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -132,6 +133,11 @@ public class AddSessionTime extends javax.swing.JFrame {
         jLabel2.setText("ABC Institute Timetable Management System");
 
         btnHome.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\home.png")); // NOI18N
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
@@ -210,6 +216,11 @@ public class AddSessionTime extends javax.swing.JFrame {
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\edit.png")); // NOI18N
         btnUpdate.setText("Update");
+        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUpdateActionPerformed(evt);
+            }
+        });
 
         btnDelete.setBackground(new java.awt.Color(0, 51, 0));
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
@@ -321,6 +332,11 @@ public class AddSessionTime extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        sessiontab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sessiontabMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(sessiontab);
@@ -498,6 +514,59 @@ public class AddSessionTime extends javax.swing.JFrame {
             Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+        dashboardnw dbn = new dashboardnw();
+        dbn.show();    //display the dashboard
+        
+        dispose();     //close the current jframe and open the new jframe
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void sessiontabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sessiontabMouseClicked
+        // TODO add your handling code here:
+        TableModel model = sessiontab.getModel();
+        int j = sessiontab.getSelectedRow();   // to get the data in form when the row is selected
+        
+        txtsessionid.setText(model.getValueAt(j, 0).toString());
+        
+        String day = model.getValueAt(j, 1).toString();
+        switch(day){
+            case "Monday":
+                txtday.setSelectedIndex(1);
+                break;
+            case "Tuesday":
+                txtday.setSelectedIndex(2);
+                break;
+            case "Wednesday":
+                txtday.setSelectedIndex(3);
+                break;
+            case "Thursday":
+                txtday.setSelectedIndex(4);
+                break;
+            case "Friday":
+                txtday.setSelectedIndex(5);
+                break;
+            case "Saturday":
+                txtday.setSelectedIndex(6);
+                break;
+            case "Sunday":
+                txtday.setSelectedIndex(7);
+                break;
+        }
+        
+        txtstarthour.setValue(model.getValueAt(j, 2));
+        txtstartminutes.setValue(model.getValueAt(j, 3));
+        
+        txtendhour.setValue(model.getValueAt(j, 4));
+        txtendminutes.setValue(model.getValueAt(j, 5));
+        
+    }//GEN-LAST:event_sessiontabMouseClicked
+
+    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnUpdateActionPerformed
 
     /**
      * @param args the command line arguments
