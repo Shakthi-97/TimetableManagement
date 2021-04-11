@@ -5,6 +5,18 @@
  */
 package com;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author mathu
@@ -16,8 +28,60 @@ public class AddSessionTime extends javax.swing.JFrame {
      */
     public AddSessionTime() {
         initComponents();
+        table_update();
     }
 
+    Connection con1;
+        PreparedStatement insert;  
+        
+        private void table_update(){
+            
+          int c;
+          
+          try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+          
+            insert = con1.prepareStatement("select * From session");
+            
+            ResultSet rs = insert.executeQuery();  
+            ResultSetMetaData Rss = rs.getMetaData();
+            c = Rss.getColumnCount();
+            
+            DefaultTableModel Df = (DefaultTableModel)sessiontab.getModel();
+            Df.setRowCount(0);
+            
+            while(rs.next()) {
+                
+                Vector v2 = new Vector();
+                
+                for(int a=1; a<=c; a++) {
+                    
+                    v2.add(rs.getString("session_ID"));
+                    v2.add(rs.getString("working_day"));
+                    v2.add(rs.getInt("start_time_hour"));
+                    v2.add(rs.getInt("start_time_minutes"));
+                    v2.add(rs.getInt("end_time_hour"));
+                    v2.add(rs.getInt("end_time_minutes"));
+                    
+                }
+                
+                Df.addRow(v2);
+                  
+            }
+         
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
+            
+        }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -136,6 +200,11 @@ public class AddSessionTime extends javax.swing.JFrame {
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\add.png")); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setBackground(new java.awt.Color(0, 51, 0));
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
@@ -353,6 +422,82 @@ public class AddSessionTime extends javax.swing.JFrame {
     private void txtsessionidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsessionidActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtsessionidActionPerformed
+
+    private boolean ID_validateFields(){
+      
+        if(txtsessionid.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the relevant session ID for the session time allocation");
+            txtsessionid.requestFocus();
+           
+            return false;
+        }
+        
+        if((Integer)txtstarthour.getValue() == 0)
+        {
+            JOptionPane.showMessageDialog(this,"Enter the hour of the starting time for the session time allocation");
+            txtstarthour.requestFocus();
+           
+            return false;
+        }
+        
+        if((Integer)txtendhour.getValue() == 0)
+        {
+            JOptionPane.showMessageDialog(this,"Enter the hour of the end time for the session time allocation");
+            txtendhour.requestFocus();
+           
+            return false;
+        }
+        
+        return true;
+    }
+    
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        String session_id = txtsessionid.getText();
+        String day = txtday.getSelectedItem().toString();
+        
+        Integer start_hour = (Integer)txtstarthour.getValue();
+        Integer start_minutes = (Integer)txtstartminutes.getValue();
+        
+        Integer end_hour = (Integer)txtendhour.getValue();
+        Integer end_minutes = (Integer)txtendminutes.getValue();
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("insert into session(session_ID,working_day,start_time_hour,start_time_minutes,end_time_hour,end_time_minutes)values(?,?,?,?,?,?)");
+            
+            insert.setString(1, session_id);
+            insert.setString(2, day);
+            insert.setInt(3, start_hour);
+            insert.setInt(4, start_minutes);
+            insert.setInt(5, end_hour);
+            insert.setInt(6, end_minutes);
+            
+            insert.executeUpdate();
+            
+            JOptionPane.showMessageDialog(this," Session time has been Added Successfuly");
+            table_update();
+            
+            // To clear the rcords in the form
+            txtsessionid.setText("");
+            txtday.setSelectedIndex(0);
+            txtstarthour.setValue(0);
+            txtstartminutes.setValue(0);
+            txtendhour.setValue(0);
+            txtendminutes.setValue(0);
+            txtsessionid.requestFocus();
+            
+        }catch (ClassNotFoundException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
