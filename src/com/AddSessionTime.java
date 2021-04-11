@@ -212,7 +212,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(0, 51, 0));
+        btnUpdate.setBackground(new java.awt.Color(0, 51, 102));
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\edit.png")); // NOI18N
         btnUpdate.setText("Update");
@@ -222,10 +222,15 @@ public class AddSessionTime extends javax.swing.JFrame {
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(0, 51, 0));
+        btnDelete.setBackground(new java.awt.Color(153, 0, 51));
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\delete.png")); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout formLayout = new javax.swing.GroupLayout(form);
         form.setLayout(formLayout);
@@ -255,27 +260,26 @@ public class AddSessionTime extends javax.swing.JFrame {
                             .addComponent(txtendhour, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                             .addComponent(txtstarthour))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnUpdate)
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(formLayout.createSequentialGroup()
-                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(formLayout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(46, 46, 46)
-                                        .addComponent(txtstartminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(formLayout.createSequentialGroup()
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(jLabel8)
+                                .addGap(39, 39, 39)
+                                .addComponent(txtstartminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(formLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(28, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAdd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnDelete)
                 .addGap(17, 17, 17))
         );
@@ -355,6 +359,11 @@ public class AddSessionTime extends javax.swing.JFrame {
         btnClear.setForeground(new java.awt.Color(255, 255, 255));
         btnClear.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\clear.png")); // NOI18N
         btnClear.setText("Clear History");
+        btnClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnClearActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -449,6 +458,13 @@ public class AddSessionTime extends javax.swing.JFrame {
             return false;
         }
         
+        if(txtday.getSelectedItem().toString() == ""){
+            JOptionPane.showMessageDialog(this,"Select the relevant working day for the session time allocation");
+            txtday.requestFocus();
+           
+            return false;
+        }
+        
         if((Integer)txtstarthour.getValue() == 0)
         {
             JOptionPane.showMessageDialog(this,"Enter the hour of the starting time for the session time allocation");
@@ -478,6 +494,8 @@ public class AddSessionTime extends javax.swing.JFrame {
         
         Integer end_hour = (Integer)txtendhour.getValue();
         Integer end_minutes = (Integer)txtendminutes.getValue();
+        
+        if(ID_validateFields()){
         
         try{
             
@@ -513,6 +531,7 @@ public class AddSessionTime extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
         }
+      }
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
@@ -565,8 +584,149 @@ public class AddSessionTime extends javax.swing.JFrame {
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         // TODO add your handling code here:
+        TableModel model = sessiontab.getModel();
+        int j = sessiontab.getSelectedRow();   // to get the data in form when the row is selected
         
+        // validation to check whether the row is selected
+        if(j == -1){
+            JOptionPane.showMessageDialog(this,"Select the session from the table which you want to edit");
+        }
+        
+        else{
+            try {
+                
+                String session_id = txtsessionid.getText();
+                String day = txtday.getSelectedItem().toString();
+        
+                Integer start_hour = (Integer)txtstarthour.getValue();
+                Integer start_minutes = (Integer)txtstartminutes.getValue();
+        
+                Integer end_hour = (Integer)txtendhour.getValue();
+                Integer end_minutes = (Integer)txtendminutes.getValue();
+                
+                int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to update this Session's time ?","Warning",JOptionPane.YES_NO_OPTION);
+
+                if (dialogResult == JOptionPane.YES_OPTION) {
+                    
+                    Class.forName("com.mysql.jdbc.Driver");
+            
+                    con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+                    insert = con1.prepareStatement("update session set working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? where session_ID=? ");
+                    
+                    insert.setString(1, day);
+                    insert.setInt(2, start_hour);
+                    insert.setInt(3, start_minutes);
+                    insert.setInt(4, end_hour);
+                    insert.setInt(5, end_minutes);
+                    insert.setString(6, session_id);
+            
+                    insert.executeUpdate();
+            
+                    JOptionPane.showMessageDialog(this," Session time has been Updated Successfuly");
+                    table_update();
+            
+                    // To clear the rcords in the form
+                    txtsessionid.setText("");
+                    txtday.setSelectedIndex(0);
+                    txtstarthour.setValue(0);
+                    txtstartminutes.setValue(0);
+                    txtendhour.setValue(0);
+                    txtendminutes.setValue(0);
+                    txtsessionid.requestFocus();
+                
+                }
+            }catch (ClassNotFoundException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            }   catch (SQLException ex) {
+                Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
+        TableModel model = sessiontab.getModel();
+        int j = sessiontab.getSelectedRow();   // to get the data in form when the row is selected
+        
+        // validation to check whether the row is selected
+        if(j == -1){
+            JOptionPane.showMessageDialog(this,"Select the session from the table which you want to edit");
+        }
+        
+        else{
+            try{
+                
+                String session_id = txtsessionid.getText();
+            
+                int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to delete this record of time allocation for session?","Warning",JOptionPane.YES_NO_OPTION);
+
+                if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con1.prepareStatement("delete from session where session_ID=? ");
+
+                insert.setString(1, session_id);
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"record of time allocated for session is Deleted");
+                insert.executeUpdate();
+            
+                JOptionPane.showMessageDialog(this," Session time has been Deleted Successfuly");
+                table_update();
+            
+                // To clear the rcords in the form
+                txtsessionid.setText("");
+                txtday.setSelectedIndex(0);
+                txtstarthour.setValue(0);
+                txtstartminutes.setValue(0);
+                txtendhour.setValue(0);
+                txtendminutes.setValue(0);
+                txtsessionid.requestFocus();
+                
+                }
+                
+            }catch (ClassNotFoundException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            }   catch (SQLException ex) {
+                Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        TableModel model = sessiontab.getModel();
+        
+        try {
+
+            int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to clear all the records ?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con1.prepareStatement("Truncate table session");
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"All Records got Cleared");
+                table_update();
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnClearActionPerformed
 
     /**
      * @param args the command line arguments
