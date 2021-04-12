@@ -5,6 +5,22 @@
  */
 package com;
 
+import java.awt.event.KeyEvent;
+import java.sql.ResultSetMetaData;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import java.awt.event.*;
 /**
  *
  * @author siva
@@ -16,6 +32,13 @@ public class AddSession extends javax.swing.JFrame {
      */
     public AddSession() {
         initComponents();
+        table_update();
+        fill_Lecture_1_Combo();
+        fill_Lecture_2_Combo();
+     //   load_tag();
+        load_subject();
+        load_group();
+        
     }
 
     /**
@@ -32,48 +55,49 @@ public class AddSession extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        loctab = new javax.swing.JTable();
-        clear = new javax.swing.JButton();
-        jTextField4 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
         locbox = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btn_Add_Session = new javax.swing.JButton();
+        edit_session = new javax.swing.JButton();
+        delete_session = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        sel_subcode = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
+        cmb_sel_lec = new javax.swing.JComboBox<>();
+        cmb_sel_tag = new javax.swing.JComboBox<>();
+        cmb_sel_grpId = new javax.swing.JComboBox<>();
+        sel_extra = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
+        spin_duration = new javax.swing.JSpinner();
+        cmb_sel_lec1 = new javax.swing.JComboBox<>();
+        cmb_sel_subject = new javax.swing.JComboBox<>();
+        spin_noSt = new javax.swing.JSpinner();
+        jTextField4 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        JTable = new javax.swing.JTable();
+        clear_session = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        home = new java.awt.Button();
         jLabel1 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(89, 39, 74));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
@@ -84,90 +108,8 @@ public class AddSession extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 102));
         jLabel7.setText("MANAGE SESSIONS");
 
-        loctab.setBorder(javax.swing.BorderFactory.createEtchedBorder(null, java.awt.Color.white));
-        loctab.setForeground(new java.awt.Color(255, 255, 255));
-        loctab.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Building Name", "Room Name", "Room Type", "Capacity"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        loctab.setSelectionBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setViewportView(loctab);
-
-        clear.setBackground(new java.awt.Color(0, 42, 100));
-        clear.setForeground(new java.awt.Color(255, 255, 255));
-        clear.setText("Clear history");
-        clear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clearActionPerformed(evt);
-            }
-        });
-
-        jTextField4.setText("jTextField4");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Search");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jLayeredPane1.setLayer(jScrollPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(clear, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jTextField4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
-        jLayeredPane1.setLayout(jLayeredPane1Layout);
-        jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(clear)
-                .addGap(58, 58, 58))
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(380, Short.MAX_VALUE))
-        );
-        jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
-                .addComponent(clear)
-                .addContainerGap())
-        );
-
         locbox.setBackground(new java.awt.Color(255, 255, 255));
-        locbox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 153, 153), 3, true));
+        locbox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(89, 39, 74), 3, true));
         locbox.setForeground(new java.awt.Color(204, 204, 255));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -184,25 +126,35 @@ public class AddSession extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(51, 0, 102));
         jLabel6.setText("SUBJECTS & GROUPS");
 
-        jButton1.setBackground(new java.awt.Color(23, 144, 52));
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("+ New Session");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_Add_Session.setBackground(new java.awt.Color(23, 144, 52));
+        btn_Add_Session.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Add_Session.setText("+ New Session");
+        btn_Add_Session.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_Add_SessionActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 153));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Edit");
-        jButton2.setAlignmentY(0.8F);
+        edit_session.setBackground(new java.awt.Color(0, 0, 153));
+        edit_session.setForeground(new java.awt.Color(255, 255, 255));
+        edit_session.setText("Edit");
+        edit_session.setAlignmentY(0.8F);
+        edit_session.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edit_sessionActionPerformed(evt);
+            }
+        });
 
-        jButton3.setBackground(new java.awt.Color(153, 0, 0));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Delete");
+        delete_session.setBackground(new java.awt.Color(153, 0, 0));
+        delete_session.setForeground(new java.awt.Color(255, 255, 255));
+        delete_session.setText("Delete");
+        delete_session.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_sessionActionPerformed(evt);
+            }
+        });
 
-        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel3.setBackground(new java.awt.Color(89, 39, 74));
         jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 102));
@@ -230,28 +182,39 @@ public class AddSession extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setText("Select Tag");
 
+        sel_subcode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sel_subcodeActionPerformed(evt);
+            }
+        });
+
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel11.setText("Select Lecturer");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel12.setText("Selected Lecturers");
+        jLabel12.setText("Selected Lecturer");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cmb_sel_lec.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cmb_sel_lec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cmb_sel_lecActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.setMinimumSize(new java.awt.Dimension(32, 20));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        cmb_sel_tag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Evaluation", "Lecture", "Practical", "Tutorial", " " }));
+        cmb_sel_tag.setMinimumSize(new java.awt.Dimension(32, 20));
+        cmb_sel_tag.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmb_sel_tagItemStateChanged(evt);
+            }
+        });
+        cmb_sel_tag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                cmb_sel_tagActionPerformed(evt);
             }
         });
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmb_sel_grpId.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Subject Code");
@@ -265,11 +228,30 @@ public class AddSession extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel16.setText("Duration");
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(2, 0, 10, 1));
+        spin_duration.setModel(new javax.swing.SpinnerNumberModel(2, 0, 10, 1));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmb_sel_lec1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cmb_sel_lec1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_sel_lec1ActionPerformed(evt);
+            }
+        });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmb_sel_subject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        cmb_sel_subject.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                cmb_sel_subjectPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
+        cmb_sel_subject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmb_sel_subjectActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout locboxLayout = new javax.swing.GroupLayout(locbox);
         locbox.setLayout(locboxLayout);
@@ -277,65 +259,60 @@ public class AddSession extends javax.swing.JFrame {
             locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(locboxLayout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(locboxLayout.createSequentialGroup()
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(locboxLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(locboxLayout.createSequentialGroup()
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton3)
-                                .addGap(20, 20, 20))
+                                .addGap(19, 19, 19)
+                                .addComponent(btn_Add_Session)
+                                .addGap(26, 26, 26)
+                                .addComponent(edit_session, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                                .addComponent(delete_session, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(11, 11, 11))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
                                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel12)
-                                    .addComponent(jComboBox1, 0, 137, Short.MAX_VALUE)
-                                    .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                                    .addComponent(cmb_sel_lec, 0, 163, Short.MAX_VALUE)
+                                    .addComponent(cmb_sel_lec1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
                                     .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.TRAILING, 0, 148, Short.MAX_VALUE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addComponent(cmb_sel_tag, javax.swing.GroupLayout.Alignment.TRAILING, 0, 148, Short.MAX_VALUE)
+                                        .addComponent(sel_extra, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addComponent(jLabel14)))
                             .addGroup(locboxLayout.createSequentialGroup()
                                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(31, 31, 31)
+                                    .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(cmb_sel_subject, 0, 164, Short.MAX_VALUE)
+                                        .addComponent(cmb_sel_grpId, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1)
-                                    .addComponent(jTextField3)
-                                    .addGroup(locboxLayout.createSequentialGroup()
-                                        .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel15)
-                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE))))))
+                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sel_subcode, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel15)
+                                    .addComponent(spin_noSt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(locboxLayout.createSequentialGroup()
                         .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(locboxLayout.createSequentialGroup()
-                                .addGap(93, 93, 93)
-                                .addComponent(jLabel3))
-                            .addGroup(locboxLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(locboxLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel4))
                             .addGroup(locboxLayout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel16)
                                 .addGap(18, 18, 18)
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(spin_duration, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(locboxLayout.createSequentialGroup()
+                                .addGap(120, 120, 120)
+                                .addComponent(jLabel3)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(108, 108, 108))
         );
         locboxLayout.setVerticalGroup(
             locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,16 +326,16 @@ public class AddSession extends javax.swing.JFrame {
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmb_sel_lec, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_sel_tag, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(sel_extra, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_sel_lec1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(jLabel6)
                 .addGap(18, 18, 18)
@@ -367,34 +344,153 @@ public class AddSession extends javax.swing.JFrame {
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(locboxLayout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel4))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel15)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23)
-                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
+                    .addComponent(sel_subcode, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmb_sel_subject, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmb_sel_grpId, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(spin_noSt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(spin_duration, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(edit_session)
+                    .addComponent(delete_session)
+                    .addComponent(btn_Add_Session))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTextField4.setText("jTextField4");
+        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField4ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Search");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jScrollPane3.setForeground(new java.awt.Color(0, 42, 100));
+        jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        JTable.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        JTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Session Id", "Select Lecturer", "Selected Lecturer ", "Extra Lecturer(s)", "Tag", "Subject", "Subject Code", "Group ID", "No of Students", "Duration"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        JTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        JTable.setGridColor(new java.awt.Color(89, 39, 74));
+        JTable.setSelectionBackground(new java.awt.Color(89, 39, 74));
+        JTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JTableMouseClicked(evt);
+            }
+        });
+        jScrollPane3.setViewportView(JTable);
+        if (JTable.getColumnModel().getColumnCount() > 0) {
+            JTable.getColumnModel().getColumn(1).setPreferredWidth(150);
+            JTable.getColumnModel().getColumn(2).setPreferredWidth(150);
+            JTable.getColumnModel().getColumn(3).setPreferredWidth(120);
+            JTable.getColumnModel().getColumn(4).setResizable(false);
+            JTable.getColumnModel().getColumn(4).setPreferredWidth(90);
+            JTable.getColumnModel().getColumn(5).setResizable(false);
+            JTable.getColumnModel().getColumn(5).setPreferredWidth(150);
+            JTable.getColumnModel().getColumn(6).setResizable(false);
+            JTable.getColumnModel().getColumn(6).setPreferredWidth(90);
+            JTable.getColumnModel().getColumn(7).setResizable(false);
+            JTable.getColumnModel().getColumn(7).setPreferredWidth(100);
+            JTable.getColumnModel().getColumn(8).setResizable(false);
+            JTable.getColumnModel().getColumn(8).setPreferredWidth(100);
+            JTable.getColumnModel().getColumn(9).setPreferredWidth(70);
+        }
+
+        clear_session.setBackground(new java.awt.Color(0, 42, 100));
+        clear_session.setForeground(new java.awt.Color(255, 255, 255));
+        clear_session.setText("Clear history");
+        clear_session.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clear_sessionActionPerformed(evt);
+            }
+        });
+
+        jTextField1.setText("jTextField1");
+
+        jLayeredPane1.setLayer(locbox, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jTextField4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(clear_session, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jTextField1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                            .addGap(217, 217, 217)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                            .addGap(495, 495, 495)
+                            .addComponent(clear_session)))
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton4)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(clear_session))
+                    .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 102));
         jLabel8.setFont(new java.awt.Font("Calisto MT", 1, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel8.setForeground(new java.awt.Color(102, 0, 51));
         jLabel8.setText("MANAGE SESSIONS");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -402,75 +498,69 @@ public class AddSession extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(500, 500, 500)
                         .addComponent(jLabel8)
-                        .addGap(437, 437, 437)
+                        .addGap(536, 536, 536)
                         .addComponent(jLabel7))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addContainerGap()
                         .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ABC Institute Timetable Management System");
 
-        home.setBackground(new java.awt.Color(0, 0, 0));
-        home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        home.setEnabled(false);
-        home.setFont(new java.awt.Font("Kristen ITC", 0, 12)); // NOI18N
-        home.setLabel("ABC");
-        home.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\va.jpg")); // NOI18N
+
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\home (1).png")); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeActionPerformed(evt);
+                jButton5ActionPerformed(evt);
             }
         });
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\va.jpg")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1040, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 999, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(219, 219, 219)
-                        .addComponent(jLabel9)))
-                .addContainerGap(22, Short.MAX_VALUE))
-            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(168, 168, 168)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1003, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 596, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(227, 227, 227))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(242, 242, 242))
         );
 
         jScrollPane2.setViewportView(jPanel2);
@@ -491,25 +581,217 @@ public class AddSession extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
+    private void cmb_sel_tagActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_sel_tagActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_homeActionPerformed
+    }//GEN-LAST:event_cmb_sel_tagActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void cmb_sel_lecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_sel_lecActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_cmb_sel_lecActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    
+    
+        Connection con1;
+        PreparedStatement insert;  
+        
+        private void table_update(){
+    
+          int c;
+          
+          try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+          
+            insert = con1.prepareStatement("select * From session");
+            
+            ResultSet rs = insert.executeQuery();  
+            ResultSetMetaData Rss = rs.getMetaData();
+            c = Rss.getColumnCount();
+            
+            DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
+            Df.setRowCount(0);
+            
+            while(rs.next()) {
+                
+                Vector v2 = new Vector();
+                
+                for(int a=1; a<=c; a++) {
+                    
+                    v2.add(rs.getInt("ses_id"));
+                    v2.add(rs.getString("lec1"));
+                    v2.add(rs.getString("lec2"));
+                    v2.add(rs.getString("extra_lec"));
+                    v2.add(rs.getString("ses_tag"));
+                    v2.add(rs.getString("subject"));
+                    v2.add(rs.getString("sub_code"));
+                    v2.add(rs.getString("grp_ID"));
+                    v2.add(rs.getInt("no_Stds"));
+                    v2.add(rs.getInt("duration"));
+                    
+                }
+                
+                Df.addRow(v2);
+                  
+            }
+         
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        }   
+        
+        
+        
+        private boolean Sessions_validateFields(){
+        if(cmb_sel_lec.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Lecturer");
+            cmb_sel_lec.requestFocus();
+            
+            return false;
+        }
+        
+        if(cmb_sel_tag.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Tag");
+            cmb_sel_tag.requestFocus();
+            
+            return false;
+        }
+        
+        if(cmb_sel_lec1.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Selected Lecturer");
+            cmb_sel_lec1.requestFocus();
+            
+            return false;
+        }
+       
+        if(sel_extra.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Add Extra Lecturers if necessary");
+            sel_extra.requestFocus();
+            
+            return false;
+        }
+        
+        if(cmb_sel_subject.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Subject");
+            cmb_sel_subject.requestFocus();
+            
+            return false;
+        }
+       
+        if(cmb_sel_grpId.getSelectedItem().toString().equals(" "))
+        {
+            JOptionPane.showMessageDialog(this,"Select the Students Group");
+            cmb_sel_grpId.requestFocus();
+            
+            return false;
+        }
+        
+       return true; 
+    }
+        
+        
+    
+    private void btn_Add_SessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Add_SessionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+        
+        String Lecturer1 = cmb_sel_lec.getSelectedItem().toString();
+        String Lecturer2 = cmb_sel_lec1.getSelectedItem().toString();
+        String Add_extra_lec = sel_extra.getText();
+        String Tag = cmb_sel_tag.getSelectedItem().toString();
+        String Subject = cmb_sel_subject.getSelectedItem().toString();
+        String Subject_Code = sel_subcode.getText();
+        String Group_ID = cmb_sel_grpId.getSelectedItem().toString();
+        Integer No_Students = (Integer)spin_noSt.getValue();
+        Integer Duration = (Integer)spin_duration.getValue();
+        
+        if(Sessions_validateFields()) {
+        
+        try {
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+            Class.forName("com.mysql.jdbc.Driver");
 
-    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+            insert = con1.prepareStatement("insert into session(lec1,lec2,extra_lec,ses_tag,subject,sub_code,grp_ID,no_Stds,duration)values(?,?,?,?,?,?,?,?,?)");
+
+            insert.setString(1, Lecturer1);
+            insert.setString(2, Lecturer2);
+            insert.setString(3, Add_extra_lec);
+            insert.setString(4, Tag);
+            insert.setString(5, Subject);
+            insert.setString(6, Subject_Code);
+            insert.setString(7, Group_ID);
+            insert.setInt(8, No_Students);
+            insert.setInt(9, Duration);
+
+            insert.executeUpdate();
+
+            JOptionPane.showMessageDialog(this,"New Session Created");
+            table_update();
+
+            
+            
+            cmb_sel_lec.setSelectedIndex(0); // To clear the rcords in the form
+            cmb_sel_lec1.setSelectedIndex(0);
+            sel_extra.setText("");
+            cmb_sel_tag.setSelectedIndex(0);
+            cmb_sel_subject.setSelectedIndex(0);
+            sel_subcode.setText("");
+            cmb_sel_grpId.setSelectedIndex(0);
+            spin_noSt.setValue(0);
+            cmb_sel_lec.requestFocus();
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     
+      } 
+    }//GEN-LAST:event_btn_Add_SessionActionPerformed
+
+    private void clear_sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear_sessionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_clearActionPerformed
+        
+        DefaultTableModel Df = (DefaultTableModel) JTable.getModel();
+        // Df.setRowCount(0);
+
+        try {
+
+            int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to clear all the records ?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con1.prepareStatement("Truncate table session");
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"All Records got Cleared");
+                table_update();
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_clear_sessionActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -518,6 +800,402 @@ public class AddSession extends javax.swing.JFrame {
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        
+        dashboardnw dbn = new dashboardnw();
+        dbn.show();  // display the dashboard
+        
+        dispose(); //close the current jframe and open the new jframe
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void JTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JTableMouseClicked
+        // TODO add your handling code here:
+
+        DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
+        int SelectedIndex = JTable.getSelectedRow();
+
+        Object obj = JTable.getValueAt(JTable.getSelectedRow(), 1);
+        cmb_sel_lec.setSelectedItem(obj);
+      
+        Object obj2 = JTable.getValueAt(JTable.getSelectedRow(), 2);
+        cmb_sel_lec1.setSelectedItem(obj2);
+
+        sel_extra.setText(Df.getValueAt(SelectedIndex, 3).toString());
+        
+//        Object obj1 = JTable.getValueAt(JTable.getSelectedRow(), 4);
+//        cmb_sel_tag.setSelectedItem(obj1);
+
+       String Tag = (Df.getValueAt(SelectedIndex, 4).toString());
+       switch(Tag){
+
+            case "select":
+            cmb_sel_tag.setSelectedIndex(0);
+            break;
+
+            case "Evaluation":
+            cmb_sel_tag.setSelectedIndex(1);
+            break;
+
+            case "Lecture":
+            cmb_sel_tag.setSelectedIndex(2);
+            break;
+
+            case "Practical":
+            cmb_sel_tag.setSelectedIndex(3);
+            break;
+
+            case "Tutorial":
+            cmb_sel_tag.setSelectedIndex(4);
+            break;
+
+        }
+       
+       
+
+        
+        Object obj3 = JTable.getValueAt(JTable.getSelectedRow(), 5);
+        cmb_sel_subject.setSelectedItem(obj3);
+      
+        sel_subcode.setText(Df.getValueAt(SelectedIndex, 6).toString());
+        
+        Object obj4 = JTable.getValueAt(JTable.getSelectedRow(), 7);
+        cmb_sel_grpId.setSelectedItem(obj4);
+        
+        spin_noSt.setValue((Integer)Df.getValueAt(SelectedIndex, 8));   
+        
+        spin_duration.setValue((Integer)Df.getValueAt(SelectedIndex, 9)); 
+        
+    }//GEN-LAST:event_JTableMouseClicked
+
+    private void sel_subcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sel_subcodeActionPerformed
+        // TODO add your handling code here:
+      
+    }//GEN-LAST:event_sel_subcodeActionPerformed
+
+    private void fill_Lecture_1_Combo(){
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("select * from lecturer");
+            
+            ResultSet rs = insert.executeQuery();  
+            
+            while(rs.next()) {
+                
+                String Lecturer1 = rs.getString("emp_name");
+                cmb_sel_lec.addItem(Lecturer1);
+                 
+            }
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    
+    private void fill_Lecture_2_Combo(){
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("select * from lecturer");
+            
+            ResultSet rs = insert.executeQuery();  
+            
+            while(rs.next()) {
+                
+                String Lecturer2 = rs.getString("emp_name");
+                cmb_sel_lec1.addItem(Lecturer2);
+                 
+            }
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    
+//    private void load_tag(){
+//        
+//         try {
+//            Class.forName("com.mysql.jdbc.Driver");
+//            
+//            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+//            
+//            insert = con1.prepareStatement("select * from tag");
+//            
+//            ResultSet rs = insert.executeQuery();  
+//            
+//            while(rs.next()) {
+//                
+//                String tag = rs.getString("relateTag");
+//                cmb_sel_tag.addItem(tag);
+//                 
+//            }
+//            
+//            
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (SQLException ex) {
+//            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
+//    }
+    
+       
+    private void load_subject(){
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("select * from subjects");
+            
+            ResultSet rs = insert.executeQuery();  
+            
+            while(rs.next()) {
+                
+                String Sub_ = rs.getString("subject_name");
+                cmb_sel_subject.addItem(Sub_);
+                 
+            }
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+
+    
+    private void load_group(){
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("select * from student");
+            
+            ResultSet rs = insert.executeQuery();  
+            
+            while(rs.next()) {
+               
+                if((cmb_sel_tag.getSelectedItem().toString().equals("Lecture")&& (cmb_sel_tag.getSelectedItem()!= null) )) {
+                    
+                   String group_id = rs.getString("groupID"); 
+                   cmb_sel_grpId.addItem(group_id);  
+        
+                   
+             }
+                
+               else {
+                    
+                    String Sub_group_id = rs.getString("subGroupID"); 
+                    cmb_sel_grpId.addItem(Sub_group_id);
+                    
+                }
+            }
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    private void cmb_sel_subjectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_sel_subjectActionPerformed
+        // TODO add your handling code here:   
+    }//GEN-LAST:event_cmb_sel_subjectActionPerformed
+
+    private void cmb_sel_subjectPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_cmb_sel_subjectPopupMenuWillBecomeInvisible
+       
+        String temp = (String) cmb_sel_subject.getSelectedItem();
+        
+        try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("select subject_code from subjects where subject_name=? ");
+            insert.setString(1, temp);  
+            ResultSet rs = insert.executeQuery();
+            
+            if(rs.next()) {
+                 String Sub_code = rs.getString("subject_code");
+                 sel_subcode.setText(Sub_code);
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_cmb_sel_subjectPopupMenuWillBecomeInvisible
+
+    private void cmb_sel_tagItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmb_sel_tagItemStateChanged
+        // TODO add your handling code here:
+     
+    }//GEN-LAST:event_cmb_sel_tagItemStateChanged
+
+    private void edit_sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_sessionActionPerformed
+        // TODO add your handling code here:
+        
+        DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
+        
+        int SelectedIndex = JTable.getSelectedRow();  // to get the data in form when the row is selected
+        
+        if(SelectedIndex == -1) {
+             JOptionPane.showMessageDialog(this,"Select the Session you want to edit");
+         }
+        
+        else
+
+        try {
+
+            int id = Integer.parseInt(Df.getValueAt(SelectedIndex, 0).toString());
+
+            String Lecturer1 = cmb_sel_lec.getSelectedItem().toString();
+            String Lecturer2 = cmb_sel_lec1.getSelectedItem().toString();
+            String Add_extra_lec = sel_extra.getText();
+            String Tag = cmb_sel_tag.getSelectedItem().toString();
+            String Subject = cmb_sel_subject.getSelectedItem().toString();
+            String Subject_Code = sel_subcode.getText();
+            String Group_ID = cmb_sel_grpId.getSelectedItem().toString();
+            Integer No_Students = (Integer)spin_noSt.getValue();
+            Integer Duration = (Integer)spin_duration.getValue();
+
+            int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to update this Session ?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con1.prepareStatement("update session set lec1=?, lec2=?, extra_lec=?, ses_tag=?, subject=?, sub_code=?, grp_ID=?, no_Stds=?, duration=? where ses_id=? ");
+
+                
+                insert.setString(1, Lecturer1);
+                insert.setString(2, Lecturer2);
+                insert.setString(3, Add_extra_lec);
+                insert.setString(4, Tag);
+                insert.setString(5, Subject);
+                insert.setString(6, Subject_Code);
+                insert.setString(7, Group_ID);
+                insert.setInt(8, No_Students);
+                insert.setInt(9, Duration);
+                insert.setInt(10, id);
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"Session Updated");
+                table_update();
+                
+                sel_extra.setText("");
+                cmb_sel_lec.setSelectedIndex(0); // To clear the rcords in the form
+                cmb_sel_lec1.setSelectedIndex(0);
+                cmb_sel_tag.setSelectedIndex(0);
+                cmb_sel_subject.setSelectedIndex(0);
+                cmb_sel_grpId.setSelectedIndex(0);
+                sel_subcode.setText("");
+                spin_noSt.setValue(0);
+                spin_duration.setValue(0);
+                cmb_sel_lec.requestFocus();
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_edit_sessionActionPerformed
+
+    private void delete_sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_sessionActionPerformed
+        // TODO add your handling code here:
+        
+        DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
+        int SelectedIndex = JTable.getSelectedRow();  // to get the data in form when the row is selected
+        
+        if(SelectedIndex == -1) {
+             JOptionPane.showMessageDialog(this,"Select the Session you want to delete");
+         }
+        
+        else
+
+        try {
+
+            int id = Integer.parseInt(Df.getValueAt(SelectedIndex, 0).toString());
+            
+            int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to delete this Session ?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con1.prepareStatement("delete from session where ses_id=? ");
+
+                insert.setInt(1, id);
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"Session Deleted");
+                table_update();
+
+                sel_extra.setText("");
+                cmb_sel_lec.setSelectedIndex(0); // To clear the rcords in the form
+                cmb_sel_lec1.setSelectedIndex(0);
+                cmb_sel_tag.setSelectedIndex(0);
+                cmb_sel_subject.setSelectedIndex(0);
+                cmb_sel_grpId.setSelectedIndex(0);
+                sel_subcode.setText("");
+                spin_noSt.setValue(0);
+                spin_duration.setValue(0);
+                cmb_sel_lec.requestFocus();
+
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_delete_sessionActionPerformed
+
+    private void cmb_sel_lec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmb_sel_lec1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmb_sel_lec1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -555,17 +1233,18 @@ public class AddSession extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton clear;
-    private java.awt.Button home;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JTable JTable;
+    private javax.swing.JButton btn_Add_Session;
+    private javax.swing.JButton clear_session;
+    private javax.swing.JComboBox<String> cmb_sel_grpId;
+    private javax.swing.JComboBox<String> cmb_sel_lec;
+    private javax.swing.JComboBox<String> cmb_sel_lec1;
+    private javax.swing.JComboBox<String> cmb_sel_subject;
+    private javax.swing.JComboBox<String> cmb_sel_tag;
+    private javax.swing.JButton delete_session;
+    private javax.swing.JButton edit_session;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -586,14 +1265,14 @@ public class AddSession extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel locbox;
-    private javax.swing.JTable loctab;
+    private javax.swing.JTextField sel_extra;
+    private javax.swing.JTextField sel_subcode;
+    private javax.swing.JSpinner spin_duration;
+    private javax.swing.JSpinner spin_noSt;
     // End of variables declaration//GEN-END:variables
 }
