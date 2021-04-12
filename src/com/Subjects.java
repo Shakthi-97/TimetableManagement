@@ -78,7 +78,7 @@ public class Subjects extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        home_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
@@ -343,7 +343,7 @@ public class Subjects extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Offered Year", "Offered Semester", "Subject Name", "Subject Code", "No of Lecture Hrs", "No of Tutorial Hrs", "No of Lab Hrs", "No of Evaluation Hrs"
+                "ID", "Offered Year", "Offered Semester", "Subject Name", "Subject Code", "Lecture Hrs", "Tutorial Hrs", "Lab Hrs", "Evaluation Hrs"
             }
         ) {
             Class[] types = new Class [] {
@@ -363,6 +363,20 @@ public class Subjects extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(JTable1);
+        if (JTable1.getColumnModel().getColumnCount() > 0) {
+            JTable1.getColumnModel().getColumn(0).setPreferredWidth(50);
+            JTable1.getColumnModel().getColumn(1).setPreferredWidth(80);
+            JTable1.getColumnModel().getColumn(2).setPreferredWidth(110);
+            JTable1.getColumnModel().getColumn(3).setPreferredWidth(250);
+            JTable1.getColumnModel().getColumn(4).setPreferredWidth(90);
+            JTable1.getColumnModel().getColumn(5).setResizable(false);
+            JTable1.getColumnModel().getColumn(5).setPreferredWidth(80);
+            JTable1.getColumnModel().getColumn(6).setPreferredWidth(80);
+            JTable1.getColumnModel().getColumn(7).setResizable(false);
+            JTable1.getColumnModel().getColumn(7).setPreferredWidth(60);
+            JTable1.getColumnModel().getColumn(8).setResizable(false);
+            JTable1.getColumnModel().getColumn(8).setPreferredWidth(95);
+        }
 
         jLabel7.setBackground(new java.awt.Color(0, 0, 102));
         jLabel7.setFont(new java.awt.Font("Calisto MT", 1, 16)); // NOI18N
@@ -430,8 +444,13 @@ public class Subjects extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\va.jpg")); // NOI18N
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\home.png")); // NOI18N
-        jButton1.setPreferredSize(new java.awt.Dimension(20, 20));
+        home_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\home.png")); // NOI18N
+        home_btn.setPreferredSize(new java.awt.Dimension(20, 20));
+        home_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                home_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -444,7 +463,7 @@ public class Subjects extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(143, 143, 143)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(home_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(jLabel9)))
                 .addContainerGap(26, Short.MAX_VALUE))
@@ -452,11 +471,11 @@ public class Subjects extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+                    .addComponent(home_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(435, 435, 435))
@@ -654,6 +673,12 @@ public class Subjects extends javax.swing.JFrame {
 
         DefaultTableModel Df = (DefaultTableModel)JTable1.getModel();
         int SelectedIndex = JTable1.getSelectedRow();  // to get the data in form when the row is selected
+        
+        if(SelectedIndex == -1) {
+             JOptionPane.showMessageDialog(this,"Select the Subject you want to edit");
+         }
+        
+        else
          
          try {
              
@@ -724,6 +749,12 @@ public class Subjects extends javax.swing.JFrame {
 
         DefaultTableModel Df = (DefaultTableModel)JTable1.getModel();
         int SelectedIndex = JTable1.getSelectedRow();  // to get the data in form when the row is selected
+        
+        if(SelectedIndex == -1) {
+             JOptionPane.showMessageDialog(this,"Select the Subject you want to delete");
+         }
+        
+        else
          
          
          try {
@@ -897,6 +928,16 @@ public class Subjects extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rd_seme1ActionPerformed
 
+    private void home_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_btnActionPerformed
+        // TODO add your handling code here:
+        
+        dashboardnw dbn = new dashboardnw();
+        dbn.show();  // display the dashboard
+        
+        dispose(); //close the current jframe and open the new jframe
+        
+    }//GEN-LAST:event_home_btnActionPerformed
+
      
     
     /**
@@ -941,7 +982,7 @@ public class Subjects extends javax.swing.JFrame {
     private javax.swing.JButton btneditsubject;
     private javax.swing.JButton clear_subject;
     private javax.swing.JComboBox<String> cmb_yr;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton home_btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
