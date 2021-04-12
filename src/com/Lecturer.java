@@ -79,7 +79,7 @@ public class Lecturer extends javax.swing.JFrame {
         btn_search = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        home_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(0, 0));
@@ -130,6 +130,16 @@ public class Lecturer extends javax.swing.JFrame {
             }
         });
         jScrollPane3.setViewportView(JTable);
+        if (JTable.getColumnModel().getColumnCount() > 0) {
+            JTable.getColumnModel().getColumn(0).setPreferredWidth(50);
+            JTable.getColumnModel().getColumn(1).setPreferredWidth(150);
+            JTable.getColumnModel().getColumn(2).setResizable(false);
+            JTable.getColumnModel().getColumn(2).setPreferredWidth(120);
+            JTable.getColumnModel().getColumn(3).setPreferredWidth(120);
+            JTable.getColumnModel().getColumn(4).setResizable(false);
+            JTable.getColumnModel().getColumn(4).setPreferredWidth(150);
+            JTable.getColumnModel().getColumn(6).setPreferredWidth(100);
+        }
 
         locbox.setBackground(new java.awt.Color(255, 255, 255));
         locbox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(89, 39, 74), 3, true));
@@ -241,15 +251,15 @@ public class Lecturer extends javax.swing.JFrame {
             }
         });
 
-        cmb_fac.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Computing", "Engineering", "Business ", "Humanities & Sciences", "Architecture", "Law", " ", " ", " " }));
+        cmb_fac.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Computing", "Engineering", "Business ", "Humanities & Sciences", "School of Architecture", "School of Law", " ", " ", " " }));
 
-        cmb_dep.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "IT", "SE", "IM", "DS", "IT - Curtin", "CSNE", "ISE" }));
+        cmb_dep.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Information Technology", "Software Engineering", "Interactive Media", "Data Science", "Cyber Security", "IT - Curtin", "Computer Systems & Network Engineering", "Information Systems Engineering" }));
 
         cmb_cen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Malabe", "Metropolitan", "Kandy", "Matara", "Kurunagela", "Jaffna", " ", " ", " " }));
 
         cmb_build.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "New Building", "A Block", "B Block", "C Block", "D Block", "E Block", "F Block", " " }));
 
-        cmb_lvl.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1", "2", "3", "4", "5" }));
+        cmb_lvl.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "1", "2", "3", "4", "5", "6", " " }));
         cmb_lvl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmb_lvlActionPerformed(evt);
@@ -260,6 +270,7 @@ public class Lecturer extends javax.swing.JFrame {
         btnrank.setForeground(new java.awt.Color(255, 255, 255));
         btnrank.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\gen 1 white.png")); // NOI18N
         btnrank.setText("Generate ");
+        btnrank.setToolTipText("Click to Generate the Rank");
         btnrank.setAlignmentY(0.8F);
         btnrank.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -389,7 +400,7 @@ public class Lecturer extends javax.swing.JFrame {
             }
         });
 
-        btn_search.setBackground(new java.awt.Color(102, 0, 102));
+        btn_search.setBackground(new java.awt.Color(89, 39, 74));
         btn_search.setForeground(new java.awt.Color(255, 255, 255));
         btn_search.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\search white.png")); // NOI18N
         btn_search.setText("Search");
@@ -473,8 +484,13 @@ public class Lecturer extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\va.jpg")); // NOI18N
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\home (1).png")); // NOI18N
-        jButton1.setPreferredSize(new java.awt.Dimension(20, 20));
+        home_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\home (1).png")); // NOI18N
+        home_btn.setPreferredSize(new java.awt.Dimension(20, 20));
+        home_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                home_btnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -487,7 +503,7 @@ public class Lecturer extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 986, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(136, 136, 136)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(home_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(jLabel9)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -495,11 +511,11 @@ public class Lecturer extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(home_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -525,6 +541,63 @@ public class Lecturer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+        Connection con1;
+        PreparedStatement insert;  
+        
+        private void table_update(){
+            
+          int c;
+          
+          try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+          
+            insert = con1.prepareStatement("select * From lecturer");
+            
+            ResultSet rs = insert.executeQuery();  
+            ResultSetMetaData Rss = rs.getMetaData();
+            c = Rss.getColumnCount();
+            
+            DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
+            Df.setRowCount(0);
+            
+            while(rs.next()) {
+                
+                Vector v2 = new Vector();
+                
+                for(int a=1; a<=c; a++) {
+                    
+                    v2.add(rs.getString("id"));
+                    v2.add(rs.getString("emp_name"));
+                    v2.add(rs.getString("emp_id"));
+                    v2.add(rs.getString("faculty"));
+                    v2.add(rs.getString("department"));
+                    v2.add(rs.getString("center"));
+                    v2.add(rs.getString("building"));
+                    v2.add(rs.getString("level"));
+                    v2.add(rs.getString("rank"));
+                    
+                }
+                
+                Df.addRow(v2);
+                  
+            }
+         
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
+            
+        }
+        
+  
+    
     private void btnrankActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrankActionPerformed
         // TODO add your handling code here:
 
@@ -562,6 +635,12 @@ public class Lecturer extends javax.swing.JFrame {
 
         DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
         int SelectedIndex = JTable.getSelectedRow();  // to get the data in form when the row is selected
+        
+        if(SelectedIndex == -1) {
+             JOptionPane.showMessageDialog(this,"Select the Employee you want to delete");
+         }
+        
+        else
 
         try {
 
@@ -608,7 +687,14 @@ public class Lecturer extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
+        
         int SelectedIndex = JTable.getSelectedRow();  // to get the data in form when the row is selected
+        
+        if(SelectedIndex == -1) {
+             JOptionPane.showMessageDialog(this,"Select the Employee you want to edit");
+         }
+        
+        else
 
         try {
 
@@ -879,11 +965,11 @@ public class Lecturer extends javax.swing.JFrame {
             cmb_fac.setSelectedIndex(4);
             break;
 
-            case "Architecture":
+            case "School of Architecture":
             cmb_fac.setSelectedIndex(5);
             break;
 
-            case "Law":
+            case "School of Law":
             cmb_fac.setSelectedIndex(6);
             break;
 
@@ -896,31 +982,35 @@ public class Lecturer extends javax.swing.JFrame {
             cmb_dep.setSelectedIndex(0);
             break;
 
-            case "IT":
+            case "Information Technology":
             cmb_dep.setSelectedIndex(1);
             break;
 
-            case "SE":
+            case "Software Engineering":
             cmb_dep.setSelectedIndex(2);
             break;
 
-            case "IM":
+            case "Interactive Media":
             cmb_dep.setSelectedIndex(3);
             break;
 
-            case "DS":
+            case "Data Science":
             cmb_dep.setSelectedIndex(4);
             break;
-
-            case "IT - Curtin":
+            
+            case "Cyber Security":
             cmb_dep.setSelectedIndex(5);
             break;
 
-            case "CSNE":
+            case "IT - Curtin":
             cmb_dep.setSelectedIndex(6);
             break;
 
-            case "ISE":
+            case "Computer Systems & Network Engineering":
+            cmb_dep.setSelectedIndex(7);
+            break;
+
+            case "Information Systems Engineering":
             cmb_dep.setSelectedIndex(7);
             break;
 
@@ -1020,6 +1110,10 @@ public class Lecturer extends javax.swing.JFrame {
 
             case "5":
             cmb_lvl.setSelectedIndex(5);
+            break;
+            
+            case "6":
+            cmb_lvl.setSelectedIndex(6);
             break;
 
         }
@@ -1134,61 +1228,16 @@ public class Lecturer extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtidKeyReleased
 
+    private void home_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home_btnActionPerformed
+        // TODO add your handling code here:
+        
+        dashboardnw dbn = new dashboardnw();
+        dbn.show();  // display the dashboard
+        
+        dispose(); //close the current jframe and open the new jframe
+    }//GEN-LAST:event_home_btnActionPerformed
+
     
-        Connection con1;
-        PreparedStatement insert;  
-        
-        private void table_update(){
-            
-          int c;
-          
-          try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-          
-            insert = con1.prepareStatement("select * From lecturer");
-            
-            ResultSet rs = insert.executeQuery();  
-            ResultSetMetaData Rss = rs.getMetaData();
-            c = Rss.getColumnCount();
-            
-            DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
-            Df.setRowCount(0);
-            
-            while(rs.next()) {
-                
-                Vector v2 = new Vector();
-                
-                for(int a=1; a<=c; a++) {
-                    
-                    v2.add(rs.getString("id"));
-                    v2.add(rs.getString("emp_name"));
-                    v2.add(rs.getString("emp_id"));
-                    v2.add(rs.getString("faculty"));
-                    v2.add(rs.getString("department"));
-                    v2.add(rs.getString("center"));
-                    v2.add(rs.getString("building"));
-                    v2.add(rs.getString("level"));
-                    v2.add(rs.getString("rank"));
-                    
-                }
-                
-                Df.addRow(v2);
-                  
-            }
-         
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
-        }
-          
-            
-        }
-        
         
        
     
@@ -1240,7 +1289,7 @@ public class Lecturer extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmb_dep;
     private javax.swing.JComboBox<String> cmb_fac;
     private javax.swing.JComboBox<String> cmb_lvl;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton home_btn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
