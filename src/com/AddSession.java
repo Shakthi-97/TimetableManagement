@@ -80,8 +80,8 @@ public class AddSession extends javax.swing.JFrame {
         spin_duration = new javax.swing.JSpinner();
         cmb_sel_lec1 = new javax.swing.JComboBox<>();
         cmb_sel_subject = new javax.swing.JComboBox<>();
-        spin_noSt = new javax.swing.JSpinner();
         jLabel17 = new javax.swing.JLabel();
+        txt_stds = new javax.swing.JTextField();
         Lecture_Search = new javax.swing.JTextField();
         Btn_Lec_Search = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -257,8 +257,6 @@ public class AddSession extends javax.swing.JFrame {
             }
         });
 
-        spin_noSt.setModel(new javax.swing.SpinnerNumberModel(120, 0, 700, 1));
-
         jLabel17.setText("hour");
 
         javax.swing.GroupLayout locboxLayout = new javax.swing.GroupLayout(locbox);
@@ -271,14 +269,6 @@ public class AddSession extends javax.swing.JFrame {
                     .addGroup(locboxLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(locboxLayout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(btn_Add_Session)
-                                .addGap(18, 18, 18)
-                                .addComponent(edit_session, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(delete_session, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(27, 27, 27))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
                                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel11)
@@ -301,28 +291,39 @@ public class AddSession extends javax.swing.JFrame {
                                     .addComponent(jLabel4))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(sel_subcode, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel15)
-                                    .addComponent(spin_noSt, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
+                                        .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel15))
+                                        .addGap(61, 61, 61))
+                                    .addComponent(sel_subcode, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_stds, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(locboxLayout.createSequentialGroup()
+                                .addGap(110, 110, 110)
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
+                                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(locboxLayout.createSequentialGroup()
+                                        .addComponent(jLabel16)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(spin_duration, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, locboxLayout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
+                                        .addComponent(btn_Add_Session)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(edit_session, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(delete_session, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGap(27, 27, 27))))
                     .addGroup(locboxLayout.createSequentialGroup()
-                        .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(locboxLayout.createSequentialGroup()
-                                .addGap(120, 120, 120)
-                                .addComponent(jLabel3))
-                            .addGroup(locboxLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel16)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(spin_duration, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(149, 149, 149)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108))
         );
         locboxLayout.setVerticalGroup(
             locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -354,8 +355,8 @@ public class AddSession extends javax.swing.JFrame {
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sel_subcode, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cmb_sel_subject, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cmb_sel_subject, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sel_subcode, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
@@ -363,7 +364,7 @@ public class AddSession extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cmb_sel_grpId, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(spin_noSt, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_stds, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(23, 23, 23)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(spin_duration, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -733,7 +734,10 @@ public class AddSession extends javax.swing.JFrame {
         String Subject = cmb_sel_subject.getSelectedItem().toString();
         String Subject_Code = sel_subcode.getText();
         String Group_ID = cmb_sel_grpId.getSelectedItem().toString();
-        Integer No_Students = (Integer)spin_noSt.getValue();
+       // Integer No_Students = (Integer)spin_noSt.getValue();
+        
+        String No_Students = txt_stds.getText();
+        
         Integer Duration = (Integer)spin_duration.getValue();
         
         if(Sessions_validateFields()) {
@@ -753,7 +757,7 @@ public class AddSession extends javax.swing.JFrame {
             insert.setString(5, Subject);
             insert.setString(6, Subject_Code);
             insert.setString(7, Group_ID);
-            insert.setInt(8, No_Students);
+            insert.setString(8, No_Students);
             insert.setInt(9, Duration);
 
             insert.executeUpdate();
@@ -770,7 +774,9 @@ public class AddSession extends javax.swing.JFrame {
             cmb_sel_subject.setSelectedIndex(0);
             sel_subcode.setText("");
             cmb_sel_grpId.setSelectedIndex(0);
-            spin_noSt.setValue(0);
+          //  spin_noSt.setValue(0);
+            txt_stds.setText("");
+            spin_duration.setValue(0);
             cmb_sel_lec.requestFocus();
 
         } catch (ClassNotFoundException ex) {
@@ -820,7 +826,7 @@ public class AddSession extends javax.swing.JFrame {
         
         if(Lecture_Search.getText().isEmpty())
         {
-            JOptionPane.showMessageDialog(this,"Enter the Employee name to Search");   
+            JOptionPane.showMessageDialog(this,"Enter the Student Group you want to Search");   
             Lecture_Search.requestFocus();
             
             return false;
@@ -835,16 +841,48 @@ public class AddSession extends javax.swing.JFrame {
         
         if(validate_Search ()) {
         
-         DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
-         TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(Df);
-         JTable.setRowSorter(tr);
-         tr.setRowFilter(RowFilter.regexFilter(Lecture_Search.getText().trim()));
-         
-//         if() {  
-//                JOptionPane.showMessageDialog(null, "Employee not Found");  
-//            }
-        
+        try {
+       
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("select * From session where grp_ID=?");
+            
+            insert.setString(1, Lecture_Search.getText());
+            ResultSet rs = insert.executeQuery();  
+            
+            if(rs.next()){
+                
+                cmb_sel_lec.setSelectedItem(rs.getString("lec1"));    
+                cmb_sel_tag.setSelectedItem(rs.getString("ses_tag")); 
+                cmb_sel_lec1.setSelectedItem(rs.getString("lec2")); 
+                sel_extra.setText(rs.getString("extra_lec"));
+                cmb_sel_subject.setSelectedItem(rs.getString("subject")); 
+                sel_subcode.setText(rs.getString("sub_code"));
+                cmb_sel_grpId.setSelectedItem(rs.getString("grp_ID")); 
+               // spin_noSt.setValue(rs.getInt("no_Stds"));
+                txt_stds.setText(rs.getString("no_Stds"));
+                spin_duration.setValue(rs.getInt("duration"));
+               
+               
+            }
+            
+            else {  
+                JOptionPane.showMessageDialog(null, "Group not Found");  
+            }  
+                      
+             Lecture_Search.setText("");   
+            
+             
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }  
+        
         
     }//GEN-LAST:event_Btn_Lec_SearchActionPerformed
 
@@ -916,7 +954,9 @@ public class AddSession extends javax.swing.JFrame {
         Object obj4 = JTable.getValueAt(JTable.getSelectedRow(), 7);
         cmb_sel_grpId.setSelectedItem(obj4);
         
-        spin_noSt.setValue((Integer)Df.getValueAt(SelectedIndex, 8));   
+     //   spin_noSt.setValue((Integer)Df.getValueAt(SelectedIndex, 8));   
+     
+        txt_stds.setText(Df.getValueAt(SelectedIndex, 8).toString());
         
         spin_duration.setValue((Integer)Df.getValueAt(SelectedIndex, 9)); 
         
@@ -1141,7 +1181,8 @@ public class AddSession extends javax.swing.JFrame {
             String Subject = cmb_sel_subject.getSelectedItem().toString();
             String Subject_Code = sel_subcode.getText();
             String Group_ID = cmb_sel_grpId.getSelectedItem().toString();
-            Integer No_Students = (Integer)spin_noSt.getValue();
+           // Integer No_Students = (Integer)spin_noSt.getValue();
+            String No_Students = txt_stds.getText();
             Integer Duration = (Integer)spin_duration.getValue();
 
             int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to update this Session ?","Warning",JOptionPane.YES_NO_OPTION);
@@ -1162,7 +1203,7 @@ public class AddSession extends javax.swing.JFrame {
                 insert.setString(5, Subject);
                 insert.setString(6, Subject_Code);
                 insert.setString(7, Group_ID);
-                insert.setInt(8, No_Students);
+                insert.setString(8, No_Students);
                 insert.setInt(9, Duration);
                 insert.setInt(10, id);
 
@@ -1178,7 +1219,8 @@ public class AddSession extends javax.swing.JFrame {
                 cmb_sel_subject.setSelectedIndex(0);
                 cmb_sel_grpId.setSelectedIndex(0);
                 sel_subcode.setText("");
-                spin_noSt.setValue(0);
+               // spin_noSt.setValue(0);
+                txt_stds.setText("");
                 spin_duration.setValue(0);
                 cmb_sel_lec.requestFocus();
 
@@ -1231,7 +1273,8 @@ public class AddSession extends javax.swing.JFrame {
                 cmb_sel_subject.setSelectedIndex(0);
                 cmb_sel_grpId.setSelectedIndex(0);
                 sel_subcode.setText("");
-                spin_noSt.setValue(0);
+              //  spin_noSt.setValue(0);
+                txt_stds.setText("");
                 spin_duration.setValue(0);
                 cmb_sel_lec.requestFocus();
 
@@ -1255,8 +1298,7 @@ public class AddSession extends javax.swing.JFrame {
          DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
          TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(Df);
          JTable.setRowSorter(tr); 
-         tr.setRowFilter(RowFilter.regexFilter(text_search1.getText().trim()));
-         
+         tr.setRowFilter(RowFilter.regexFilter(text_search1.getText().trim())); 
          
     }//GEN-LAST:event_text_search1KeyPressed
 
@@ -1345,7 +1387,7 @@ public class AddSession extends javax.swing.JFrame {
     private javax.swing.JTextField sel_extra;
     private javax.swing.JTextField sel_subcode;
     private javax.swing.JSpinner spin_duration;
-    private javax.swing.JSpinner spin_noSt;
     private javax.swing.JTextField text_search1;
+    private javax.swing.JTextField txt_stds;
     // End of variables declaration//GEN-END:variables
 }
