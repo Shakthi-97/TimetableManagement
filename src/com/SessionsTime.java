@@ -5,6 +5,18 @@
  */
 package com;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author USER
@@ -16,7 +28,64 @@ public class SessionsTime extends javax.swing.JFrame {
      */
     public SessionsTime() {
         initComponents();
+        table_update();
     }
+    
+    Connection con;
+        PreparedStatement insert;
+        
+        //display in the table
+        private void table_update()
+        {
+            int a;
+            
+            try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            insert = con.prepareStatement("select * From session");
+            
+            ResultSet rs = insert.executeQuery();
+            ResultSetMetaData Rss = rs.getMetaData();
+            a = Rss.getColumnCount();
+            
+            DefaultTableModel Df = (DefaultTableModel)consecutive.getModel();
+            DefaultTableModel Df1 = (DefaultTableModel)parallel.getModel();
+            DefaultTableModel Df2 = (DefaultTableModel)lapping.getModel();
+            Df.setRowCount(0);
+            
+                while(rs.next()) {
+                
+                Vector vec = new Vector();
+                
+                for(int i=1; i<=a; i++) {
+                    
+                    vec.add(rs.getString("ses_id"));
+                    vec.add(rs.getString("lec1"));
+                    vec.add(rs.getString("lec2"));
+                    vec.add(rs.getString("extra_lec"));
+                    vec.add(rs.getString("ses_tag"));
+                    vec.add(rs.getString("subject"));
+                    vec.add(rs.getString("sub_code"));
+                    vec.add(rs.getString("grp_ID"));
+                    vec.add(rs.getString("no_Stds"));
+                    vec.add(rs.getString("duration"));
+                    
+                }
+                
+                Df.addRow(vec);
+                Df1.addRow(vec);
+                Df2.addRow(vec);                  
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        catch (SQLException ex) {
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,8 +103,20 @@ public class SessionsTime extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel7 = new javax.swing.JPanel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        consecutive = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        parallel = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        lapping = new javax.swing.JTable();
         NotAvailableTimes = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         form = new javax.swing.JPanel();
@@ -91,15 +172,51 @@ public class SessionsTime extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
+        jButton5.setText("Add Consecutive Session");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Add Room");
+
+        consecutive.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Session ID", "Select Lecturer", "Selected Lecturer", "Extra Lecturer", "Tag", "Subject", "Subject Code", "Group ID", "No of Students", "Duration"
+            }
+        ));
+        jScrollPane2.setViewportView(consecutive);
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1108, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(249, 249, 249)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6))
+                .addGap(26, 26, 26))
         );
 
         jTabbedPane1.addTab("Consecutive", jPanel7);
@@ -107,15 +224,46 @@ public class SessionsTime extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
+        jButton7.setText("Add Parallel Session");
+
+        jButton8.setText("Add Room");
+
+        parallel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Session ID", "Select Lecturer", "Selected Lecturer", "Extra Lecturer", "Tag", "Subject", "Subject Code", "Group ID", "No of Students", "Duration"
+            }
+        ));
+        jScrollPane4.setViewportView(parallel);
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1108, Short.MAX_VALUE)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(250, 250, 250)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton8)
+                    .addComponent(jButton7))
+                .addGap(21, 21, 21))
         );
 
         jTabbedPane1.addTab("Parallel", jPanel8);
@@ -123,15 +271,51 @@ public class SessionsTime extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
+        jButton9.setText("Add Non Overlapping Session");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("Add Room");
+
+        lapping.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Session ID", "Select Lecturer", "Selected Lecturer", "Extra Lecturer", "Tag", "Subject", "Subject Code", "Group ID", "No of Students", "Duration"
+            }
+        ));
+        jScrollPane5.setViewportView(lapping);
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1108, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(227, 227, 227)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton10)
+                    .addComponent(jButton9))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Non Overlapping", jPanel9);
@@ -199,17 +383,14 @@ public class SessionsTime extends javax.swing.JFrame {
 
         btnAdd.setBackground(new java.awt.Color(0, 51, 0));
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdd.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\add.png")); // NOI18N
         btnAdd.setText("Add");
 
         btnUpdate.setBackground(new java.awt.Color(0, 51, 102));
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\edit.png")); // NOI18N
         btnUpdate.setText("Update");
 
         btnDelete.setBackground(new java.awt.Color(153, 0, 51));
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\delete.png")); // NOI18N
         btnDelete.setText("Delete");
 
         javax.swing.GroupLayout formLayout = new javax.swing.GroupLayout(form);
@@ -451,6 +632,39 @@ public class SessionsTime extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdayActionPerformed
 
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+
+        TableModel model1 = consecutive.getModel();
+        int indexs[] = consecutive.getSelectedRows();
+
+        Object[] row = new Object[10];
+
+        sample sam1 = new sample();
+        DefaultTableModel model2 = (DefaultTableModel)sam1.jTable1.getModel();
+
+        for(int i = 0; i < indexs.length; i++)
+        {
+            row[0] = model1.getValueAt(indexs[i], 0);
+            row[1] = model1.getValueAt(indexs[i], 1);
+            row[2] = model1.getValueAt(indexs[i], 2);
+            row[3] = model1.getValueAt(indexs[i], 3);
+            row[4] = model1.getValueAt(indexs[i], 4);
+            row[5] = model1.getValueAt(indexs[i], 5);
+            row[6] = model1.getValueAt(indexs[i], 6);
+            row[7] = model1.getValueAt(indexs[i], 7);
+            row[8] = model1.getValueAt(indexs[i], 8);
+            row[9] = model1.getValueAt(indexs[i], 9);
+
+            model2.addRow(row);
+        }
+        sam1.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -492,8 +706,15 @@ public class SessionsTime extends javax.swing.JFrame {
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JTable consecutive;
     private javax.swing.JPanel form;
     private javax.swing.JButton home_btn;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -513,8 +734,13 @@ public class SessionsTime extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable lapping;
+    private javax.swing.JTable parallel;
     private javax.swing.JTable sessiontab;
     private javax.swing.JComboBox<String> txtday;
     private javax.swing.JSpinner txtendhour;
