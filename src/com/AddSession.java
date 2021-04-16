@@ -20,7 +20,11 @@ import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JTextField;
 import java.awt.event.*;
+
 /**
  *
  * @author siva
@@ -35,9 +39,10 @@ public class AddSession extends javax.swing.JFrame {
         table_update();
         fill_Lecture_1_Combo();
         fill_Lecture_2_Combo();
-     //   load_tag();
+     // load_tag();
         load_subject();
         load_group();
+        addPlaceHolderStyle(text_search1);
         
     }
 
@@ -82,12 +87,12 @@ public class AddSession extends javax.swing.JFrame {
         cmb_sel_subject = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         txt_stds = new javax.swing.JTextField();
-        Lecture_Search = new javax.swing.JTextField();
-        Btn_Lec_Search = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         JTable = new javax.swing.JTable();
         clear_session = new javax.swing.JButton();
         text_search1 = new javax.swing.JTextField();
+        Lecture_Search = new javax.swing.JTextField();
+        Btn_Lec_Search = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -378,22 +383,6 @@ public class AddSession extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        Lecture_Search.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lecture_SearchActionPerformed(evt);
-            }
-        });
-
-        Btn_Lec_Search.setBackground(new java.awt.Color(89, 39, 74));
-        Btn_Lec_Search.setForeground(new java.awt.Color(255, 255, 255));
-        Btn_Lec_Search.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\search white.png")); // NOI18N
-        Btn_Lec_Search.setText("Search");
-        Btn_Lec_Search.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Btn_Lec_SearchActionPerformed(evt);
-            }
-        });
-
         jScrollPane3.setForeground(new java.awt.Color(0, 42, 100));
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -431,11 +420,11 @@ public class AddSession extends javax.swing.JFrame {
             JTable.getColumnModel().getColumn(4).setResizable(false);
             JTable.getColumnModel().getColumn(4).setPreferredWidth(90);
             JTable.getColumnModel().getColumn(5).setResizable(false);
-            JTable.getColumnModel().getColumn(5).setPreferredWidth(150);
+            JTable.getColumnModel().getColumn(5).setPreferredWidth(165);
             JTable.getColumnModel().getColumn(6).setResizable(false);
             JTable.getColumnModel().getColumn(6).setPreferredWidth(90);
             JTable.getColumnModel().getColumn(7).setResizable(false);
-            JTable.getColumnModel().getColumn(7).setPreferredWidth(100);
+            JTable.getColumnModel().getColumn(7).setPreferredWidth(90);
             JTable.getColumnModel().getColumn(8).setResizable(false);
             JTable.getColumnModel().getColumn(8).setPreferredWidth(100);
             JTable.getColumnModel().getColumn(9).setPreferredWidth(70);
@@ -451,6 +440,20 @@ public class AddSession extends javax.swing.JFrame {
             }
         });
 
+        text_search1.setText("SEARCH HERE....");
+        text_search1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                text_search1FocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                text_search1FocusLost(evt);
+            }
+        });
+        text_search1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                text_search1ActionPerformed(evt);
+            }
+        });
         text_search1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 text_search1KeyPressed(evt);
@@ -458,56 +461,66 @@ public class AddSession extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 text_search1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                text_search1KeyTyped(evt);
+            }
+        });
+
+        Btn_Lec_Search.setBackground(new java.awt.Color(89, 39, 74));
+        Btn_Lec_Search.setForeground(new java.awt.Color(255, 255, 255));
+        Btn_Lec_Search.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\search white.png")); // NOI18N
+        Btn_Lec_Search.setText("Search");
+        Btn_Lec_Search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Lec_SearchActionPerformed(evt);
+            }
         });
 
         jLayeredPane1.setLayer(locbox, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(Lecture_Search, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(Btn_Lec_Search, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jScrollPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(clear_session, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(text_search1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(Lecture_Search, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(Btn_Lec_Search, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(392, 392, 392)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                                .addComponent(text_search1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Lecture_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(Btn_Lec_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(clear_session, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                        .addComponent(text_search1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Lecture_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(Btn_Lec_Search))
+                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(clear_session)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
                         .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(text_search1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Lecture_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Btn_Lec_Search)
-                            .addComponent(text_search1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Btn_Lec_Search))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(clear_session))
+                        .addComponent(clear_session)
+                        .addGap(30, 30, 30))
                     .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(25, 25, 25))
+                        .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))))
         );
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 102));
@@ -522,9 +535,9 @@ public class AddSession extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(500, 500, 500)
+                        .addGap(611, 611, 611)
                         .addComponent(jLabel8)
-                        .addGap(536, 536, 536)
+                        .addGap(425, 425, 425)
                         .addComponent(jLabel7))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -612,8 +625,25 @@ public class AddSession extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cmb_sel_lecActionPerformed
 
+    public void addPlaceHolderStyle(JTextField textField ){
+        
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.ITALIC);
+        textField.setFont(font);
+        textField.setForeground(Color.black);
+     
+    }
     
+    public void removePlaceHolderStyle(JTextField textField ){
+        
+        Font font = textField.getFont();
+        font = font.deriveFont(Font.PLAIN);
+        textField.setFont(font);
+        textField.setForeground(Color.black);
+       
+    }
     
+
         Connection con1;
         PreparedStatement insert;  
         
@@ -650,7 +680,7 @@ public class AddSession extends javax.swing.JFrame {
                     v2.add(rs.getString("subject"));
                     v2.add(rs.getString("sub_code"));
                     v2.add(rs.getString("grp_ID"));
-                    v2.add(rs.getInt("no_Stds"));
+                    v2.add(rs.getString("no_Stds"));
                     v2.add(rs.getInt("duration"));
                     
                 }
@@ -719,6 +749,14 @@ public class AddSession extends javax.swing.JFrame {
             return false;
         }
         
+        if(txt_stds.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the NO of Students for this session");
+            txt_stds.requestFocus();
+            
+            return false;
+        }
+       
        return true; 
     }
         
@@ -734,8 +772,6 @@ public class AddSession extends javax.swing.JFrame {
         String Subject = cmb_sel_subject.getSelectedItem().toString();
         String Subject_Code = sel_subcode.getText();
         String Group_ID = cmb_sel_grpId.getSelectedItem().toString();
-       // Integer No_Students = (Integer)spin_noSt.getValue();
-        
         String No_Students = txt_stds.getText();
         
         Integer Duration = (Integer)spin_duration.getValue();
@@ -774,7 +810,6 @@ public class AddSession extends javax.swing.JFrame {
             cmb_sel_subject.setSelectedIndex(0);
             sel_subcode.setText("");
             cmb_sel_grpId.setSelectedIndex(0);
-          //  spin_noSt.setValue(0);
             txt_stds.setText("");
             spin_duration.setValue(0);
             cmb_sel_lec.requestFocus();
@@ -821,75 +856,6 @@ public class AddSession extends javax.swing.JFrame {
         
     }//GEN-LAST:event_clear_sessionActionPerformed
 
-    
-    private boolean validate_Search (){
-        
-        if(Lecture_Search.getText().isEmpty())
-        {
-            JOptionPane.showMessageDialog(this,"Enter the Student Group you want to Search");   
-            Lecture_Search.requestFocus();
-            
-            return false;
-        }
-        
-       return true; 
-    }
-    
-    
-    private void Btn_Lec_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Lec_SearchActionPerformed
-        // TODO add your handling code here:
-        
-        if(validate_Search ()) {
-        
-        try {
-       
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            
-            insert = con1.prepareStatement("select * From session where grp_ID=?");
-            
-            insert.setString(1, Lecture_Search.getText());
-            ResultSet rs = insert.executeQuery();  
-            
-            if(rs.next()){
-                
-                cmb_sel_lec.setSelectedItem(rs.getString("lec1"));    
-                cmb_sel_tag.setSelectedItem(rs.getString("ses_tag")); 
-                cmb_sel_lec1.setSelectedItem(rs.getString("lec2")); 
-                sel_extra.setText(rs.getString("extra_lec"));
-                cmb_sel_subject.setSelectedItem(rs.getString("subject")); 
-                sel_subcode.setText(rs.getString("sub_code"));
-                cmb_sel_grpId.setSelectedItem(rs.getString("grp_ID")); 
-               // spin_noSt.setValue(rs.getInt("no_Stds"));
-                txt_stds.setText(rs.getString("no_Stds"));
-                spin_duration.setValue(rs.getInt("duration"));
-               
-               
-            }
-            
-            else {  
-                JOptionPane.showMessageDialog(null, "Group not Found");  
-            }  
-                      
-             Lecture_Search.setText("");   
-            
-             
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }  
-        
-        
-    }//GEN-LAST:event_Btn_Lec_SearchActionPerformed
-
-    
-    private void Lecture_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lecture_SearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Lecture_SearchActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -914,12 +880,9 @@ public class AddSession extends javax.swing.JFrame {
         cmb_sel_lec1.setSelectedItem(obj2);
 
         sel_extra.setText(Df.getValueAt(SelectedIndex, 3).toString());
-        
-//        Object obj1 = JTable.getValueAt(JTable.getSelectedRow(), 4);
-//        cmb_sel_tag.setSelectedItem(obj1);
 
-       String Tag = (Df.getValueAt(SelectedIndex, 4).toString());
-       switch(Tag){
+        String Tag = (Df.getValueAt(SelectedIndex, 4).toString());
+        switch(Tag){
 
             case "select":
             cmb_sel_tag.setSelectedIndex(0);
@@ -953,9 +916,7 @@ public class AddSession extends javax.swing.JFrame {
         
         Object obj4 = JTable.getValueAt(JTable.getSelectedRow(), 7);
         cmb_sel_grpId.setSelectedItem(obj4);
-        
-     //   spin_noSt.setValue((Integer)Df.getValueAt(SelectedIndex, 8));   
-     
+
         txt_stds.setText(Df.getValueAt(SelectedIndex, 8).toString());
         
         spin_duration.setValue((Integer)Df.getValueAt(SelectedIndex, 9)); 
@@ -1090,26 +1051,29 @@ public class AddSession extends javax.swing.JFrame {
             
             con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
             
-            insert = con1.prepareStatement("select * from student");
+            insert = con1.prepareStatement("select subGroupID,GroupID from student");
             
             ResultSet rs = insert.executeQuery();  
             
             while(rs.next()) {
                
-                if((cmb_sel_tag.getSelectedItem().toString().equals("Lecture"))){   
+//                if((cmb_sel_tag.getSelectedItem().toString().equals("Lecture"))){   
                     
                    String group_id = rs.getString("groupID"); 
                    cmb_sel_grpId.addItem(group_id);  
         
-                   
-             }
-                
-               else {
-                    
+//                   
+//             }
+//                
+//               else {
+//                    
                     String Sub_group_id = rs.getString("subGroupID"); 
                     cmb_sel_grpId.addItem(Sub_group_id);
-                    
-                }
+//                    
+//                }
+                
+                
+                
             }
             
             
@@ -1181,7 +1145,6 @@ public class AddSession extends javax.swing.JFrame {
             String Subject = cmb_sel_subject.getSelectedItem().toString();
             String Subject_Code = sel_subcode.getText();
             String Group_ID = cmb_sel_grpId.getSelectedItem().toString();
-           // Integer No_Students = (Integer)spin_noSt.getValue();
             String No_Students = txt_stds.getText();
             Integer Duration = (Integer)spin_duration.getValue();
 
@@ -1219,7 +1182,6 @@ public class AddSession extends javax.swing.JFrame {
                 cmb_sel_subject.setSelectedIndex(0);
                 cmb_sel_grpId.setSelectedIndex(0);
                 sel_subcode.setText("");
-               // spin_noSt.setValue(0);
                 txt_stds.setText("");
                 spin_duration.setValue(0);
                 cmb_sel_lec.requestFocus();
@@ -1273,7 +1235,6 @@ public class AddSession extends javax.swing.JFrame {
                 cmb_sel_subject.setSelectedIndex(0);
                 cmb_sel_grpId.setSelectedIndex(0);
                 sel_subcode.setText("");
-              //  spin_noSt.setValue(0);
                 txt_stds.setText("");
                 spin_duration.setValue(0);
                 cmb_sel_lec.requestFocus();
@@ -1310,6 +1271,98 @@ public class AddSession extends javax.swing.JFrame {
          JTable.setRowSorter(tr); 
          tr.setRowFilter(RowFilter.regexFilter(text_search1.getText().trim()));
     }//GEN-LAST:event_text_search1KeyReleased
+
+    private void text_search1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_search1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_text_search1ActionPerformed
+
+    private void text_search1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_search1KeyTyped
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_text_search1KeyTyped
+
+    private void text_search1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_text_search1FocusGained
+        // TODO add your handling code here:
+        
+        if(text_search1.getText().equals("SEARCH HERE....")){
+            
+            text_search1.setText(null);
+            text_search1.requestFocus();
+            removePlaceHolderStyle(text_search1);
+     
+        }
+    }//GEN-LAST:event_text_search1FocusGained
+
+    private void text_search1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_text_search1FocusLost
+        // TODO add your handling code here:
+        
+        if(text_search1.getText().length()==0){
+           
+            addPlaceHolderStyle(text_search1);
+            text_search1.setText("SEARCH HERE....");
+            
+        }
+    }//GEN-LAST:event_text_search1FocusLost
+
+    
+     private boolean validate_Search (){
+        
+        if(Lecture_Search.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Enter the Student Group you want to Search");  
+            Lecture_Search.requestFocus();
+            return false;
+        }
+        
+       return true; 
+    }
+    
+    private void Btn_Lec_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Lec_SearchActionPerformed
+        // TODO add your handling code here:
+        
+        if(validate_Search ()) {
+        
+        try {
+       
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("select * From session where grp_ID=?");
+            
+            insert.setString(1, Lecture_Search.getText());
+            ResultSet rs = insert.executeQuery();  
+            
+            if(rs.next()){
+                
+                cmb_sel_lec.setSelectedItem(rs.getString("lec1"));    
+                cmb_sel_tag.setSelectedItem(rs.getString("ses_tag")); 
+                cmb_sel_lec1.setSelectedItem(rs.getString("lec2")); 
+                sel_extra.setText(rs.getString("extra_lec"));
+                cmb_sel_subject.setSelectedItem(rs.getString("subject")); 
+                sel_subcode.setText(rs.getString("sub_code"));
+                cmb_sel_grpId.setSelectedItem(rs.getString("grp_ID")); 
+                txt_stds.setText(rs.getString("no_Stds"));
+                spin_duration.setValue(rs.getInt("duration"));
+
+            }
+            
+            else {  
+                JOptionPane.showMessageDialog(null, "Student Group not Found");  
+            }  
+                      
+             Lecture_Search.setText("");   
+            
+             
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Lecturer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }  
+        
+    }//GEN-LAST:event_Btn_Lec_SearchActionPerformed
 
     /**
      * @param args the command line arguments
