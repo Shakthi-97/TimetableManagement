@@ -30,6 +30,7 @@ public class AddSessionTime extends javax.swing.JFrame {
     public AddSessionTime() {
         initComponents();
         table_update();
+        get_session_id_();
     }
 
     Connection con1;
@@ -82,6 +83,35 @@ public class AddSessionTime extends javax.swing.JFrame {
           
             
         }
+        
+        private void get_session_id_(){
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con1.prepareStatement("select ses_id from session");
+            
+            ResultSet rs = insert.executeQuery();  
+            
+            while(rs.next()) {
+                
+                String Selectroom = rs.getString("ses_id");
+                txtsessionid.addItem(Selectroom);
+                 
+            }
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+        
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -102,7 +132,6 @@ public class AddSessionTime extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtsessionid = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         txtday = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -118,6 +147,7 @@ public class AddSessionTime extends javax.swing.JFrame {
         btnAdd = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
+        txtsessionid = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         sessiontab = new javax.swing.JTable();
         btnClear = new javax.swing.JButton();
@@ -176,12 +206,6 @@ public class AddSessionTime extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Session ID");
-
-        txtsessionid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsessionidActionPerformed(evt);
-            }
-        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Working day");
@@ -251,9 +275,9 @@ public class AddSessionTime extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel6))
                         .addGap(64, 64, 64)
-                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtsessionid, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtday, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtday, 0, 86, Short.MAX_VALUE)
+                            .addComponent(txtsessionid, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(formLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -273,9 +297,9 @@ public class AddSessionTime extends javax.swing.JFrame {
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(btnAdd)
                 .addGap(18, 18, 18)
                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -438,21 +462,17 @@ public class AddSessionTime extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 18, Short.MAX_VALUE))
+                .addGap(0, 16, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtsessionidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsessionidActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsessionidActionPerformed
-
     private boolean ID_validateFields(){
       
-        if(txtsessionid.getText().isEmpty())
+        if(txtsessionid.getSelectedItem().toString() == "")
         {
-            JOptionPane.showMessageDialog(this,"Enter the relevant session ID for the session time allocation");
+            JOptionPane.showMessageDialog(this,"Select the relevant session ID for the session time allocation");
             txtsessionid.requestFocus();
            
             return false;
@@ -486,7 +506,7 @@ public class AddSessionTime extends javax.swing.JFrame {
     
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        String session_id = txtsessionid.getText();
+        String session_id = txtsessionid.getSelectedItem().toString();
         String day = txtday.getSelectedItem().toString();
         
         Integer start_hour = (Integer)txtstarthour.getValue();
@@ -503,7 +523,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             
             con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
             
-            insert = con1.prepareStatement("insert into session(session_ID,working_day,start_time_hour,start_time_minutes,end_time_hour,end_time_minutes)values(?,?,?,?,?,?)");
+            insert = con1.prepareStatement("insert into session(ses_id,working_day,start_time_hour,start_time_minutes,end_time_hour,end_time_minutes)values(?,?,?,?,?,?)");
             
             insert.setString(1, session_id);
             insert.setString(2, day);
@@ -518,7 +538,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             table_update();
             
             // To clear the rcords in the form
-            txtsessionid.setText("");
+            txtsessionid.setSelectedIndex(0);
             txtday.setSelectedIndex(0);
             txtstarthour.setValue(0);
             txtstartminutes.setValue(0);
@@ -547,7 +567,8 @@ public class AddSessionTime extends javax.swing.JFrame {
         TableModel model = sessiontab.getModel();
         int j = sessiontab.getSelectedRow();   // to get the data in form when the row is selected
         
-        txtsessionid.setText(model.getValueAt(j, 0).toString());
+        Object o = sessiontab.getValueAt(j, 0);
+        txtsessionid.setSelectedItem(o);
         
         String day = model.getValueAt(j, 1).toString();
         switch(day){
@@ -595,7 +616,7 @@ public class AddSessionTime extends javax.swing.JFrame {
         else{
             try {
                 
-                String session_id = txtsessionid.getText();
+                String session_id = txtsessionid.getSelectedItem().toString();
                 String day = txtday.getSelectedItem().toString();
         
                 Integer start_hour = (Integer)txtstarthour.getValue();
@@ -612,7 +633,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             
                     con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
             
-                    insert = con1.prepareStatement("update session set working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? where session_ID=? ");
+                    insert = con1.prepareStatement("update session set working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? where ses_id=? ");
                     
                     insert.setString(1, day);
                     insert.setInt(2, start_hour);
@@ -627,7 +648,7 @@ public class AddSessionTime extends javax.swing.JFrame {
                     table_update();
             
                     // To clear the rcords in the form
-                    txtsessionid.setText("");
+                    txtsessionid.setSelectedIndex(0);
                     txtday.setSelectedIndex(0);
                     txtstarthour.setValue(0);
                     txtstartminutes.setValue(0);
@@ -657,7 +678,14 @@ public class AddSessionTime extends javax.swing.JFrame {
         else{
             try{
                 
-                String session_id = txtsessionid.getText();
+                String session_id = txtsessionid.getSelectedItem().toString();
+                String day = txtday.getSelectedItem().toString();
+        
+                Integer start_hour = (Integer)txtstarthour.getValue();
+                Integer start_minutes = (Integer)txtstartminutes.getValue();
+        
+                Integer end_hour = (Integer)txtendhour.getValue();
+                Integer end_minutes = (Integer)txtendminutes.getValue();
             
                 int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to delete this record of time allocation for session?","Warning",JOptionPane.YES_NO_OPTION);
 
@@ -667,9 +695,14 @@ public class AddSessionTime extends javax.swing.JFrame {
 
                 con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
 
-                insert = con1.prepareStatement("delete from session where session_ID=? ");
+                insert = con1.prepareStatement("delete working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? from session where ses_id=? ");
 
-                insert.setString(1, session_id);
+                insert.setString(1, day);
+                insert.setInt(2, start_hour);
+                insert.setInt(3, start_minutes);
+                insert.setInt(4, end_hour);
+                insert.setInt(5, end_minutes);
+                insert.setString(6, session_id);
 
                 insert.executeUpdate();
 
@@ -680,7 +713,7 @@ public class AddSessionTime extends javax.swing.JFrame {
                 table_update();
             
                 // To clear the rcords in the form
-                txtsessionid.setText("");
+                txtsessionid.setSelectedIndex(0);
                 txtday.setSelectedIndex(0);
                 txtstarthour.setValue(0);
                 txtstartminutes.setValue(0);
@@ -712,7 +745,7 @@ public class AddSessionTime extends javax.swing.JFrame {
 
                 con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
 
-                insert = con1.prepareStatement("Truncate table session");
+                insert = con1.prepareStatement("delete working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? from session");
 
                 insert.executeUpdate();
 
@@ -790,7 +823,7 @@ public class AddSessionTime extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> txtday;
     private javax.swing.JSpinner txtendhour;
     private javax.swing.JSpinner txtendminutes;
-    private javax.swing.JTextField txtsessionid;
+    private javax.swing.JComboBox<String> txtsessionid;
     private javax.swing.JSpinner txtstarthour;
     private javax.swing.JSpinner txtstartminutes;
     // End of variables declaration//GEN-END:variables
