@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -30,6 +31,8 @@ public class SessionsTime extends javax.swing.JFrame {
     public SessionsTime() {
         initComponents();
         table_update();
+        session_id_NotAvailable();
+        not_available_update();
     }
     
     Connection con;
@@ -87,6 +90,87 @@ public class SessionsTime extends javax.swing.JFrame {
             Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         }
         }
+        
+//---------------------------------------------------------------------------------------------------
+        
+        private void session_id_NotAvailable(){
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con.prepareStatement("select ses_id from session");
+            
+            ResultSet rs = insert.executeQuery();  
+            
+            while(rs.next()) {
+                
+                String Selectroom = rs.getString("ses_id");
+                txtsessionid.addItem(Selectroom);
+                 
+            }
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+       
+//---------------------------------------------------------------------------------------------------
+        
+        public void not_available_update(){
+            
+            int c;
+          
+          try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+          
+            insert = con.prepareStatement("select * From session");
+            
+            ResultSet rs = insert.executeQuery();  
+            ResultSetMetaData Rss = rs.getMetaData();
+            c = Rss.getColumnCount();
+            
+            DefaultTableModel Df = (DefaultTableModel)sessiontab.getModel();
+            Df.setRowCount(0);
+            
+            while(rs.next()) {
+                
+                Vector v2 = new Vector();
+                
+                for(int a=1; a<=c; a++) {
+                    
+                    v2.add(rs.getString("session_ID"));
+                    v2.add(rs.getString("working_day"));
+                    v2.add(rs.getInt("start_time_hour"));
+                    v2.add(rs.getInt("start_time_minutes"));
+                    v2.add(rs.getInt("end_time_hour"));
+                    v2.add(rs.getInt("end_time_minutes"));
+                    
+                }
+                
+                Df.addRow(v2);
+                  
+            }
+         
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+        }
+        
+//---------------------------------------------------------------------------------------------------
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -124,22 +208,22 @@ public class SessionsTime extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtsessionid = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         txtday = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         txtstarthour = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        txtstartminute = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         txtendhour = new javax.swing.JSpinner();
         jLabel11 = new javax.swing.JLabel();
         txtendminutes = new javax.swing.JSpinner();
         jLabel12 = new javax.swing.JLabel();
-        btnAdd = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
+        btn_NotAvailable_Add = new javax.swing.JButton();
+        btn_NotAvailable_Update = new javax.swing.JButton();
+        btn_NotAvailable_Delete = new javax.swing.JButton();
+        txtsessionid = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         sessiontab = new javax.swing.JTable();
         btnClear = new javax.swing.JButton();
@@ -382,17 +466,32 @@ public class SessionsTime extends javax.swing.JFrame {
 
         jLabel12.setText("minutes");
 
-        btnAdd.setBackground(new java.awt.Color(0, 51, 0));
-        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
-        btnAdd.setText("Add");
+        btn_NotAvailable_Add.setBackground(new java.awt.Color(0, 51, 0));
+        btn_NotAvailable_Add.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Add.setText("Add");
+        btn_NotAvailable_Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NotAvailable_AddActionPerformed(evt);
+            }
+        });
 
-        btnUpdate.setBackground(new java.awt.Color(0, 51, 102));
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setText("Update");
+        btn_NotAvailable_Update.setBackground(new java.awt.Color(0, 51, 102));
+        btn_NotAvailable_Update.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Update.setText("Update");
+        btn_NotAvailable_Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NotAvailable_UpdateActionPerformed(evt);
+            }
+        });
 
-        btnDelete.setBackground(new java.awt.Color(153, 0, 51));
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete.setText("Delete");
+        btn_NotAvailable_Delete.setBackground(new java.awt.Color(153, 0, 51));
+        btn_NotAvailable_Delete.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Delete.setText("Delete");
+        btn_NotAvailable_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NotAvailable_DeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout formLayout = new javax.swing.GroupLayout(form);
         form.setLayout(formLayout);
@@ -402,48 +501,51 @@ public class SessionsTime extends javax.swing.JFrame {
             .addGroup(formLayout.createSequentialGroup()
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(formLayout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addGap(37, 37, 37)
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(4, 4, 4)
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(formLayout.createSequentialGroup()
                                 .addComponent(jLabel7)
-                                .addGap(40, 40, 40)
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)
+                                .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel8)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(formLayout.createSequentialGroup()
                                 .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39))))
+                                .addGap(45, 45, 45))))
                     .addGroup(formLayout.createSequentialGroup()
-                        .addGap(37, 37, 37)
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addGap(51, 51, 51)
-                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtsessionid, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtday, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(formLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addGap(51, 51, 51)
+                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtday, 0, 87, Short.MAX_VALUE)
+                                    .addComponent(txtsessionid, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(formLayout.createSequentialGroup()
+                                .addGap(112, 112, 112)
+                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel10))))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(formLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAdd)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnUpdate)
-                        .addGap(16, 16, 16)
-                        .addComponent(btnDelete))
-                    .addGroup(formLayout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel10))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(21, 21, 21)
+                        .addComponent(btn_NotAvailable_Add)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_NotAvailable_Update)
+                        .addGap(35, 35, 35)
+                        .addComponent(btn_NotAvailable_Delete)))
+                .addContainerGap())
         );
         formLayout.setVerticalGroup(
             formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,7 +565,7 @@ public class SessionsTime extends javax.swing.JFrame {
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
                 .addGap(30, 30, 30)
                 .addComponent(jLabel10)
@@ -475,9 +577,9 @@ public class SessionsTime extends javax.swing.JFrame {
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdd)
-                    .addComponent(btnUpdate)
-                    .addComponent(btnDelete))
+                    .addComponent(btn_NotAvailable_Add)
+                    .addComponent(btn_NotAvailable_Update)
+                    .addComponent(btn_NotAvailable_Delete))
                 .addGap(20, 20, 20))
         );
 
@@ -498,6 +600,11 @@ public class SessionsTime extends javax.swing.JFrame {
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+        });
+        sessiontab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sessiontabMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(sessiontab);
@@ -666,6 +773,238 @@ public class SessionsTime extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
 
+    private boolean ID_validateFields(){
+      
+        if(txtsessionid.getSelectedItem().toString() == "")
+        {
+            JOptionPane.showMessageDialog(this,"Select the relevant session ID for the session time allocation");
+            txtsessionid.requestFocus();
+           
+            return false;
+        }
+        
+        if(txtday.getSelectedItem().toString() == ""){
+            JOptionPane.showMessageDialog(this,"Select the relevant working day for the session time allocation");
+            txtday.requestFocus();
+           
+            return false;
+        }
+        
+        if((Integer)txtstarthour.getValue() == 0)
+        {
+            JOptionPane.showMessageDialog(this,"Enter the hour of the starting time for the session time allocation");
+            txtstarthour.requestFocus();
+           
+            return false;
+        }
+        
+        if((Integer)txtendhour.getValue() == 0)
+        {
+            JOptionPane.showMessageDialog(this,"Enter the hour of the end time for the session time allocation");
+            txtendhour.requestFocus();
+           
+            return false;
+        }
+        
+        return true;
+    }
+    
+    private void btn_NotAvailable_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NotAvailable_AddActionPerformed
+        // TODO add your handling code here:
+        String session_id = txtsessionid.getSelectedItem().toString();
+        String workingday = txtday.getSelectedItem().toString();
+        Integer starthour = (Integer)txtstarthour.getValue();
+        Integer startminute = (Integer)txtstartminute.getValue();
+        Integer endhour = (Integer)txtendhour.getValue();
+        Integer endminute = (Integer)txtendminutes.getValue();
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            insert = con.prepareStatement("insert into notavailable_session (session_ID,workingday,NotAvailable_start_hr,NotAvailable_start_min,NotAvailable_end_hr,NotAvailable_end_min)values(?,?,?,?,?,?)");
+            
+            insert.setString(1, session_id);
+            insert.setString(2, workingday);
+            insert.setInt(3, starthour);
+            insert.setInt(4, startminute);
+            insert.setInt(5, endhour);
+            insert.setInt(6, endminute);
+            
+            insert.executeUpdate();
+            
+            JOptionPane.showMessageDialog(this, "Successfully not available time inserted for the session");
+            table_update();
+            
+            // To clear the rcords in the form
+            txtsessionid.setSelectedIndex(0);
+            txtday.setSelectedIndex(0);
+            txtstarthour.setValue(0);
+            txtstartminute.setValue(0);
+            txtendhour.setValue(0);
+            txtendminutes.setValue(0);
+            txtsessionid.requestFocus(); 
+            
+            
+        }catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btn_NotAvailable_AddActionPerformed
+
+    private void btn_NotAvailable_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NotAvailable_UpdateActionPerformed
+        // TODO add your handling code here:
+        TableModel model = sessiontab.getModel();
+        int j = sessiontab.getSelectedRow();   // to get the data in form when the row is selected
+        
+        if(j == -1){
+            JOptionPane.showMessageDialog(this,"Select the session from the table you want to update");
+        }
+        
+        else{
+        try {
+
+            String session_id = txtsessionid.getSelectedItem().toString();
+            String workingday = txtday.getSelectedItem().toString();
+            Integer starthour = (Integer)txtstarthour.getValue();
+            Integer startminute = (Integer)txtstartminute.getValue();
+            Integer endhour = (Integer)txtendhour.getValue();
+            Integer endminute = (Integer)txtendminutes.getValue();
+            
+            int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to update this record of Not Available time for session ?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con.prepareStatement("update notavailable_session set workingday=?, NotAvailable_start_hr=?, NotAvailable_start_min=?, NotAvailable_end_hr=?, NotAvailable_end_min=? where session_ID=? ");
+
+                insert.setString(1, workingday);
+                insert.setInt(2, starthour);
+                insert.setInt(3, startminute);
+                insert.setInt(4, endhour);
+                insert.setInt(5, endminute);
+                insert.setString(6, session_id);
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"record of Not Available time for session is Updated");
+                table_update();
+
+                // To clear the rcords in the form
+                txtsessionid.setSelectedIndex(0);
+                txtday.setSelectedIndex(0);
+                txtstarthour.setValue(0);
+                txtstartminute.setValue(0);
+                txtendhour.setValue(0);
+                txtendminutes.setValue(0);
+                txtsessionid.requestFocus(); 
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+      } 
+    }//GEN-LAST:event_btn_NotAvailable_UpdateActionPerformed
+
+    private void btn_NotAvailable_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NotAvailable_DeleteActionPerformed
+        // TODO add your handling code here:
+        TableModel model = sessiontab.getModel();
+        int j = sessiontab.getSelectedRow();   // to get the data in form when the row is selected
+        
+        if(j == -1){
+            JOptionPane.showMessageDialog(this,"Select the session from the table you want to delete");
+        }
+        
+        else{
+        try {
+
+            String session_id = txtsessionid.getSelectedItem().toString();
+            
+            int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to delete this record of Not Available time for session ?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con.prepareStatement("delete from notavailable_session where session_ID=? ");
+
+                insert.setString(1, session_id);
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"record of Not Available time for session is Deleted");
+                table_update();
+
+                // To clear the rcords in the form
+                txtsessionid.setSelectedIndex(0);
+                txtday.setSelectedIndex(0);
+                txtstarthour.setValue(0);
+                txtstartminute.setValue(0);
+                txtendhour.setValue(0);
+                txtendminutes.setValue(0);
+                txtsessionid.requestFocus(); 
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+      }
+    }//GEN-LAST:event_btn_NotAvailable_DeleteActionPerformed
+
+    private void sessiontabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sessiontabMouseClicked
+        // TODO add your handling code here:
+        TableModel model = sessiontab.getModel();
+        int j = sessiontab.getSelectedRow();   // to get the data in form when the row is selected
+        
+        Object o = sessiontab.getValueAt(j, 0);
+        txtsessionid.setSelectedItem(o);
+        
+        String day = model.getValueAt(j, 1).toString();
+        switch(day){
+            case "Monday":
+                txtday.setSelectedIndex(1);
+                break;
+            case "Tuesday":
+                txtday.setSelectedIndex(2);
+                break;
+            case "Wednesday":
+                txtday.setSelectedIndex(3);
+                break;
+            case "Thursday":
+                txtday.setSelectedIndex(4);
+                break;
+            case "Friday":
+                txtday.setSelectedIndex(5);
+                break;
+            case "Saturday":
+                txtday.setSelectedIndex(6);
+                break;
+            case "Sunday":
+                txtday.setSelectedIndex(7);
+                break;
+        }
+        
+        txtstarthour.setValue(model.getValueAt(j, 2));
+        txtstartminute.setValue(model.getValueAt(j, 3));
+        
+        txtendhour.setValue(model.getValueAt(j, 4));
+        txtendminutes.setValue(model.getValueAt(j, 5));
+    }//GEN-LAST:event_sessiontabMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -703,10 +1042,10 @@ public class SessionsTime extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel NotAvailableTimes;
-    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btn_NotAvailable_Add;
+    private javax.swing.JButton btn_NotAvailable_Delete;
+    private javax.swing.JButton btn_NotAvailable_Update;
     private javax.swing.JTable consecutive;
     private javax.swing.JPanel form;
     private javax.swing.JButton home_btn;
@@ -738,7 +1077,6 @@ public class SessionsTime extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable lapping;
     private javax.swing.JTable parallel;
@@ -746,7 +1084,8 @@ public class SessionsTime extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> txtday;
     private javax.swing.JSpinner txtendhour;
     private javax.swing.JSpinner txtendminutes;
-    private javax.swing.JTextField txtsessionid;
+    private javax.swing.JComboBox<String> txtsessionid;
     private javax.swing.JSpinner txtstarthour;
+    private javax.swing.JSpinner txtstartminute;
     // End of variables declaration//GEN-END:variables
 }
