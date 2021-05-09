@@ -114,9 +114,9 @@ public class SessionsTime extends javax.swing.JFrame {
             
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
@@ -163,9 +163,9 @@ public class SessionsTime extends javax.swing.JFrame {
          
             
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         }
             
         }
@@ -847,9 +847,9 @@ public class SessionsTime extends javax.swing.JFrame {
             
             
         }catch (ClassNotFoundException ex) {
-            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btn_NotAvailable_AddActionPerformed
 
@@ -906,9 +906,9 @@ public class SessionsTime extends javax.swing.JFrame {
             }
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         }
        
       } 
@@ -957,9 +957,9 @@ public class SessionsTime extends javax.swing.JFrame {
             }
 
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(WorkingDaysHours.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         }
        
       }
