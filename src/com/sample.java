@@ -26,11 +26,12 @@ public class sample extends javax.swing.JFrame {
      */
     public sample() {
         initComponents();
-        consecutive();
+        //consecutive();
     }
     
     Connection con;
     PreparedStatement insert;
+    Integer consecID;
     
     private void consecutive(){
     
@@ -39,8 +40,8 @@ public class sample extends javax.swing.JFrame {
 
                Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
                
-               insert = con.prepareStatement("select consecutiveID from consecutive where ses_id = ?");
-               //insert.setString(1,)
+                insert = con.prepareStatement("select consecutiveID from consecutive order by id desc limit 1");
+               
                ResultSet rs = insert.executeQuery();
                
                while(rs.next()){
@@ -117,20 +118,67 @@ public class sample extends javax.swing.JFrame {
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         // TODO add your handling code here:
        DefaultTableModel Df = (DefaultTableModel)cons.getModel();
+       //consecutive();
        
        if(Df.getRowCount()==0){
            JOptionPane.showMessageDialog(this, "Table is Empty");
        }else{
            
            String sesid,lec1,lec2,extlec,tag,subj,sucode,grpid,nostd,dura;
-          
+           
            
            try{ 
                Class.forName("com.mysql.cj.jdbc.Driver");
 
                Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
                
-               //for(int consec = 1; consec < consecID; consec++)
+               insert = con.prepareStatement("select consecutiveID from consecutive order by id desc limit 1");
+               
+               ResultSet rs = insert.executeQuery();
+               
+               while(rs.next()){
+                   int consecID = rs.getInt("consecutiveID");
+                   
+               }
+               if(consecID == null){
+                   int consec = 1;
+                   for(int i=0; i<Df.getRowCount(); i++){
+                        sesid = Df.getValueAt(i, 0).toString();
+                        lec1 = Df.getValueAt(i, 1).toString();
+                        lec2 = Df.getValueAt(i, 2).toString();
+                        extlec = Df.getValueAt(i, 3).toString();
+                        tag = Df.getValueAt(i, 4).toString();
+                        subj = Df.getValueAt(i, 5).toString();
+                        sucode = Df.getValueAt(i, 6).toString();
+                        grpid = Df.getValueAt(i, 7).toString();
+                        nostd = Df.getValueAt(i, 8).toString();
+                        dura = Df.getValueAt(i, 9).toString();
+                        
+                        String query ="insert into consecutive(ses_id, lec1, lec2, extra_lec, ses_tag, subject, sub_code, grp_ID, no_Stds, duration, consecutiveID)values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                        
+                        
+                        
+                        PreparedStatement prstd = con.prepareStatement(query);
+                        prstd.setString(1, sesid);
+                        prstd.setString(2, lec1);
+                        prstd.setString(3, lec2);
+                        prstd.setString(4, extlec);
+                        prstd.setString(5, tag);
+                        prstd.setString(6, subj);
+                        prstd.setString(7, sucode);
+                        prstd.setString(8, grpid);
+                        prstd.setString(9, nostd);
+                        prstd.setString(10, dura);
+                        prstd.setInt(11, consec);
+                        
+                        
+                        prstd.execute();
+                        
+                      //consec = consec + 1;  
+                    }
+               }
+               else{
+                   for(int consec = 1; consec > consecID; consec++){
                 
                     for(int i=0; i<Df.getRowCount(); i++){
                         sesid = Df.getValueAt(i, 0).toString();
@@ -159,13 +207,15 @@ public class sample extends javax.swing.JFrame {
                         prstd.setString(8, grpid);
                         prstd.setString(9, nostd);
                         prstd.setString(10, dura);
-                        //prstd.setInt(11, consec);
+                        prstd.setInt(11, consec);
                         
                         
                         prstd.execute();
                         
                       //consec = consec + 1;  
-                    
+                    }
+               }
+               
                  
                }
                    
