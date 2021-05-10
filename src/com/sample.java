@@ -8,6 +8,7 @@ package com;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,8 +26,36 @@ public class sample extends javax.swing.JFrame {
      */
     public sample() {
         initComponents();
+        consecutive();
     }
     
+    Connection con;
+    PreparedStatement insert;
+    
+    private void consecutive(){
+    
+        try{ 
+               Class.forName("com.mysql.cj.jdbc.Driver");
+
+               Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+               
+               insert = con.prepareStatement("select consecutiveID from consecutive where ses_id = ?");
+               //insert.setString(1,)
+               ResultSet rs = insert.executeQuery();
+               
+               while(rs.next()){
+                   Integer consecID = rs.getInt("consecutiveID");
+                   
+               }
+               
+        }catch (ClassNotFoundException ex) {
+            Logger.getLogger(sample.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+            catch (SQLException ex) {
+            Logger.getLogger(sample.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -95,14 +124,14 @@ public class sample extends javax.swing.JFrame {
            
            String sesid,lec1,lec2,extlec,tag,subj,sucode,grpid,nostd,dura;
           
-             
-          
-          
+           
            try{ 
                Class.forName("com.mysql.cj.jdbc.Driver");
 
                Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-               Integer consec = 0;
+               
+               //for(int consec = 1; consec < consecID; consec++)
+                
                     for(int i=0; i<Df.getRowCount(); i++){
                         sesid = Df.getValueAt(i, 0).toString();
                         lec1 = Df.getValueAt(i, 1).toString();
@@ -116,7 +145,8 @@ public class sample extends javax.swing.JFrame {
                         dura = Df.getValueAt(i, 9).toString();
                         
                         String query ="insert into consecutive(ses_id, lec1, lec2, extra_lec, ses_tag, subject, sub_code, grp_ID, no_Stds, duration, consecutiveID)values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                  
+                        
+                        
                         
                         PreparedStatement prstd = con.prepareStatement(query);
                         prstd.setString(1, sesid);
@@ -129,14 +159,15 @@ public class sample extends javax.swing.JFrame {
                         prstd.setString(8, grpid);
                         prstd.setString(9, nostd);
                         prstd.setString(10, dura);
-                        prstd.setInt(11, consec);
+                        //prstd.setInt(11, consec);
                         
                         
                         prstd.execute();
                         
-                      consec = consec + 1;  
-                    }
+                      //consec = consec + 1;  
                     
+                 
+               }
                    
                     JOptionPane.showMessageDialog(this, "Data insert successfully");
                     Df.setRowCount(0);
