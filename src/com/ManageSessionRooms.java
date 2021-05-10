@@ -7,6 +7,7 @@ package com;
 
 
 import java.awt.Color;
+import static java.lang.Integer.parseInt;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,6 +20,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableModel;
 
 
 /**
@@ -33,8 +35,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     public ManageSessionRooms() {
         initComponents();
         table_insert();
+        table_update();
         load_sessionid();
         load_roomname();
+        roomname_NotAvailable();
         //roomtab.getColumnModel().getColumn(0).setPreferredWidth(20);
         
     }
@@ -70,6 +74,28 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         roomtab = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
+        form = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtday = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        txtstarthour = new javax.swing.JSpinner();
+        jLabel13 = new javax.swing.JLabel();
+        txtstartminute = new javax.swing.JSpinner();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        txtendhour = new javax.swing.JSpinner();
+        jLabel16 = new javax.swing.JLabel();
+        txtendminutes = new javax.swing.JSpinner();
+        jLabel17 = new javax.swing.JLabel();
+        btn_NotAvailable_Add = new javax.swing.JButton();
+        btn_NotAvailable_Update = new javax.swing.JButton();
+        btn_NotAvailable_Delete = new javax.swing.JButton();
+        NotAvailable_room = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        locationtimetab = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         ATT = new javax.swing.JButton();
@@ -86,7 +112,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(89, 39, 74));
         jPanel2.setName(""); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\va.jpg")); // NOI18N
         jLabel8.setText("jLabel8");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -120,7 +145,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         cancel.setBackground(new java.awt.Color(153, 0, 51));
         cancel.setForeground(new java.awt.Color(255, 255, 255));
-        cancel.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\cancel.png")); // NOI18N
         cancel.setText("Cancel");
         cancel.setAlignmentY(0.8F);
         cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -183,7 +207,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         allocate.setBackground(new java.awt.Color(0, 102, 102));
         allocate.setForeground(new java.awt.Color(255, 255, 255));
-        allocate.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\allocate.png")); // NOI18N
         allocate.setText("Allocate");
         allocate.setAlignmentY(0.8F);
         allocate.addActionListener(new java.awt.event.ActionListener() {
@@ -302,7 +325,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(locbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sessions", jPanel4);
@@ -319,7 +342,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGap(0, 467, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Consecutive", jPanel5);
@@ -327,15 +350,233 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 51)));
 
+        form.setBackground(new java.awt.Color(255, 255, 255));
+        form.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(89, 39, 74), 3));
+        form.setForeground(new java.awt.Color(255, 255, 255));
+
+        jPanel7.setBackground(new java.awt.Color(89, 39, 74));
+
+        jLabel6.setFont(new java.awt.Font("Calisto MT", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("ADD NOT AVAILABLE TIME");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setText("Room");
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel11.setText("Working day");
+
+        txtday.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " ", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" }));
+        txtday.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdayActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel12.setText("Start time");
+
+        jLabel13.setText("hour");
+
+        jLabel14.setText("minutes");
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel15.setText("End time");
+
+        jLabel16.setText("hour");
+
+        jLabel17.setText("minutes");
+
+        btn_NotAvailable_Add.setBackground(new java.awt.Color(0, 51, 0));
+        btn_NotAvailable_Add.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Add.setText("Add");
+        btn_NotAvailable_Add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NotAvailable_AddActionPerformed(evt);
+            }
+        });
+
+        btn_NotAvailable_Update.setBackground(new java.awt.Color(0, 51, 102));
+        btn_NotAvailable_Update.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Update.setText("Update");
+        btn_NotAvailable_Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NotAvailable_UpdateActionPerformed(evt);
+            }
+        });
+
+        btn_NotAvailable_Delete.setBackground(new java.awt.Color(153, 0, 51));
+        btn_NotAvailable_Delete.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Delete.setText("Delete");
+        btn_NotAvailable_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NotAvailable_DeleteActionPerformed(evt);
+            }
+        });
+
+        NotAvailable_room.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NotAvailable_roomActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout formLayout = new javax.swing.GroupLayout(form);
+        form.setLayout(formLayout);
+        formLayout.setHorizontalGroup(
+            formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(formLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_NotAvailable_Add)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_NotAvailable_Update)
+                .addGap(28, 28, 28)
+                .addComponent(btn_NotAvailable_Delete)
+                .addGap(20, 20, 20))
+            .addGroup(formLayout.createSequentialGroup()
+                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(formLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(txtday, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(formLayout.createSequentialGroup()
+                                    .addComponent(jLabel13)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel14)
+                                    .addGap(14, 14, 14))
+                                .addComponent(NotAvailable_room, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(formLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)))
+                    .addGroup(formLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(jLabel12))
+                    .addGroup(formLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel15)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        formLayout.setVerticalGroup(
+            formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formLayout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(NotAvailable_room, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txtday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13)
+                    .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_NotAvailable_Add)
+                    .addComponent(btn_NotAvailable_Update)
+                    .addComponent(btn_NotAvailable_Delete))
+                .addGap(20, 20, 20))
+        );
+
+        locationtimetab.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Room name", "Working day", "Start hour", "Starti minute", "End hour", "End minute"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        locationtimetab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                locationtimetabMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(locationtimetab);
+        if (locationtimetab.getColumnModel().getColumnCount() > 0) {
+            locationtimetab.getColumnModel().getColumn(0).setResizable(false);
+            locationtimetab.getColumnModel().getColumn(1).setResizable(false);
+            locationtimetab.getColumnModel().getColumn(2).setResizable(false);
+            locationtimetab.getColumnModel().getColumn(3).setResizable(false);
+            locationtimetab.getColumnModel().getColumn(4).setResizable(false);
+            locationtimetab.getColumnModel().getColumn(5).setResizable(false);
+        }
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Not Available Times", jPanel6);
@@ -369,7 +610,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Georgia", 1, 10)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\home.png")); // NOI18N
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jButton4.setBorderPainted(false);
         jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -385,7 +625,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         ATT.setBackground(new java.awt.Color(51, 102, 255));
         ATT.setForeground(new java.awt.Color(255, 255, 255));
-        ATT.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\add.png")); // NOI18N
         ATT.setText("Add To Timetable");
         ATT.setAlignmentY(0.8F);
         ATT.addActionListener(new java.awt.event.ActionListener() {
@@ -567,11 +806,90 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 }
  //************************************view**********************************************************
        
+ //-----------------------------------view------------------------------------------------------------
+        
+     private void table_update(){
+            
+          int c;
+          
+          try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+          
+            insert = con.prepareStatement("select * From NotAvailableRoom");
+            
+            ResultSet rs = insert.executeQuery();  
+            ResultSetMetaData Rss = rs.getMetaData();
+            c = Rss.getColumnCount();
+            
+            DefaultTableModel Df = (DefaultTableModel)locationtimetab.getModel();
+            Df.setRowCount(0);
+            
+            while(rs.next()) {
+                
+                Vector v2 = new Vector();
+                
+                for(int a=1; a<=c; a++) {
+                    
+                    v2.add(rs.getString("room_name"));
+                    v2.add(rs.getString("workingday"));
+                    v2.add(rs.getInt("NotAvailable_start_hr"));
+                    v2.add(rs.getInt("NotAvailable_start_min"));
+                    v2.add(rs.getInt("NotAvailable_end_hr"));
+                    v2.add(rs.getInt("NotAvailable_end_min"));
+                    
+                }
+                
+                Df.addRow(v2);
+                  
+            }
+         
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          
+            
+        } 
       
+ //-----------------------------------view------------------------------------------------------------
      
-      
-      
-    
+ //-----------------------------------view------------------------------------------------------------
+     
+     private void roomname_NotAvailable(){
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con.prepareStatement("select room_name from room");
+            
+            ResultSet rs = insert.executeQuery();  
+            
+            while(rs.next()) {
+                
+                String Selectroom = rs.getString("room_name");
+                NotAvailable_room.addItem(Selectroom);
+                 
+            }
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+     
+ //-----------------------------------view------------------------------------------------------------ 
+     
     
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:home button
@@ -682,6 +1000,245 @@ public class ManageSessionRooms extends javax.swing.JFrame {
        
     }//GEN-LAST:event_roomtabMouseClicked
 
+    private void txtdayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdayActionPerformed
+
+    private boolean ID_validateFields(){
+      
+        if(NotAvailable_room.getSelectedItem().toString() == "")
+        {
+            JOptionPane.showMessageDialog(this,"Select the relevant room_name for the session time allocation");
+            NotAvailable_room.requestFocus();
+           
+            return false;
+        }
+        
+        if(txtday.getSelectedItem().toString() == ""){
+            JOptionPane.showMessageDialog(this,"Select the relevant working day for the session time allocation");
+            txtday.requestFocus();
+           
+            return false;
+        }
+        
+        if((Integer)txtstarthour.getValue() == 0)
+        {
+            JOptionPane.showMessageDialog(this,"Enter the hour of the starting time for the session time allocation");
+            txtstarthour.requestFocus();
+           
+            return false;
+        }
+        
+        if((Integer)txtendhour.getValue() == 0)
+        {
+            JOptionPane.showMessageDialog(this,"Enter the hour of the end time for the session time allocation");
+            txtendhour.requestFocus();
+           
+            return false;
+        }
+        
+        return true;
+    }
+    
+    private void btn_NotAvailable_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NotAvailable_AddActionPerformed
+        // TODO add your handling code here:
+        String room_name = NotAvailable_room.getSelectedItem().toString();
+        String workingday = txtday.getSelectedItem().toString();
+        Integer starthour = (Integer)txtstarthour.getValue();
+        Integer startminute = (Integer)txtstartminute.getValue();
+        Integer endhour = (Integer)txtendhour.getValue();
+        Integer endminute = (Integer)txtendminutes.getValue();
+        
+        try{
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            insert = con.prepareStatement("insert into NotAvailableRoom (room_name,workingday,NotAvailable_start_hr,NotAvailable_start_min,NotAvailable_end_hr,NotAvailable_end_min)values(?,?,?,?,?,?)");
+            
+            insert.setString(1, room_name);
+            insert.setString(2, workingday);
+            insert.setInt(3, starthour);
+            insert.setInt(4, startminute);
+            insert.setInt(5, endhour);
+            insert.setInt(6, endminute);
+            
+            insert.executeUpdate();
+            
+            JOptionPane.showMessageDialog(this, "Successfully not available time inserted for the location");
+            table_update();
+            
+            // To clear the rcords in the form
+            NotAvailable_room.setSelectedIndex(0);
+            txtday.setSelectedIndex(0);
+            txtstarthour.setValue(0);
+            txtstartminute.setValue(0);
+            txtendhour.setValue(0);
+            txtendminutes.setValue(0);
+            NotAvailable_room.requestFocus(); 
+            
+            
+        }catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btn_NotAvailable_AddActionPerformed
+
+    private void NotAvailable_roomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotAvailable_roomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NotAvailable_roomActionPerformed
+
+    private void btn_NotAvailable_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NotAvailable_DeleteActionPerformed
+        // TODO add your handling code here:
+        TableModel model = locationtimetab.getModel();
+        int j = locationtimetab.getSelectedRow();   // to get the data in form when the row is selected
+        
+        if(j == -1){
+            JOptionPane.showMessageDialog(this,"Select the location from the table you want to delete");
+        }
+        
+        else{
+        try {
+
+            String room_name = NotAvailable_room.getSelectedItem().toString();
+            
+            int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to delete this record of Not Available time for location ?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con.prepareStatement("delete from NotAvailableRoom where room_name=? ");
+
+                insert.setString(1, room_name);
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"record of Not Available time for location is Deleted");
+                table_update();
+
+                // To clear the rcords in the form
+                NotAvailable_room.setSelectedIndex(0);
+                txtday.setSelectedIndex(0);
+                txtstarthour.setValue(0);
+                txtstartminute.setValue(0);
+                txtendhour.setValue(0);
+                txtendminutes.setValue(0);
+                NotAvailable_room.requestFocus(); 
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+      }
+    }//GEN-LAST:event_btn_NotAvailable_DeleteActionPerformed
+
+    private void btn_NotAvailable_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NotAvailable_UpdateActionPerformed
+        // TODO add your handling code here:
+        TableModel model = locationtimetab.getModel();
+        int j = locationtimetab.getSelectedRow();   // to get the data in form when the row is selected
+        
+        if(j == -1){
+            JOptionPane.showMessageDialog(this,"Select the location from the table you want to update");
+        }
+        
+        else{
+        try {
+
+            String room_name = NotAvailable_room.getSelectedItem().toString();
+            String workingday = txtday.getSelectedItem().toString();
+            Integer starthour = (Integer)txtstarthour.getValue();
+            Integer startminute = (Integer)txtstartminute.getValue();
+            Integer endhour = (Integer)txtendhour.getValue();
+            Integer endminute = (Integer)txtendminutes.getValue();
+            
+            int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to update this record of Not Available time for location ?","Warning",JOptionPane.YES_NO_OPTION);
+
+            if (dialogResult == JOptionPane.YES_OPTION) {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                insert = con.prepareStatement("update NotAvailableRoom set workingday=?, NotAvailable_start_hr=?, NotAvailable_start_min=?, NotAvailable_end_hr=?, NotAvailable_end_min=? where room_name=? ");
+
+                insert.setString(1, workingday);
+                insert.setInt(2, starthour);
+                insert.setInt(3, startminute);
+                insert.setInt(4, endhour);
+                insert.setInt(5, endminute);
+                insert.setString(6, room_name);
+
+                insert.executeUpdate();
+
+                JOptionPane.showMessageDialog(this,"record of Not Available time for location is Updated");
+                table_update();
+
+                // To clear the rcords in the form
+                NotAvailable_room.setSelectedIndex(0);
+                txtday.setSelectedIndex(0);
+                txtstarthour.setValue(0);
+                txtstartminute.setValue(0);
+                txtendhour.setValue(0);
+                txtendminutes.setValue(0);
+                NotAvailable_room.requestFocus(); 
+
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+      } 
+    }//GEN-LAST:event_btn_NotAvailable_UpdateActionPerformed
+
+    private void locationtimetabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_locationtimetabMouseClicked
+        // TODO add your handling code here:
+        TableModel model = locationtimetab.getModel();
+        int j = locationtimetab.getSelectedRow();   // to get the data in form when the row is selected
+        
+        Object o = locationtimetab.getValueAt(j, 0);
+        NotAvailable_room.setSelectedItem(o);
+        String workingday = model.getValueAt(j, 1).toString();
+        switch(workingday){
+            case "Monday":
+                txtday.setSelectedIndex(1);
+                break;
+            case "Tuesday":
+                txtday.setSelectedIndex(2);
+                break;
+            case "Wednesday":
+                txtday.setSelectedIndex(3);
+                break;
+            case "Thursday":
+                txtday.setSelectedIndex(4);
+                break;
+            case "Friday":
+                txtday.setSelectedIndex(5);
+                break;
+            case "Saturday":
+                txtday.setSelectedIndex(6);
+                break;
+            case "Sunday":
+                txtday.setSelectedIndex(7);
+                break;
+        }
+        txtstarthour.setValue(model.getValueAt(j, 2));
+        txtstartminute.setValue(model.getValueAt(j, 3));
+        txtendhour.setValue(model.getValueAt(j, 4));
+        txtendminutes.setValue(model.getValueAt(j, 5));
+        
+    }//GEN-LAST:event_locationtimetabMouseClicked
+
     
     
     
@@ -740,17 +1297,31 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ATT;
+    private javax.swing.JComboBox<String> NotAvailable_room;
     private javax.swing.JTextField RSS;
     private javax.swing.JComboBox<String> SR;
     private javax.swing.JComboBox<String> SS;
     private javax.swing.JButton allocate;
+    private javax.swing.JButton btn_NotAvailable_Add;
+    private javax.swing.JButton btn_NotAvailable_Delete;
+    private javax.swing.JButton btn_NotAvailable_Update;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cancel;
+    private javax.swing.JPanel form;
     private javax.swing.JButton jButton4;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -760,10 +1331,18 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTable locationtimetab;
     private javax.swing.JPanel locbox;
     private javax.swing.JTable roomtab;
+    private javax.swing.JComboBox<String> txtday;
+    private javax.swing.JSpinner txtendhour;
+    private javax.swing.JSpinner txtendminutes;
+    private javax.swing.JSpinner txtstarthour;
+    private javax.swing.JSpinner txtstartminute;
     // End of variables declaration//GEN-END:variables
   
 }
