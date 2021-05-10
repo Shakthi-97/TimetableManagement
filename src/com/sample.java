@@ -5,6 +5,15 @@
  */
 package com;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author USER
@@ -17,7 +26,7 @@ public class sample extends javax.swing.JFrame {
     public sample() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,11 +37,12 @@ public class sample extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        cons = new javax.swing.JTable();
+        saveBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        cons.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -40,7 +50,14 @@ public class sample extends javax.swing.JFrame {
                 "Session ID", "Select Lectuter", "Selected Lecturer", "Extra Lecturer", "Tag", "Subject", "Subject Code", "Group ID", "No of Students", "Duration"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(cons);
+
+        saveBtn.setText("Save");
+        saveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -50,17 +67,90 @@ public class sample extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1004, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(449, 449, 449)
+                .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addComponent(saveBtn)
+                .addGap(51, 51, 51))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        // TODO add your handling code here:
+       DefaultTableModel Df = (DefaultTableModel)cons.getModel();
+       
+       if(Df.getRowCount()==0){
+           JOptionPane.showMessageDialog(this, "Table is Empty");
+       }else{
+           
+           String sesid,lec1,lec2,extlec,tag,subj,sucode,grpid,nostd,dura;
+          
+             
+          
+          
+           try{ 
+               Class.forName("com.mysql.cj.jdbc.Driver");
+
+               Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+               Integer consec = 0;
+                    for(int i=0; i<Df.getRowCount(); i++){
+                        sesid = Df.getValueAt(i, 0).toString();
+                        lec1 = Df.getValueAt(i, 1).toString();
+                        lec2 = Df.getValueAt(i, 2).toString();
+                        extlec = Df.getValueAt(i, 3).toString();
+                        tag = Df.getValueAt(i, 4).toString();
+                        subj = Df.getValueAt(i, 5).toString();
+                        sucode = Df.getValueAt(i, 6).toString();
+                        grpid = Df.getValueAt(i, 7).toString();
+                        nostd = Df.getValueAt(i, 8).toString();
+                        dura = Df.getValueAt(i, 9).toString();
+                        
+                        String query ="insert into consecutive(ses_id, lec1, lec2, extra_lec, ses_tag, subject, sub_code, grp_ID, no_Stds, duration, consecutiveID)values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                  
+                        
+                        PreparedStatement prstd = con.prepareStatement(query);
+                        prstd.setString(1, sesid);
+                        prstd.setString(2, lec1);
+                        prstd.setString(3, lec2);
+                        prstd.setString(4, extlec);
+                        prstd.setString(5, tag);
+                        prstd.setString(6, subj);
+                        prstd.setString(7, sucode);
+                        prstd.setString(8, grpid);
+                        prstd.setString(9, nostd);
+                        prstd.setString(10, dura);
+                        prstd.setInt(11, consec);
+                        
+                        
+                        prstd.execute();
+                        
+                      consec = consec + 1;  
+                    }
+                    
+                   
+                    JOptionPane.showMessageDialog(this, "Data insert successfully");
+                    Df.setRowCount(0);
+                    
+                    
+           }catch (ClassNotFoundException ex) {
+            Logger.getLogger(sample.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+            catch (SQLException ex) {
+            Logger.getLogger(sample.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       }
+    }//GEN-LAST:event_saveBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,7 +188,8 @@ public class sample extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTable cons;
     private javax.swing.JScrollPane jScrollPane2;
-    public javax.swing.JTable jTable1;
+    private javax.swing.JButton saveBtn;
     // End of variables declaration//GEN-END:variables
 }
