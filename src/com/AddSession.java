@@ -39,7 +39,6 @@ public class AddSession extends javax.swing.JFrame {
         table_update();
         fill_Lecture_1_Combo();
         fill_Lecture_2_Combo();
-     // load_tag();
         load_subject();
         load_group();
         addPlaceHolderStyle(text_search1);
@@ -94,6 +93,7 @@ public class AddSession extends javax.swing.JFrame {
         Lecture_Search = new javax.swing.JTextField();
         Btn_Lec_Search = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
+        add_session = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
@@ -491,16 +491,15 @@ public class AddSession extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(clear_session)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jLayeredPane1Layout.createSequentialGroup()
                         .addComponent(text_search1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(Lecture_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Btn_Lec_Search))
-                    .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(clear_session)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Btn_Lec_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -528,6 +527,17 @@ public class AddSession extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(102, 0, 51));
         jLabel8.setText("MANAGE SESSIONS");
 
+        add_session.setBackground(new java.awt.Color(14, 1, 47));
+        add_session.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        add_session.setForeground(new java.awt.Color(255, 255, 255));
+        add_session.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\add.png")); // NOI18N
+        add_session.setText("Add Sessions");
+        add_session.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_sessionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -535,9 +545,11 @@ public class AddSession extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(611, 611, 611)
+                        .addGap(518, 518, 518)
                         .addComponent(jLabel8)
-                        .addGap(425, 425, 425)
+                        .addGap(197, 197, 197)
+                        .addComponent(add_session)
+                        .addGap(228, 228, 228)
                         .addComponent(jLabel7))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -547,11 +559,12 @@ public class AddSession extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jLabel8)
+                    .addComponent(add_session, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -630,7 +643,7 @@ public class AddSession extends javax.swing.JFrame {
         Font font = textField.getFont();
         font = font.deriveFont(Font.ITALIC);
         textField.setFont(font);
-        textField.setForeground(Color.black);
+        textField.setForeground(Color.gray);
      
     }
     
@@ -985,34 +998,7 @@ public class AddSession extends javax.swing.JFrame {
         
     }
     
-    
-//    private void load_tag(){
-//        
-//         try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            
-//            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-//            
-//            insert = con1.prepareStatement("select * from tag");
-//            
-//            ResultSet rs = insert.executeQuery();  
-//            
-//            while(rs.next()) {
-//                
-//                String tag = rs.getString("relateTag");
-//                cmb_sel_tag.addItem(tag);
-//                 
-//            }
-//            
-//            
-//        } catch (ClassNotFoundException ex) {
-//            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (SQLException ex) {
-//            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-        
-//    }
-    
+   
        
     private void load_subject(){
         
@@ -1057,23 +1043,12 @@ public class AddSession extends javax.swing.JFrame {
             
             while(rs.next()) {
                
-//                if((cmb_sel_tag.getSelectedItem().toString().equals("Lecture"))){   
-                    
                    String group_id = rs.getString("groupID"); 
                    cmb_sel_grpId.addItem(group_id);  
-        
-//                   
-//             }
-//                
-//               else {
-//                    
-                    String Sub_group_id = rs.getString("subGroupID"); 
+                        
+                   String Sub_group_id = rs.getString("subGroupID"); 
                     cmb_sel_grpId.addItem(Sub_group_id);
-//                    
-//                }
-                
-                
-                
+                    
             }
             
             
@@ -1364,6 +1339,16 @@ public class AddSession extends javax.swing.JFrame {
         
     }//GEN-LAST:event_Btn_Lec_SearchActionPerformed
 
+    private void add_sessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_sessionActionPerformed
+        // TODO add your handling code here:
+        
+        SessionsTime sess = new SessionsTime();
+        sess.show();  // display the Sessions time Jframe
+        
+        dispose(); //close the current jframe and open the new jframe
+        
+    }//GEN-LAST:event_add_sessionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1403,6 +1388,7 @@ public class AddSession extends javax.swing.JFrame {
     private javax.swing.JButton Btn_Lec_Search;
     private javax.swing.JTable JTable;
     private javax.swing.JTextField Lecture_Search;
+    private javax.swing.JButton add_session;
     private javax.swing.JButton btn_Add_Session;
     private javax.swing.JButton clear_session;
     private javax.swing.JComboBox<String> cmb_sel_grpId;
