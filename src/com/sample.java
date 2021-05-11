@@ -26,37 +26,10 @@ public class sample extends javax.swing.JFrame {
      */
     public sample() {
         initComponents();
-        //consecutive();
-    }
-    
-    Connection con;
-    PreparedStatement insert;
-    Integer consecID;
-    
-    private void consecutive(){
-    
-        try{ 
-               Class.forName("com.mysql.cj.jdbc.Driver");
-
-               Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-               
-                insert = con.prepareStatement("select consecutiveID from consecutive order by id desc limit 1");
-               
-               ResultSet rs = insert.executeQuery();
-               
-               while(rs.next()){
-                   Integer consecID = rs.getInt("consecutiveID");
-                   
-               }
-               
-        }catch (ClassNotFoundException ex) {
-            Logger.getLogger(sample.class.getName()).log(Level.SEVERE, null, ex);
-            }
         
-            catch (SQLException ex) {
-            Logger.getLogger(sample.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
+   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -118,119 +91,61 @@ public class sample extends javax.swing.JFrame {
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         // TODO add your handling code here:
        DefaultTableModel Df = (DefaultTableModel)cons.getModel();
-       //consecutive();
-       
-       if(Df.getRowCount()==0){
-           JOptionPane.showMessageDialog(this, "Table is Empty");
-       }else{
-           
-           String sesid,lec1,lec2,extlec,tag,subj,sucode,grpid,nostd,dura;
-           
-           
-           try{ 
-               Class.forName("com.mysql.cj.jdbc.Driver");
 
-               Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-               
-               insert = con.prepareStatement("select consecutiveID from consecutive order by id desc limit 1");
-               
-               ResultSet rs = insert.executeQuery();
-               
-               while(rs.next()){
-                   int consecID = rs.getInt("consecutiveID");
-                   
-               }
-               if(consecID == null){
-                   int consec = 1;
-                   for(int i=0; i<Df.getRowCount(); i++){
-                        sesid = Df.getValueAt(i, 0).toString();
-                        lec1 = Df.getValueAt(i, 1).toString();
-                        lec2 = Df.getValueAt(i, 2).toString();
-                        extlec = Df.getValueAt(i, 3).toString();
-                        tag = Df.getValueAt(i, 4).toString();
-                        subj = Df.getValueAt(i, 5).toString();
-                        sucode = Df.getValueAt(i, 6).toString();
-                        grpid = Df.getValueAt(i, 7).toString();
-                        nostd = Df.getValueAt(i, 8).toString();
-                        dura = Df.getValueAt(i, 9).toString();
-                        
-                        String query ="insert into consecutive(ses_id, lec1, lec2, extra_lec, ses_tag, subject, sub_code, grp_ID, no_Stds, duration, consecutiveID)values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                        
-                        
-                        
-                        PreparedStatement prstd = con.prepareStatement(query);
-                        prstd.setString(1, sesid);
-                        prstd.setString(2, lec1);
-                        prstd.setString(3, lec2);
-                        prstd.setString(4, extlec);
-                        prstd.setString(5, tag);
-                        prstd.setString(6, subj);
-                        prstd.setString(7, sucode);
-                        prstd.setString(8, grpid);
-                        prstd.setString(9, nostd);
-                        prstd.setString(10, dura);
-                        prstd.setInt(11, consec);
-                        
-                        
-                        prstd.execute();
-                        
-                      //consec = consec + 1;  
-                    }
-               }
-               else{
-                   for(int consec = 1; consec > consecID; consec++){
-                
-                    for(int i=0; i<Df.getRowCount(); i++){
-                        sesid = Df.getValueAt(i, 0).toString();
-                        lec1 = Df.getValueAt(i, 1).toString();
-                        lec2 = Df.getValueAt(i, 2).toString();
-                        extlec = Df.getValueAt(i, 3).toString();
-                        tag = Df.getValueAt(i, 4).toString();
-                        subj = Df.getValueAt(i, 5).toString();
-                        sucode = Df.getValueAt(i, 6).toString();
-                        grpid = Df.getValueAt(i, 7).toString();
-                        nostd = Df.getValueAt(i, 8).toString();
-                        dura = Df.getValueAt(i, 9).toString();
-                        
-                        String query ="insert into consecutive(ses_id, lec1, lec2, extra_lec, ses_tag, subject, sub_code, grp_ID, no_Stds, duration, consecutiveID)values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                        
-                        
-                        
-                        PreparedStatement prstd = con.prepareStatement(query);
-                        prstd.setString(1, sesid);
-                        prstd.setString(2, lec1);
-                        prstd.setString(3, lec2);
-                        prstd.setString(4, extlec);
-                        prstd.setString(5, tag);
-                        prstd.setString(6, subj);
-                        prstd.setString(7, sucode);
-                        prstd.setString(8, grpid);
-                        prstd.setString(9, nostd);
-                        prstd.setString(10, dura);
-                        prstd.setInt(11, consec);
-                        
-                        
-                        prstd.execute();
-                        
-                      //consec = consec + 1;  
-                    }
-               }
-               
-                 
-               }
-                   
-                    JOptionPane.showMessageDialog(this, "Data insert successfully");
-                    Df.setRowCount(0);
+        if(Df.getRowCount()==0){
+            JOptionPane.showMessageDialog(this, "Table is Empty");
+        }else{
+
+            String sesid,lec1,lec2,extlec,tag,subj,sucode,grpid,nostd,dura;
+
+            try{
+                Class.forName("com.mysql.cj.jdbc.Driver");
+
+                Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+              
+                for(int i=0; i<Df.getRowCount(); i++){
+                    sesid = Df.getValueAt(i, 0).toString();
+                    lec1 = Df.getValueAt(i, 1).toString();
+                    lec2 = Df.getValueAt(i, 2).toString();
+                    extlec = Df.getValueAt(i, 3).toString();
+                    tag = Df.getValueAt(i, 4).toString();
+                    subj = Df.getValueAt(i, 5).toString();
+                    sucode = Df.getValueAt(i, 6).toString();
+                    grpid = Df.getValueAt(i, 7).toString();
+                    nostd = Df.getValueAt(i, 8).toString();
+                    dura = Df.getValueAt(i, 9).toString();
+
+                    String query ="insert into consecutive(ses_id, lec1, lec2, extra_lec, ses_tag, subject, sub_code, grp_ID, no_Stds, duration)values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+                    PreparedStatement prstd = con.prepareStatement(query);
+                    prstd.setString(1, sesid);
+                    prstd.setString(2, lec1);
+                    prstd.setString(3, lec2);
+                    prstd.setString(4, extlec);
+                    prstd.setString(5, tag);
+                    prstd.setString(6, subj);
+                    prstd.setString(7, sucode);
+                    prstd.setString(8, grpid);
+                    prstd.setString(9, nostd);
+                    prstd.setString(10, dura);
                     
-                    
-           }catch (ClassNotFoundException ex) {
-            Logger.getLogger(sample.class.getName()).log(Level.SEVERE, null, ex);
+
+                    prstd.execute();
+
+                   
+                }
+
+                JOptionPane.showMessageDialog(this, "Data insert successfully");
+                Df.setRowCount(0);
+
+            }catch (ClassNotFoundException ex) {
+                Logger.getLogger(sampleOverlap.class.getName()).log(Level.SEVERE, null, ex);
             }
-        
+
             catch (SQLException ex) {
-            Logger.getLogger(sample.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(sampleOverlap.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
-       }
     }//GEN-LAST:event_saveBtnActionPerformed
 
     /**
