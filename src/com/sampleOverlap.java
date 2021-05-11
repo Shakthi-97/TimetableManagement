@@ -99,7 +99,7 @@ public class sampleOverlap extends javax.swing.JFrame {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
                 Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-                Integer overl = 0;
+                
                 for(int i=0; i<Df.getRowCount(); i++){
                     sesid = Df.getValueAt(i, 0).toString();
                     lec1 = Df.getValueAt(i, 1).toString();
@@ -112,7 +112,7 @@ public class sampleOverlap extends javax.swing.JFrame {
                     nostd = Df.getValueAt(i, 8).toString();
                     dura = Df.getValueAt(i, 9).toString();
 
-                    String query ="insert into noverlap(ses_id, lec1, lec2, extra_lec, ses_tag, subject, sub_code, grp_ID, no_Stds, duration, overlapID)values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    String query ="insert into noverlap(ses_id, lec1, lec2, extra_lec, ses_tag, subject, sub_code, grp_ID, no_Stds, duration)values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                     PreparedStatement prstd = con.prepareStatement(query);
                     prstd.setString(1, sesid);
@@ -125,11 +125,11 @@ public class sampleOverlap extends javax.swing.JFrame {
                     prstd.setString(8, grpid);
                     prstd.setString(9, nostd);
                     prstd.setString(10, dura);
-                    prstd.setInt(11, overl);
+                    
 
                     prstd.execute();
 
-                    overl = overl + 1;
+                   
                 }
 
                 JOptionPane.showMessageDialog(this, "Data insert successfully");
