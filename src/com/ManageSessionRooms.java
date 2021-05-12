@@ -68,11 +68,21 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         SS = new javax.swing.JComboBox<>();
         SR = new javax.swing.JComboBox<>();
-        RSS = new javax.swing.JTextField();
         allocate = new javax.swing.JButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        RSS = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         roomtab = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
+        jLabel18 = new javax.swing.JLabel();
+        SS1 = new javax.swing.JComboBox<>();
+        jLabel19 = new javax.swing.JLabel();
+        SR1 = new javax.swing.JComboBox<>();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        RSS1 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        roomtab1 = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         form = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -112,7 +122,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(89, 39, 74));
         jPanel2.setName(""); // NOI18N
 
-        jLabel8.setText("jLabel8");
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\va.jpg")); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
@@ -165,10 +175,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
                 .addComponent(jLabel2)
-                .addGap(94, 94, 94))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,13 +208,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             }
         });
 
-        RSS.setToolTipText("Selected Session Details");
-        RSS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RSSActionPerformed(evt);
-            }
-        });
-
         allocate.setBackground(new java.awt.Color(0, 102, 102));
         allocate.setForeground(new java.awt.Color(255, 255, 255));
         allocate.setText("Allocate");
@@ -215,57 +218,65 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             }
         });
 
+        RSS.setColumns(20);
+        RSS.setLineWrap(true);
+        RSS.setRows(5);
+        RSS.setWrapStyleWord(true);
+        jScrollPane3.setViewportView(RSS);
+
         javax.swing.GroupLayout locboxLayout = new javax.swing.GroupLayout(locbox);
         locbox.setLayout(locboxLayout);
         locboxLayout.setHorizontalGroup(
             locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(locboxLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(locboxLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SS, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(locboxLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(SR, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30))
             .addGroup(locboxLayout.createSequentialGroup()
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(locboxLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))
-                        .addGap(42, 42, 42)
-                        .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SS, 0, 149, Short.MAX_VALUE)
-                            .addComponent(SR, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel5))
                     .addGroup(locboxLayout.createSequentialGroup()
-                        .addGap(57, 57, 57)
+                        .addGap(39, 39, 39)
                         .addComponent(allocate)
                         .addGap(18, 18, 18)
                         .addComponent(cancel))
                     .addGroup(locboxLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(RSS)))
-                .addContainerGap())
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         locboxLayout.setVerticalGroup(
             locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(locboxLayout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
+                .addGap(30, 30, 30)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(SS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(SR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(RSS, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cancel)
                     .addComponent(allocate))
-                .addGap(32, 32, 32))
+                .addContainerGap())
         );
 
         roomtab.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
@@ -288,6 +299,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        roomtab.setPreferredSize(new java.awt.Dimension(860, 64));
         roomtab.setSelectionBackground(new java.awt.Color(89, 39, 74));
         roomtab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -296,12 +308,12 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(roomtab);
         if (roomtab.getColumnModel().getColumnCount() > 0) {
-            roomtab.getColumnModel().getColumn(0).setMinWidth(30);
-            roomtab.getColumnModel().getColumn(0).setPreferredWidth(20);
-            roomtab.getColumnModel().getColumn(0).setMaxWidth(50);
+            roomtab.getColumnModel().getColumn(0).setMinWidth(10);
+            roomtab.getColumnModel().getColumn(0).setPreferredWidth(60);
+            roomtab.getColumnModel().getColumn(0).setMaxWidth(60);
             roomtab.getColumnModel().getColumn(1).setMinWidth(370);
-            roomtab.getColumnModel().getColumn(1).setPreferredWidth(370);
-            roomtab.getColumnModel().getColumn(1).setMaxWidth(400);
+            roomtab.getColumnModel().getColumn(1).setPreferredWidth(500);
+            roomtab.getColumnModel().getColumn(1).setMaxWidth(4800);
             roomtab.getColumnModel().getColumn(2).setMinWidth(60);
             roomtab.getColumnModel().getColumn(2).setPreferredWidth(60);
             roomtab.getColumnModel().getColumn(2).setMaxWidth(70);
@@ -314,18 +326,18 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(locbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(109, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(111, 111, 111))
         );
 
         jTabbedPane1.addTab("Sessions", jPanel4);
@@ -334,15 +346,120 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 51)));
 
+        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel18.setText("Select Session");
+
+        SS1.setToolTipText("Select Session ID");
+        SS1.setDoubleBuffered(true);
+        SS1.setEditor(null);
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel19.setText("Select Room");
+
+        SR1.setToolTipText("Allocate Room ");
+        SR1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                SR1PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
+        SR1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SR1ActionPerformed(evt);
+            }
+        });
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel20.setText("Selected Session");
+
+        RSS1.setColumns(20);
+        RSS1.setLineWrap(true);
+        RSS1.setRows(5);
+        RSS1.setWrapStyleWord(true);
+        RSS1.setAutoscrolls(false);
+        jScrollPane4.setViewportView(RSS1);
+
+        roomtab1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        roomtab1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "ID", "Selected Session Details", "Room"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        roomtab1.setPreferredSize(new java.awt.Dimension(860, 64));
+        roomtab1.setSelectionBackground(new java.awt.Color(89, 39, 74));
+        roomtab1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                roomtab1MouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(roomtab1);
+        if (roomtab1.getColumnModel().getColumnCount() > 0) {
+            roomtab1.getColumnModel().getColumn(0).setMinWidth(10);
+            roomtab1.getColumnModel().getColumn(0).setPreferredWidth(60);
+            roomtab1.getColumnModel().getColumn(0).setMaxWidth(60);
+            roomtab1.getColumnModel().getColumn(1).setMinWidth(370);
+            roomtab1.getColumnModel().getColumn(1).setPreferredWidth(500);
+            roomtab1.getColumnModel().getColumn(1).setMaxWidth(4800);
+            roomtab1.getColumnModel().getColumn(2).setMinWidth(60);
+            roomtab1.getColumnModel().getColumn(2).setPreferredWidth(60);
+            roomtab1.getColumnModel().getColumn(2).setMaxWidth(70);
+        }
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SS1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jLabel20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 467, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel18)
+                        .addComponent(SS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel19)
+                        .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel20)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
         );
 
         jTabbedPane1.addTab("Consecutive", jPanel5);
@@ -610,6 +727,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Georgia", 1, 10)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\home.png")); // NOI18N
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jButton4.setBorderPainted(false);
         jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -637,7 +755,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -649,7 +766,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ATT)))
+                        .addComponent(ATT))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 935, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -760,7 +878,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
       
       
 
-//************************************view**********************************************************
+//************************************sessions view**********************************************************
     
         private void table_insert(){
             int l;
@@ -948,11 +1066,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ATTActionPerformed
 
-    private void RSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RSSActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_RSSActionPerformed
-
     private void SRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SRActionPerformed
         // TODO add your handling code here:
         
@@ -973,7 +1086,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             ResultSet rs = insert.executeQuery();
             
             if(rs.next()) {
-                 String selectedsession = (rs.getString("ses_id")+"/  "+rs.getString("lec1")+"/  "+rs.getString("lec2")+"/  "+rs.getString("extra_lec")+"/  "+rs.getString("ses_tag")+"/  "+rs.getString("subject")+"/  "+rs.getString("sub_code")+"/  "+rs.getString("grp_ID")+"/  "+rs.getString("no_Stds")+"/  "+rs.getString("duration"));
+                 String selectedsession = (rs.getString("ses_id")+"     "+rs.getString("lec1")+"     "+rs.getString("lec2")+"     "+rs.getString("extra_lec")+"     "+rs.getString("ses_tag")+"     "+rs.getString("subject")+"     "+rs.getString("sub_code")+"     "+rs.getString("grp_ID")+"     "+rs.getString("no_Stds")+"     "+rs.getString("duration"));
                  
                  RSS.setText(selectedsession);
          
@@ -1239,6 +1352,18 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         
     }//GEN-LAST:event_locationtimetabMouseClicked
 
+    private void SR1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SR1PopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SR1PopupMenuWillBecomeInvisible
+
+    private void SR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SR1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SR1ActionPerformed
+
+    private void roomtab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomtab1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_roomtab1MouseClicked
+
     
     
     
@@ -1298,9 +1423,12 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ATT;
     private javax.swing.JComboBox<String> NotAvailable_room;
-    private javax.swing.JTextField RSS;
+    private javax.swing.JTextArea RSS;
+    private javax.swing.JTextArea RSS1;
     private javax.swing.JComboBox<String> SR;
+    private javax.swing.JComboBox<String> SR1;
     private javax.swing.JComboBox<String> SS;
+    private javax.swing.JComboBox<String> SS1;
     private javax.swing.JButton allocate;
     private javax.swing.JButton btn_NotAvailable_Add;
     private javax.swing.JButton btn_NotAvailable_Delete;
@@ -1317,7 +1445,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1334,10 +1465,14 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable locationtimetab;
     private javax.swing.JPanel locbox;
     private javax.swing.JTable roomtab;
+    private javax.swing.JTable roomtab1;
     private javax.swing.JComboBox<String> txtday;
     private javax.swing.JSpinner txtendhour;
     private javax.swing.JSpinner txtendminutes;
