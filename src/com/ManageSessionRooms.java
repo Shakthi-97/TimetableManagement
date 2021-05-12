@@ -38,6 +38,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         table_update();
         load_sessionid();
         load_roomname();
+        table_consecutive();
         roomname_NotAvailable();
         //roomtab.getColumnModel().getColumn(0).setPreferredWidth(20);
         
@@ -71,18 +72,14 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         allocate = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         RSS = new javax.swing.JTextArea();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane6 = new javax.swing.JScrollPane();
         roomtab = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        SS1 = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
         SR1 = new javax.swing.JComboBox<>();
-        jLabel20 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        RSS1 = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
-        roomtab1 = new javax.swing.JTable();
+        cons = new javax.swing.JTable();
+        change = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         form = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -264,7 +261,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(SS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(SR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -282,17 +279,17 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         roomtab.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         roomtab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Selected Session Details", "Room"
+                "ID", "Ses_ID", "lec1", "lect2", "extra_lec", "ses_tag", "subject", "sub_code", "grp_ID", "room_name"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -301,23 +298,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         });
         roomtab.setPreferredSize(new java.awt.Dimension(860, 64));
         roomtab.setSelectionBackground(new java.awt.Color(89, 39, 74));
-        roomtab.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                roomtabMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(roomtab);
-        if (roomtab.getColumnModel().getColumnCount() > 0) {
-            roomtab.getColumnModel().getColumn(0).setMinWidth(10);
-            roomtab.getColumnModel().getColumn(0).setPreferredWidth(60);
-            roomtab.getColumnModel().getColumn(0).setMaxWidth(60);
-            roomtab.getColumnModel().getColumn(1).setMinWidth(370);
-            roomtab.getColumnModel().getColumn(1).setPreferredWidth(500);
-            roomtab.getColumnModel().getColumn(1).setMaxWidth(4800);
-            roomtab.getColumnModel().getColumn(2).setMinWidth(60);
-            roomtab.getColumnModel().getColumn(2).setPreferredWidth(60);
-            roomtab.getColumnModel().getColumn(2).setMaxWidth(70);
-        }
+        jScrollPane6.setViewportView(roomtab);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -326,8 +307,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
@@ -335,9 +316,12 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(locbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(111, 111, 111))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(locbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(111, 111, 111))))
         );
 
         jTabbedPane1.addTab("Sessions", jPanel4);
@@ -345,13 +329,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 0, 51)));
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel18.setText("Select Session");
-
-        SS1.setToolTipText("Select Session ID");
-        SS1.setDoubleBuffered(true);
-        SS1.setEditor(null);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel19.setText("Select Room");
@@ -372,92 +349,76 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             }
         });
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel20.setText("Selected Session");
-
-        RSS1.setColumns(20);
-        RSS1.setLineWrap(true);
-        RSS1.setRows(5);
-        RSS1.setWrapStyleWord(true);
-        RSS1.setAutoscrolls(false);
-        jScrollPane4.setViewportView(RSS1);
-
-        roomtab1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-        roomtab1.setModel(new javax.swing.table.DefaultTableModel(
+        cons.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        cons.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Selected Session Details", "Room"
+                "Cons_ID", "Ses_ID", "lec1", "lect2", "extra_lec", "ses_tag", "subject", "sub_code", "grp_ID", "no_of_stdnts", "duration", "room_name"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        roomtab1.setPreferredSize(new java.awt.Dimension(860, 64));
-        roomtab1.setSelectionBackground(new java.awt.Color(89, 39, 74));
-        roomtab1.addMouseListener(new java.awt.event.MouseAdapter() {
+        cons.setPreferredSize(new java.awt.Dimension(860, 64));
+        cons.setSelectionBackground(new java.awt.Color(89, 39, 74));
+        cons.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                roomtab1MouseClicked(evt);
+                consMouseClicked(evt);
             }
         });
-        jScrollPane5.setViewportView(roomtab1);
-        if (roomtab1.getColumnModel().getColumnCount() > 0) {
-            roomtab1.getColumnModel().getColumn(0).setMinWidth(10);
-            roomtab1.getColumnModel().getColumn(0).setPreferredWidth(60);
-            roomtab1.getColumnModel().getColumn(0).setMaxWidth(60);
-            roomtab1.getColumnModel().getColumn(1).setMinWidth(370);
-            roomtab1.getColumnModel().getColumn(1).setPreferredWidth(500);
-            roomtab1.getColumnModel().getColumn(1).setMaxWidth(4800);
-            roomtab1.getColumnModel().getColumn(2).setMinWidth(60);
-            roomtab1.getColumnModel().getColumn(2).setPreferredWidth(60);
-            roomtab1.getColumnModel().getColumn(2).setMaxWidth(70);
+        jScrollPane5.setViewportView(cons);
+        if (cons.getColumnModel().getColumnCount() > 0) {
+            cons.getColumnModel().getColumn(9).setHeaderValue("no_of_stdnts");
+            cons.getColumnModel().getColumn(10).setHeaderValue("duration");
+            cons.getColumnModel().getColumn(11).setHeaderValue("room_name");
         }
+
+        change.setBackground(new java.awt.Color(0, 102, 102));
+        change.setForeground(new java.awt.Color(255, 255, 255));
+        change.setText("Change");
+        change.setAlignmentY(0.8F);
+        change.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(23, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(SS1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addGap(268, 268, 268)
                 .addComponent(jLabel19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jLabel20)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 804, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(31, 31, 31)
+                .addComponent(change)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel18)
-                        .addComponent(SS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel19)
-                        .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel20)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGap(19, 19, 19)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(change))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
@@ -693,7 +654,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Not Available Times", jPanel6);
@@ -858,6 +819,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 
                 String Selectroom = rs.getString("room_name");
                 SR.addItem(Selectroom);
+                SR1.addItem(Selectroom);
                  
             }
             
@@ -887,7 +849,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                  
                     Class.forName("com.mysql.jdbc.Driver");
                     con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-                    insert = con.prepareStatement("select * From allocate");
+                    //insert = con.prepareStatement("select * From allocate");
+                    insert = con.prepareStatement( "SELECT  a.ID, s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, a.room_name FROM session s, allocate a WHERE  s.ses_id = a.ses_id");
                     ResultSet rs = insert.executeQuery();
                     ResultSetMetaData Rsm = rs.getMetaData();
                     l = Rsm.getColumnCount();
@@ -901,8 +864,74 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                         for(int a = 1; a<=l; a++)
                         {
                             v.add(rs.getString("ID"));
-                            v.add(rs.getString("sss"));
-                            v.add(rs.getString("slr"));
+                            v.add(rs.getString("ses_id"));
+                            v.add(rs.getString("lec1"));
+                            v.add(rs.getString("lec2"));
+                            v.add(rs.getString("extra_lec"));
+                            v.add(rs.getString("ses_tag"));
+                            v.add(rs.getString("subject"));
+                            v.add(rs.getString("sub_code"));
+                            v.add(rs.getString("grp_ID"));
+                            v.add(rs.getString("room_name"));
+                           
+                           
+                            
+                        }
+                    
+                        Df.addRow(v);
+                    
+                     }   
+             }
+             
+            catch (ClassNotFoundException ex){
+                Logger.getLogger(Location.class.getName()).log(Level.SEVERE, null, ex);
+            
+            }
+
+            catch (SQLException ex){
+             Logger.getLogger(Location.class.getName()).log(Level.SEVERE, null, ex);
+            
+        }
+}
+ //************************************view**********************************************************
+        
+        
+        
+  
+//************************************consecutive sessions view**********************************************************
+    
+        private void table_consecutive(){
+            int l;
+            
+             try{
+                 
+                    Class.forName("com.mysql.jdbc.Driver");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                    insert = con.prepareStatement("SELECT c.consec_ID, c.ses_id, c.lec1, c.lec2, c.extra_lec, c.ses_tag, c.subject, c.sub_code, c.grp_ID, c.no_Stds, c.duration, a.room_name FROM consecutive c, allocate a WHERE  c.ses_id = a.ses_id");
+                    ResultSet rs = insert.executeQuery();
+                    ResultSetMetaData Rsm = rs.getMetaData();
+                    l = Rsm.getColumnCount();
+            
+                    DefaultTableModel Df = (DefaultTableModel)cons.getModel();
+                    Df.setRowCount(0);
+            
+                    while(rs.next()){
+                        Vector v = new Vector();
+                    
+                        for(int a = 1; a<=l; a++)
+                        {
+                            v.add(rs.getString("consec_ID"));
+                            v.add(rs.getString("ses_id"));
+                            v.add(rs.getString("lec1"));
+                            v.add(rs.getString("lec2"));
+                            v.add(rs.getString("extra_lec"));
+                            v.add(rs.getString("ses_tag"));
+                            v.add(rs.getString("subject"));
+                            v.add(rs.getString("sub_code"));
+                            v.add(rs.getString("grp_ID"));
+                            v.add(rs.getString("no_Stds"));
+                            v.add(rs.getString("duration"));
+                            v.add(rs.getString("room_name"));
                            
                             
                         }
@@ -1027,17 +1056,17 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         // TODO add your handling code here:
         String select_session = SS.getSelectedItem().toString();
         String select_room = SR.getSelectedItem().toString();
-        String selected_session = RSS.getText();
+        
         
       
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            insert = con.prepareStatement("insert into allocate (sls,slr,sss) values(?,?,?)");
+            insert = con.prepareStatement("insert into allocate (ses_id,room_name) values(?,?) ");
             insert.setString(1, select_session);
             insert.setString(2, select_room);
-            insert.setString(3, selected_session);
+            
           
             insert.executeUpdate();
             
@@ -1046,7 +1075,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             
             SS.setSelectedIndex(0);
             SR.setSelectedIndex(0);
-            RSS.setText("");
+          
+           
             SS.requestFocus();
             
             
@@ -1098,20 +1128,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_SRPopupMenuWillBecomeInvisible
-
-    private void roomtabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomtabMouseClicked
-        // TODO add your handling code here:
-         //DefaultTableModel Df = (DefaultTableModel)roomtab.getModel();
-        //int selectedIndex = roomtab.getSelectedRow();
-        
-        
-        //SS.setSelectedItem(Df.getValueAt(selectedIndex, 1).toString());
-        //SR.setSelectedItem(Df.getValueAt(selectedIndex, 2).toString());
-       //RSS.setText(Df.getValueAt(selectedIndex, 3).toString());
-          
-        
-       
-    }//GEN-LAST:event_roomtabMouseClicked
 
     private void txtdayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdayActionPerformed
         // TODO add your handling code here:
@@ -1360,11 +1376,48 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SR1ActionPerformed
 
-    private void roomtab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_roomtab1MouseClicked
+    private void consMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_roomtab1MouseClicked
+    }//GEN-LAST:event_consMouseClicked
+//***********************************************changing same room to consecutive sessions*****************************//
+    private void changeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeActionPerformed
+        // TODO add your handling code here:
+            DefaultTableModel Df = (DefaultTableModel)cons.getModel();
+        int selectedIndex = cons.getSelectedRow();
+      
+        try{
+             int ID = Integer.parseInt(Df.getValueAt(selectedIndex, 0).toString());
+      
+           
+           String Room_Name = SR1.getSelectedItem().toString();
+        
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            insert = con.prepareStatement("update allocate room_name=? where ID=?");
+            insert.setString(1, Room_Name);
+            insert.setInt(2, ID);
+            
+            insert.executeUpdate();
+            
+            JOptionPane.showMessageDialog(this, "Successfully updated");
+            table_consecutive();
+            
+         //   SR1.getSelectedIndex(0);
+            
+            SR1.requestFocus();
+            
+            
+        }
+        catch (ClassNotFoundException ex){
+            Logger.getLogger(Location.class.getName()).log(Level.SEVERE, null, ex); 
+        }
+         catch (SQLException ex){
+            Logger.getLogger(Location.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+                                          
+    }//GEN-LAST:event_changeActionPerformed
 
-    
+    //***********************************************changing same room to consecutive sessions*****************************//
     
     
     
@@ -1424,17 +1477,17 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private javax.swing.JButton ATT;
     private javax.swing.JComboBox<String> NotAvailable_room;
     private javax.swing.JTextArea RSS;
-    private javax.swing.JTextArea RSS1;
     private javax.swing.JComboBox<String> SR;
     private javax.swing.JComboBox<String> SR1;
     private javax.swing.JComboBox<String> SS;
-    private javax.swing.JComboBox<String> SS1;
     private javax.swing.JButton allocate;
     private javax.swing.JButton btn_NotAvailable_Add;
     private javax.swing.JButton btn_NotAvailable_Delete;
     private javax.swing.JButton btn_NotAvailable_Update;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton cancel;
+    private javax.swing.JButton change;
+    private javax.swing.JTable cons;
     private javax.swing.JPanel form;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel10;
@@ -1445,10 +1498,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1463,16 +1514,14 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable locationtimetab;
     private javax.swing.JPanel locbox;
     private javax.swing.JTable roomtab;
-    private javax.swing.JTable roomtab1;
     private javax.swing.JComboBox<String> txtday;
     private javax.swing.JSpinner txtendhour;
     private javax.swing.JSpinner txtendminutes;
