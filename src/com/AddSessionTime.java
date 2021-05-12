@@ -46,7 +46,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             
             con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
           
-            insert = con1.prepareStatement("select * From session");
+            insert = con1.prepareStatement("select * From session_time");
             
             ResultSet rs = insert.executeQuery();  
             ResultSetMetaData Rss = rs.getMetaData();
@@ -61,7 +61,7 @@ public class AddSessionTime extends javax.swing.JFrame {
                 
                 for(int a=1; a<=c; a++) {
                     
-                    v2.add(rs.getString("session_ID"));
+                    v2.add(rs.getString("session_id"));
                     v2.add(rs.getString("working_day"));
                     v2.add(rs.getInt("start_time_hour"));
                     v2.add(rs.getInt("start_time_minutes"));
@@ -279,25 +279,25 @@ public class AddSessionTime extends javax.swing.JFrame {
                             .addComponent(txtday, 0, 86, Short.MAX_VALUE)
                             .addComponent(txtsessionid, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(formLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
+                        .addGap(50, 50, 50)
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtendhour, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                            .addComponent(txtstarthour))
+                            .addComponent(txtstarthour, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+                            .addComponent(txtendhour))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(formLayout.createSequentialGroup()
                                 .addComponent(jLabel8)
-                                .addGap(39, 39, 39)
-                                .addComponent(txtstartminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(34, 34, 34)
+                                .addComponent(txtstartminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(formLayout.createSequentialGroup()
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(39, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
                 .addContainerGap(23, Short.MAX_VALUE)
                 .addComponent(btnAdd)
@@ -523,7 +523,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             
             con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
             
-            insert = con1.prepareStatement("insert into session(ses_id,working_day,start_time_hour,start_time_minutes,end_time_hour,end_time_minutes)values(?,?,?,?,?,?)");
+            insert = con1.prepareStatement("insert into session_time(session_id,working_day,start_time_hour,start_time_minutes,end_time_hour,end_time_minutes)values(?,?,?,?,?,?)");
             
             insert.setString(1, session_id);
             insert.setString(2, day);
@@ -633,7 +633,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             
                     con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
             
-                    insert = con1.prepareStatement("update session set working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? where ses_id=? ");
+                    insert = con1.prepareStatement("update session_time set working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? where session_id=? ");
                     
                     insert.setString(1, day);
                     insert.setInt(2, start_hour);
@@ -679,13 +679,6 @@ public class AddSessionTime extends javax.swing.JFrame {
             try{
                 
                 String session_id = txtsessionid.getSelectedItem().toString();
-                String day = txtday.getSelectedItem().toString();
-        
-                Integer start_hour = (Integer)txtstarthour.getValue();
-                Integer start_minutes = (Integer)txtstartminutes.getValue();
-        
-                Integer end_hour = (Integer)txtendhour.getValue();
-                Integer end_minutes = (Integer)txtendminutes.getValue();
             
                 int dialogResult = JOptionPane.showConfirmDialog(null,"Do you want to delete this record of time allocation for session?","Warning",JOptionPane.YES_NO_OPTION);
 
@@ -695,14 +688,9 @@ public class AddSessionTime extends javax.swing.JFrame {
 
                 con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
 
-                insert = con1.prepareStatement("delete working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? from session where ses_id=? ");
+                insert = con1.prepareStatement("delete from session_time where session_id=? ");
 
-                insert.setString(1, day);
-                insert.setInt(2, start_hour);
-                insert.setInt(3, start_minutes);
-                insert.setInt(4, end_hour);
-                insert.setInt(5, end_minutes);
-                insert.setString(6, session_id);
+                insert.setString(1, session_id);
 
                 insert.executeUpdate();
 
@@ -745,7 +733,7 @@ public class AddSessionTime extends javax.swing.JFrame {
 
                 con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
 
-                insert = con1.prepareStatement("delete working_day=?, start_time_hour=?, start_time_minutes=?, end_time_hour=?, end_time_minutes=? from session");
+                insert = con1.prepareStatement("Truncate table session_time");
 
                 insert.executeUpdate();
 
