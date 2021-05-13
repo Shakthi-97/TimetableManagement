@@ -133,7 +133,7 @@ public class SessionsTime extends javax.swing.JFrame {
             
             con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
           
-            insert = con.prepareStatement("select * From session");
+            insert = con.prepareStatement("select * From notavailable_session");
             
             ResultSet rs = insert.executeQuery();  
             ResultSetMetaData Rss = rs.getMetaData();
