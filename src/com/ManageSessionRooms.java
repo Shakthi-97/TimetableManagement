@@ -123,6 +123,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(89, 39, 74));
         jPanel2.setName(""); // NOI18N
 
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\va.jpg")); // NOI18N
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -264,7 +266,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addGap(19, 19, 19))
         );
 
-        roomtab.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         roomtab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -284,6 +285,11 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         roomtab.setPreferredSize(new java.awt.Dimension(860, 64));
         roomtab.setSelectionBackground(new java.awt.Color(89, 39, 74));
         jScrollPane6.setViewportView(roomtab);
+        if (roomtab.getColumnModel().getColumnCount() > 0) {
+            roomtab.getColumnModel().getColumn(0).setMinWidth(20);
+            roomtab.getColumnModel().getColumn(0).setPreferredWidth(30);
+            roomtab.getColumnModel().getColumn(0).setMaxWidth(30);
+        }
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -331,7 +337,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             }
         });
 
-        cons.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         cons.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -701,6 +706,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Georgia", 1, 10)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\home.png")); // NOI18N
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jButton4.setBorderPainted(false);
         jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -728,8 +734,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap(20, Short.MAX_VALUE))
+            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -748,9 +754,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1106,6 +1110,9 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:home button
+         dashboardnw dbn = new dashboardnw();
+        dbn.show();
+        dispose();
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
