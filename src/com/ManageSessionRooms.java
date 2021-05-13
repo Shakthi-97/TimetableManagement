@@ -561,6 +561,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             }
         });
 
+        NotAvailable_room.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
         NotAvailable_room.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NotAvailable_roomActionPerformed(evt);
@@ -584,16 +585,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                     .addGroup(formLayout.createSequentialGroup()
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(formLayout.createSequentialGroup()
-                                .addGap(143, 143, 143)
-                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtday, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(NotAvailable_room, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(formLayout.createSequentialGroup()
-                                .addGap(37, 37, 37)
-                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11)))
-                            .addGroup(formLayout.createSequentialGroup()
                                 .addGap(99, 99, 99)
                                 .addComponent(jLabel15))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
@@ -614,7 +605,19 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, formLayout.createSequentialGroup()
+                                    .addGap(37, 37, 37)
+                                    .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel11)
+                                        .addGroup(formLayout.createSequentialGroup()
+                                            .addComponent(jLabel10)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(NotAvailable_room, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, formLayout.createSequentialGroup()
+                                    .addGap(143, 143, 143)
+                                    .addComponent(txtday, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 14, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(formLayout.createSequentialGroup()
@@ -650,12 +653,12 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                     .addComponent(jLabel16)
                     .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
-                .addGap(34, 34, 34)
+                .addGap(18, 18, 18)
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_NotAvailable_Add)
                     .addComponent(btn_NotAvailable_Update)
                     .addComponent(btn_NotAvailable_Delete))
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         locationtimetab.setModel(new javax.swing.table.DefaultTableModel(
@@ -710,7 +713,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(form, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Not Available Times", jPanel6);
@@ -1296,10 +1299,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_NotAvailable_AddActionPerformed
 
-    private void NotAvailable_roomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotAvailable_roomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NotAvailable_roomActionPerformed
-
     private void btn_NotAvailable_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NotAvailable_DeleteActionPerformed
         // TODO add your handling code here:
         TableModel model = locationtimetab.getModel();
@@ -1580,6 +1579,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_SRPopupMenuWillBecomeInvisible
+
+    private void NotAvailable_roomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotAvailable_roomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NotAvailable_roomActionPerformed
 
     
     
