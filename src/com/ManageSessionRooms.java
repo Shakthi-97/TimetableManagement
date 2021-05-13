@@ -148,8 +148,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(89, 39, 74));
         jPanel2.setName(""); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\va.jpg")); // NOI18N
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -340,7 +338,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, 303, Short.MAX_VALUE))
+                    .addComponent(locbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(111, 111, 111))
         );
 
@@ -536,6 +534,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         btn_NotAvailable_Add.setBackground(new java.awt.Color(0, 51, 0));
         btn_NotAvailable_Add.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Add.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\add.png")); // NOI18N
         btn_NotAvailable_Add.setText("Add");
         btn_NotAvailable_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -545,6 +544,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         btn_NotAvailable_Update.setBackground(new java.awt.Color(0, 51, 102));
         btn_NotAvailable_Update.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Update.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\edit.png")); // NOI18N
         btn_NotAvailable_Update.setText("Update");
         btn_NotAvailable_Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -554,6 +554,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         btn_NotAvailable_Delete.setBackground(new java.awt.Color(153, 0, 51));
         btn_NotAvailable_Delete.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Delete.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\delete.png")); // NOI18N
         btn_NotAvailable_Delete.setText("Delete");
         btn_NotAvailable_Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -578,7 +579,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btn_NotAvailable_Add)
-                        .addGap(30, 30, 30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_NotAvailable_Update)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_NotAvailable_Delete))
@@ -618,7 +619,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, formLayout.createSequentialGroup()
                                     .addGap(143, 143, 143)
                                     .addComponent(txtday, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 14, Short.MAX_VALUE)))
+                        .addGap(0, 17, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(formLayout.createSequentialGroup()
                 .addGap(98, 98, 98)
@@ -702,7 +703,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -747,7 +748,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Georgia", 1, 10)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\home.png")); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\home.png")); // NOI18N
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jButton4.setBorderPainted(false);
         jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -776,7 +777,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(20, Short.MAX_VALUE))
-            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1295,6 +1296,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(ManageSessionRooms.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Not available time for the location has been already inserted before");
         }
         
     }//GEN-LAST:event_btn_NotAvailable_AddActionPerformed
