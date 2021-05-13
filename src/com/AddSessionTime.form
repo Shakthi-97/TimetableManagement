@@ -133,16 +133,16 @@
                       <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="btnClear" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="form" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" min="-2" pref="626" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace pref="931" max="32767" attributes="0"/>
+                      <Component id="btnClear" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="59" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="form" min="-2" pref="279" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="701" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -244,10 +244,10 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace pref="39" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="23" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnUpdate" min="-2" pref="79" max="-2" attributes="0"/>
@@ -312,7 +312,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -499,23 +499,41 @@
                 <Component class="javax.swing.JTable" name="sessiontab">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="6" rowCount="4">
+                      <Table columnCount="9" rowCount="4">
                         <Column editable="true" title="Session ID" type="java.lang.String"/>
+                        <Column editable="true" title="Lecturer" type="java.lang.String"/>
+                        <Column editable="true" title="Subject Code" type="java.lang.String"/>
+                        <Column editable="true" title="Group ID" type="java.lang.String"/>
                         <Column editable="true" title="Working day" type="java.lang.String"/>
-                        <Column editable="true" title="Start time(hour)" type="java.lang.String"/>
-                        <Column editable="true" title="Start time(minutes)" type="java.lang.String"/>
-                        <Column editable="true" title="End time(hour)" type="java.lang.String"/>
-                        <Column editable="true" title="End time(minutes)" type="java.lang.String"/>
+                        <Column editable="true" title="Start time(h)" type="java.lang.String"/>
+                        <Column editable="true" title="Start time(min)" type="java.lang.String"/>
+                        <Column editable="true" title="End time(h)" type="java.lang.String"/>
+                        <Column editable="true" title="End time(min)" type="java.lang.String"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="false">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="65" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>
                         </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="false">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="false">
                           <Title/>
                           <Editor/>
                           <Renderer/>

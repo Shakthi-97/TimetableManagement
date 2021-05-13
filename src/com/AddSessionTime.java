@@ -46,7 +46,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             
             con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
           
-            insert = con1.prepareStatement("select * From session_time");
+            insert = con1.prepareStatement("select t.session_id, s.lec1, s.sub_code, s.grp_ID, t.working_day, t.start_time_hour, t.start_time_minutes, t.end_time_hour, t.end_time_minutes From session_time t, session s WHERE t.session_id = s.ses_id");
             
             ResultSet rs = insert.executeQuery();  
             ResultSetMetaData Rss = rs.getMetaData();
@@ -62,6 +62,9 @@ public class AddSessionTime extends javax.swing.JFrame {
                 for(int a=1; a<=c; a++) {
                     
                     v2.add(rs.getString("session_id"));
+                    v2.add(rs.getString("lec1"));
+                    v2.add(rs.getString("sub_code"));
+                    v2.add(rs.getString("grp_ID"));
                     v2.add(rs.getString("working_day"));
                     v2.add(rs.getInt("start_time_hour"));
                     v2.add(rs.getInt("start_time_minutes"));
@@ -192,7 +195,7 @@ public class AddSessionTime extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
+                .addGap(62, 62, 62)
                 .addComponent(jLabel4)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -304,9 +307,9 @@ public class AddSessionTime extends javax.swing.JFrame {
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnAdd)
                 .addGap(18, 18, 18)
                 .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -352,17 +355,17 @@ public class AddSessionTime extends javax.swing.JFrame {
 
         sessiontab.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Session ID", "Working day", "Start time(hour)", "Start time(minutes)", "End time(hour)", "End time(minutes)"
+                "Session ID", "Lecturer", "Subject Code", "Group ID", "Working day", "Start time(h)", "Start time(min)", "End time(h)", "End time(min)"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -377,13 +380,16 @@ public class AddSessionTime extends javax.swing.JFrame {
         jScrollPane1.setViewportView(sessiontab);
         if (sessiontab.getColumnModel().getColumnCount() > 0) {
             sessiontab.getColumnModel().getColumn(0).setResizable(false);
-            sessiontab.getColumnModel().getColumn(0).setPreferredWidth(100);
+            sessiontab.getColumnModel().getColumn(0).setPreferredWidth(65);
             sessiontab.getColumnModel().getColumn(1).setResizable(false);
-            sessiontab.getColumnModel().getColumn(1).setPreferredWidth(90);
             sessiontab.getColumnModel().getColumn(2).setResizable(false);
-            sessiontab.getColumnModel().getColumn(2).setPreferredWidth(70);
+            sessiontab.getColumnModel().getColumn(3).setResizable(false);
             sessiontab.getColumnModel().getColumn(4).setResizable(false);
-            sessiontab.getColumnModel().getColumn(4).setPreferredWidth(60);
+            sessiontab.getColumnModel().getColumn(4).setPreferredWidth(70);
+            sessiontab.getColumnModel().getColumn(5).setResizable(false);
+            sessiontab.getColumnModel().getColumn(5).setPreferredWidth(70);
+            sessiontab.getColumnModel().getColumn(7).setResizable(false);
+            sessiontab.getColumnModel().getColumn(7).setPreferredWidth(60);
         }
 
         btnClear.setBackground(new java.awt.Color(204, 0, 0));
@@ -405,14 +411,15 @@ public class AddSessionTime extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(249, 249, 249))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnClear)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(form, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(64, 64, 64)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 626, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(931, Short.MAX_VALUE)
+                .addComponent(btnClear)
                 .addContainerGap(59, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(form, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 701, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -557,6 +564,7 @@ public class AddSessionTime extends javax.swing.JFrame {
             Logger.getLogger(AddSessionTime.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(AddSessionTime.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Time for the session has been already inserted before");
         }
       }
     }//GEN-LAST:event_btnAddActionPerformed
@@ -577,7 +585,7 @@ public class AddSessionTime extends javax.swing.JFrame {
         Object o = sessiontab.getValueAt(j, 0);
         txtsessionid.setSelectedItem(o);
         
-        String day = model.getValueAt(j, 1).toString();
+        String day = model.getValueAt(j, 4).toString();
         switch(day){
             case "Monday":
                 txtday.setSelectedIndex(1);
@@ -602,11 +610,11 @@ public class AddSessionTime extends javax.swing.JFrame {
                 break;
         }
         
-        txtstarthour.setValue(model.getValueAt(j, 2));
-        txtstartminutes.setValue(model.getValueAt(j, 3));
+        txtstarthour.setValue(model.getValueAt(j, 5));
+        txtstartminutes.setValue(model.getValueAt(j, 6));
         
-        txtendhour.setValue(model.getValueAt(j, 4));
-        txtendminutes.setValue(model.getValueAt(j, 5));
+        txtendhour.setValue(model.getValueAt(j, 7));
+        txtendminutes.setValue(model.getValueAt(j, 8));
         
     }//GEN-LAST:event_sessiontabMouseClicked
 
