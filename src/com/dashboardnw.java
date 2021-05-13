@@ -200,6 +200,7 @@ public class dashboardnw extends javax.swing.JFrame {
         jLabel1.setText("Analysis");
 
         jButton10.setText("Registered Students");
+        jButton10.setToolTipText("Show Student Statistics");
         jButton10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 3, true));
         jButton10.setBorderPainted(false);
         jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -214,6 +215,7 @@ public class dashboardnw extends javax.swing.JFrame {
         });
 
         jButton11.setText("Registered Subjects");
+        jButton11.setToolTipText("Show Subject Statistics");
         jButton11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 3, true));
         jButton11.setBorderPainted(false);
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -222,7 +224,8 @@ public class dashboardnw extends javax.swing.JFrame {
             }
         });
 
-        jButton12.setText("Registered Employe");
+        jButton12.setText("Registered Employee");
+        jButton12.setToolTipText("Show Employee Statistics");
         jButton12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 3, true));
         jButton12.setBorderPainted(false);
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -232,6 +235,7 @@ public class dashboardnw extends javax.swing.JFrame {
         });
 
         jButton13.setText("Registered Rooms");
+        jButton13.setToolTipText("Show Location Statistics");
         jButton13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 3, true));
         jButton13.setBorderPainted(false);
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -343,7 +347,7 @@ public class dashboardnw extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bp, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 34, Short.MAX_VALUE))
+                .addGap(0, 51, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -352,7 +356,7 @@ public class dashboardnw extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1017, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 13, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,7 +434,7 @@ public class dashboardnw extends javax.swing.JFrame {
           
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            final String SQL = ("SELECT  offered_seme, COUNT(*) FROM subjects GROUP BY offered_seme");
+            final String SQL = ("SELECT concat(offered_yr, offered_seme) AS batch , COUNT(*) FROM subjects GROUP BY batch");
             final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
             JFreeChart chart = ChartFactory.createBarChart("subjects count based on semester year","semester","No of subjects", dataset, PlotOrientation.VERTICAL, false, false, false);
             CategoryPlot catplot = chart.getCategoryPlot();
@@ -475,12 +479,14 @@ public class dashboardnw extends javax.swing.JFrame {
     
     
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        
+      AddSessionTime t = new AddSessionTime();
+        t.show();
+        dispose();  
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // tag registration
-        Tag tg = new Tag();
+        Tagg tg = new Tagg();
         tg.show();
         dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -570,7 +576,7 @@ public class dashboardnw extends javax.swing.JFrame {
     
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // student registration
-        Group grp = new Group();
+        Groupp grp = new Groupp();
         grp.show();
         dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -582,6 +588,9 @@ public class dashboardnw extends javax.swing.JFrame {
     
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        AddSession add = new AddSession();
+        add.show();
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     
