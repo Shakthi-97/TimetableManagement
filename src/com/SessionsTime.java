@@ -150,10 +150,10 @@ public class SessionsTime extends javax.swing.JFrame {
                     
                     v2.add(rs.getString("session_ID"));
                     v2.add(rs.getString("working_day"));
-                    v2.add(rs.getInt("start_time_hour"));
-                    v2.add(rs.getInt("start_time_minutes"));
-                    v2.add(rs.getInt("end_time_hour"));
-                    v2.add(rs.getInt("end_time_minutes"));
+                    v2.add(rs.getInt("notavailable_start_hr"));
+                    v2.add(rs.getInt("notavailable_start_min"));
+                    v2.add(rs.getInt("notavailable_end_hr"));
+                    v2.add(rs.getInt("notavailable_end_min"));
                     
                 }
                 
