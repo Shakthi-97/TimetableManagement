@@ -530,8 +530,7 @@ public class AddSession extends javax.swing.JFrame {
         add_session.setBackground(new java.awt.Color(14, 1, 47));
         add_session.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         add_session.setForeground(new java.awt.Color(255, 255, 255));
-        add_session.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\add.png")); // NOI18N
-        add_session.setText("Add Sessions");
+        add_session.setText(" Sessions");
         add_session.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 add_sessionActionPerformed(evt);
@@ -547,9 +546,9 @@ public class AddSession extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(518, 518, 518)
                         .addComponent(jLabel8)
-                        .addGap(197, 197, 197)
+                        .addGap(214, 214, 214)
                         .addComponent(add_session)
-                        .addGap(228, 228, 228)
+                        .addGap(211, 211, 211)
                         .addComponent(jLabel7))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
