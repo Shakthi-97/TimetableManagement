@@ -69,16 +69,15 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        SS = new javax.swing.JComboBox<>();
-        SR = new javax.swing.JComboBox<>();
         allocate = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         RSS = new javax.swing.JTextArea();
+        SS = new javax.swing.JComboBox<>();
+        SR = new javax.swing.JComboBox<>();
         jScrollPane5 = new javax.swing.JScrollPane();
         roomtab = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
-        SR1 = new javax.swing.JComboBox<>();
         change = new javax.swing.JButton();
         jLabel18 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -86,7 +85,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         RSS1 = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
         loctab = new javax.swing.JTable();
-        SS1 = new javax.swing.JComboBox<>();
+        SR1 = new javax.swing.JComboBox<>();
+        SS2 = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
         form = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -204,26 +204,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        SS.setToolTipText("Select Session ID");
-        SS.setDoubleBuffered(true);
-        SS.setEditor(null);
-
-        SR.setToolTipText("Allocate Room ");
-        SR.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-            }
-            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-                SRPopupMenuWillBecomeInvisible(evt);
-            }
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-            }
-        });
-        SR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SRActionPerformed(evt);
-            }
-        });
-
         allocate.setBackground(new java.awt.Color(0, 102, 102));
         allocate.setForeground(new java.awt.Color(255, 255, 255));
         allocate.setText("Allocate");
@@ -240,6 +220,20 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         RSS.setWrapStyleWord(true);
         jScrollPane3.setViewportView(RSS);
 
+        SS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        SS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SSActionPerformed(evt);
+            }
+        });
+
+        SR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        SR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SRActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout locboxLayout = new javax.swing.GroupLayout(locbox);
         locbox.setLayout(locboxLayout);
         locboxLayout.setHorizontalGroup(
@@ -248,14 +242,15 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, locboxLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18))
                     .addGroup(locboxLayout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SS, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(locboxLayout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SR, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(9, 9, 9)))
+                .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(SS, 0, 86, Short.MAX_VALUE)
+                    .addComponent(SR, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30))
             .addGroup(locboxLayout.createSequentialGroup()
                 .addGroup(locboxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,7 +331,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(locbox, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(locbox, javax.swing.GroupLayout.PREFERRED_SIZE, 303, Short.MAX_VALUE))
                 .addGap(111, 111, 111))
         );
 
@@ -348,22 +343,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel19.setText("Select Room");
-
-        SR1.setToolTipText("Allocate Room ");
-        SR1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
-            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
-            }
-            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
-                SR1PopupMenuWillBecomeInvisible(evt);
-            }
-            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
-            }
-        });
-        SR1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SR1ActionPerformed(evt);
-            }
-        });
 
         change.setBackground(new java.awt.Color(0, 102, 102));
         change.setForeground(new java.awt.Color(255, 255, 255));
@@ -415,10 +394,17 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         });
         jScrollPane7.setViewportView(loctab);
 
-        SS1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
-        SS1.addActionListener(new java.awt.event.ActionListener() {
+        SR1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        SR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SS1ActionPerformed(evt);
+                SR1ActionPerformed(evt);
+            }
+        });
+
+        SS2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        SS2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SS2ActionPerformed(evt);
             }
         });
 
@@ -432,12 +418,12 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(12, 12, 12)
-                        .addComponent(SS1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SS2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
                         .addComponent(jLabel20)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -459,9 +445,9 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel18)
                             .addComponent(jLabel19)
-                            .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel20)
-                            .addComponent(SS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(SR1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SS2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -852,7 +838,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             while(rs.next()) {
                 
                 String SelectSession = rs.getString("ses_id");
-                SS1.addItem(SelectSession);
+                SR1.addItem(SelectSession);
                 
                  
             }
@@ -1202,39 +1188,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     
     
     
-    private void SRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SRActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_SRActionPerformed
-//**********************************retrieve all the details into text area to double check based on session id of session table**************************//
-    private void SRPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SRPopupMenuWillBecomeInvisible
-        // TODO add your handling code here:
-         String temp = (String) SS.getSelectedItem();
-        
-        try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            
-            insert = con.prepareStatement("select * from session where ses_id=? ");
-            insert.setString(1, temp);  
-            ResultSet rs = insert.executeQuery();
-            
-            if(rs.next()) {
-                 String selectedsession = (rs.getString("ses_id")+"     "+rs.getString("lec1")+"     "+rs.getString("lec2")+"     "+rs.getString("extra_lec")+"     "+rs.getString("ses_tag")+"     "+rs.getString("subject")+"     "+rs.getString("sub_code")+"     "+rs.getString("grp_ID")+"     "+rs.getString("no_Stds")+"     "+rs.getString("duration"));
-                 
-                 RSS.setText(selectedsession);
-         
-            }
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_SRPopupMenuWillBecomeInvisible
-
     
      //**********************************retrieve all the details into text area to double check based on session id of session table**************************//                                            
 
@@ -1479,46 +1432,13 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         
     }//GEN-LAST:event_locationtimetabMouseClicked
 
-    private void SR1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SR1PopupMenuWillBecomeInvisible
-        // TODO add your handling code here:
-        
-          String temp = (String) SS1.getSelectedItem();
-        
-        try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            
-            insert = con.prepareStatement("select * from consecutive where ses_id=? ");
-            insert.setString(1, temp);  
-            ResultSet rs = insert.executeQuery();
-            
-            if(rs.next()) {
-                 String selectedsession = (rs.getString("ses_id")+"     "+rs.getString("consec_ID")+"     "+rs.getString("lec1")+"     "+ rs.getString("lec2")+"     "+rs.getString("extra_lec")+"     "+rs.getString("ses_tag")+"     "+rs.getString("subject")+"     "+rs.getString("sub_code")+"     "+rs.getString("grp_ID")+"     "+rs.getString("no_Stds")+"     "+rs.getString("duration"));
-                 
-                 RSS1.setText(selectedsession);
-         
-            }
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_SR1PopupMenuWillBecomeInvisible
-
-    private void SR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SR1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_SR1ActionPerformed
-
     private void consMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_consMouseClicked
 //***********************************************changing same room to consecutive sessions*****************************//
     private void changeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeActionPerformed
         // TODO add your handling code here:
-      String select_session = SS1.getSelectedItem().toString();
+      String select_session = SR1.getSelectedItem().toString();
         String select_room = SR1.getSelectedItem().toString();
         
         
@@ -1537,11 +1457,11 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Successfully Added");
             table_consecutive();
             
-            SS1.setSelectedIndex(0);
+            SR1.setSelectedIndex(0);
             SR1.setSelectedIndex(0);
           
            
-            SS1.requestFocus();
+            SR1.requestFocus();
             
             
         }
@@ -1568,9 +1488,21 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
     }//GEN-LAST:event_roomtabMouseClicked
 
-    private void SS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SS1ActionPerformed
+    private void SR1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SR1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SS1ActionPerformed
+    }//GEN-LAST:event_SR1ActionPerformed
+
+    private void SS2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SS2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SS2ActionPerformed
+
+    private void SSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SSActionPerformed
+
+    private void SRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SRActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SRActionPerformed
 
     
     
@@ -1644,7 +1576,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> SR;
     private javax.swing.JComboBox<String> SR1;
     private javax.swing.JComboBox<String> SS;
-    private javax.swing.JComboBox<String> SS1;
+    private javax.swing.JComboBox<String> SS2;
     private javax.swing.JButton allocate;
     private javax.swing.JButton btn_NotAvailable_Add;
     private javax.swing.JButton btn_NotAvailable_Delete;
