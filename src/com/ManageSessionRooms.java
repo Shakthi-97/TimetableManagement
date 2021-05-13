@@ -123,8 +123,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(89, 39, 74));
         jPanel2.setName(""); // NOI18N
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\va.jpg")); // NOI18N
-
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -533,6 +531,13 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(formLayout.createSequentialGroup()
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btn_NotAvailable_Add)
+                        .addGap(30, 30, 30)
+                        .addComponent(btn_NotAvailable_Update)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_NotAvailable_Delete))
                     .addGroup(formLayout.createSequentialGroup()
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(formLayout.createSequentialGroup()
@@ -544,38 +549,35 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                                 .addGap(37, 37, 37)
                                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel10)
-                                    .addComponent(jLabel11)
-                                    .addGroup(formLayout.createSequentialGroup()
-                                        .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(4, 4, 4)
-                                        .addComponent(jLabel13)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel14))
-                                    .addGroup(formLayout.createSequentialGroup()
-                                        .addGap(65, 65, 65)
-                                        .addComponent(jLabel12))
+                                    .addComponent(jLabel11)))
+                            .addGroup(formLayout.createSequentialGroup()
+                                .addGap(99, 99, 99)
+                                .addComponent(jLabel15))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(formLayout.createSequentialGroup()
                                         .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(4, 4, 4)
-                                        .addComponent(jLabel16)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jLabel16)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(formLayout.createSequentialGroup()
-                                        .addGap(63, 63, 63)
-                                        .addComponent(jLabel15)))))
-                        .addGap(0, 20, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, formLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_NotAvailable_Add)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_NotAvailable_Update)
-                        .addGap(28, 28, 28)
-                        .addComponent(btn_NotAvailable_Delete)))
+                                        .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel13)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 14, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(formLayout.createSequentialGroup()
+                .addGap(98, 98, 98)
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         formLayout.setVerticalGroup(
             formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -589,28 +591,28 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
                     .addComponent(txtday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(8, 8, 8)
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13)
                     .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(3, 3, 3)
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16)
                     .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel16))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel17))
+                .addGap(34, 34, 34)
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_NotAvailable_Add)
                     .addComponent(btn_NotAvailable_Update)
                     .addComponent(btn_NotAvailable_Delete))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         locationtimetab.setModel(new javax.swing.table.DefaultTableModel(
@@ -699,7 +701,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Georgia", 1, 10)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\home.png")); // NOI18N
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jButton4.setBorderPainted(false);
         jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -728,7 +729,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
-            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1030,7 +1031,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             
             con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
           
-            insert = con.prepareStatement("select * From NotAvailableRoom");
+            insert = con.prepareStatement("select * From notavailableroom");
             
             ResultSet rs = insert.executeQuery();  
             ResultSetMetaData Rss = rs.getMetaData();
@@ -1251,7 +1252,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            insert = con.prepareStatement("insert into NotAvailableRoom (room_name,workingday,NotAvailable_start_hr,NotAvailable_start_min,NotAvailable_end_hr,NotAvailable_end_min)values(?,?,?,?,?,?)");
+            insert = con.prepareStatement("insert into notavailableroom (room_name,workingday,NotAvailable_start_hr,NotAvailable_start_min,NotAvailable_end_hr,NotAvailable_end_min)values(?,?,?,?,?,?)");
             
             insert.setString(1, room_name);
             insert.setString(2, workingday);
@@ -1309,7 +1310,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
                 con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
 
-                insert = con.prepareStatement("delete from NotAvailableRoom where room_name=? ");
+                insert = con.prepareStatement("delete from notavailableroom where room_name=? ");
 
                 insert.setString(1, room_name);
 
@@ -1365,7 +1366,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
                 con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
 
-                insert = con.prepareStatement("update NotAvailableRoom set workingday=?, NotAvailable_start_hr=?, NotAvailable_start_min=?, NotAvailable_end_hr=?, NotAvailable_end_min=? where room_name=? ");
+                insert = con.prepareStatement("update notavailableroom set workingday=?, NotAvailable_start_hr=?, NotAvailable_start_min=?, NotAvailable_end_hr=?, NotAvailable_end_min=? where room_name=? ");
 
                 insert.setString(1, workingday);
                 insert.setInt(2, starthour);
