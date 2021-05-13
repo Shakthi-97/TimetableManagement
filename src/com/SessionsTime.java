@@ -231,11 +231,14 @@ public class SessionsTime extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(89, 39, 74));
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 733));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\va.jpg")); // NOI18N
+
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ABC Institute Timetable Management System");
 
         home_btn.setBackground(new java.awt.Color(255, 255, 255));
+        home_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\home.png")); // NOI18N
         home_btn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         home_btn.setBorderPainted(false);
         home_btn.setPreferredSize(new java.awt.Dimension(20, 20));
@@ -460,6 +463,7 @@ public class SessionsTime extends javax.swing.JFrame {
 
         btn_NotAvailable_Add.setBackground(new java.awt.Color(0, 51, 0));
         btn_NotAvailable_Add.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Add.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\add.png")); // NOI18N
         btn_NotAvailable_Add.setText("Add");
         btn_NotAvailable_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -469,6 +473,7 @@ public class SessionsTime extends javax.swing.JFrame {
 
         btn_NotAvailable_Update.setBackground(new java.awt.Color(0, 51, 102));
         btn_NotAvailable_Update.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Update.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\edit.png")); // NOI18N
         btn_NotAvailable_Update.setText("Update");
         btn_NotAvailable_Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -478,6 +483,7 @@ public class SessionsTime extends javax.swing.JFrame {
 
         btn_NotAvailable_Delete.setBackground(new java.awt.Color(153, 0, 51));
         btn_NotAvailable_Delete.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NotAvailable_Delete.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\delete.png")); // NOI18N
         btn_NotAvailable_Delete.setText("Delete");
         btn_NotAvailable_Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -498,28 +504,34 @@ public class SessionsTime extends javax.swing.JFrame {
             formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(formLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(formLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(26, 26, 26)
-                        .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(formLayout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55))))
+                .addContainerGap()
+                .addComponent(btn_NotAvailable_Add)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_NotAvailable_Update)
+                .addGap(18, 18, 18)
+                .addComponent(btn_NotAvailable_Delete)
+                .addGap(27, 27, 27))
             .addGroup(formLayout.createSequentialGroup()
                 .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(4, 4, 4)
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(formLayout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(26, 26, 26)
+                                .addComponent(txtstartminute, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8))
+                            .addGroup(formLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(formLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -535,14 +547,6 @@ public class SessionsTime extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel10))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(formLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(btn_NotAvailable_Add)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_NotAvailable_Update)
-                .addGap(18, 18, 18)
-                .addComponent(btn_NotAvailable_Delete)
-                .addGap(27, 27, 27))
         );
         formLayout.setVerticalGroup(
             formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -713,7 +717,7 @@ public class SessionsTime extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -725,7 +729,7 @@ public class SessionsTime extends javax.swing.JFrame {
                     .addComponent(home_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 29, Short.MAX_VALUE))
+                .addGap(0, 31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -860,7 +864,7 @@ public class SessionsTime extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            insert = con.prepareStatement("insert into notavailable_session (session_ID,workingday,NotAvailable_start_hr,NotAvailable_start_min,NotAvailable_end_hr,NotAvailable_end_min)values(?,?,?,?,?,?)");
+            insert = con.prepareStatement("insert into notavailable_session (session_ID,working_day,NotAvailable_start_hr,NotAvailable_start_min,NotAvailable_end_hr,NotAvailable_end_min)values(?,?,?,?,?,?)");
             
             insert.setString(1, session_id);
             insert.setString(2, workingday);
@@ -918,7 +922,7 @@ public class SessionsTime extends javax.swing.JFrame {
 
                 con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
 
-                insert = con.prepareStatement("update notavailable_session set workingday=?, NotAvailable_start_hr=?, NotAvailable_start_min=?, NotAvailable_end_hr=?, NotAvailable_end_min=? where session_ID=? ");
+                insert = con.prepareStatement("update notavailable_session set working_day=?, NotAvailable_start_hr=?, NotAvailable_start_min=?, NotAvailable_end_hr=?, NotAvailable_end_min=? where session_ID=? ");
 
                 insert.setString(1, workingday);
                 insert.setInt(2, starthour);
