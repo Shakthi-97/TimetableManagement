@@ -1456,7 +1456,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 //***********************************************changing same room to consecutive sessions*****************************//
     private void changeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeActionPerformed
         // TODO add your handling code here:
-      String select_session = SR1.getSelectedItem().toString();
+      String select_session = SS1.getSelectedItem().toString();
         String select_room = SR1.getSelectedItem().toString();
         
         
@@ -1475,11 +1475,11 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Successfully Added");
             table_consecutive();
             
-            SR1.setSelectedIndex(0);
+            SS1.setSelectedIndex(0);
             SR1.setSelectedIndex(0);
           
            
-            SR1.requestFocus();
+            SS1.requestFocus();
             
             
         }
