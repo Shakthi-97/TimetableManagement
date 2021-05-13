@@ -228,6 +228,15 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         });
 
         SR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        SR.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                SRPopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
         SR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SRActionPerformed(evt);
@@ -395,6 +404,15 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jScrollPane7.setViewportView(loctab);
 
         SR1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        SR1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                SR1PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
         SR1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SR1ActionPerformed(evt);
@@ -1503,6 +1521,65 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private void SRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SRActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SRActionPerformed
+
+    private void SR1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SR1PopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
+         String temp = (String) SS.getSelectedItem();
+        
+        try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con.prepareStatement("select * from session where ses_id=? ");
+            insert.setString(1, temp);  
+            ResultSet rs = insert.executeQuery();
+            
+            if(rs.next()) {
+                 String selectedsession = (rs.getString("ses_id")+"     "+rs.getString("lec1")+"     "+rs.getString("lec2")+"     "+rs.getString("extra_lec")+"     "+rs.getString("ses_tag")+"     "+rs.getString("subject")+"     "+rs.getString("sub_code")+"     "+rs.getString("grp_ID")+"     "+rs.getString("no_Stds")+"     "+rs.getString("duration"));
+                 
+                 RSS.setText(selectedsession);
+         
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_SR1PopupMenuWillBecomeInvisible
+
+    private void SRPopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SRPopupMenuWillBecomeInvisible
+        // TODO add your handling code here:
+        //**********************************retrieve all the details into text area to double check based on session id of session table**************************//
+         
+         String temp = (String) SS.getSelectedItem();
+        
+        try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con.prepareStatement("select * from session where ses_id=? ");
+            insert.setString(1, temp);  
+            ResultSet rs = insert.executeQuery();
+            
+            if(rs.next()) {
+                 String selectedsession = (rs.getString("ses_id")+"     "+rs.getString("lec1")+"     "+rs.getString("lec2")+"     "+rs.getString("extra_lec")+"     "+rs.getString("ses_tag")+"     "+rs.getString("subject")+"     "+rs.getString("sub_code")+"     "+rs.getString("grp_ID")+"     "+rs.getString("no_Stds")+"     "+rs.getString("duration"));
+                 
+                 RSS.setText(selectedsession);
+         
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_SRPopupMenuWillBecomeInvisible
 
     
     

@@ -482,6 +482,7 @@
                             </Property>
                           </Properties>
                           <Events>
+                            <EventHandler event="popupMenuWillBecomeInvisible" listener="javax.swing.event.PopupMenuListener" parameters="javax.swing.event.PopupMenuEvent" handler="SRPopupMenuWillBecomeInvisible"/>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SRActionPerformed"/>
                           </Events>
                           <AuxValues>
@@ -798,6 +799,7 @@
                         </Property>
                       </Properties>
                       <Events>
+                        <EventHandler event="popupMenuWillBecomeInvisible" listener="javax.swing.event.PopupMenuListener" parameters="javax.swing.event.PopupMenuEvent" handler="SR1PopupMenuWillBecomeInvisible"/>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SR1ActionPerformed"/>
                       </Events>
                       <AuxValues>
