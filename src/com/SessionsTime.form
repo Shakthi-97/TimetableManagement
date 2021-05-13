@@ -871,20 +871,20 @@
                                 <Column editable="true" title="Subject Code" type="java.lang.String"/>
                                 <Column editable="true" title="Group ID" type="java.lang.String"/>
                                 <Column editable="true" title="Working day" type="java.lang.String"/>
-                                <Column editable="true" title="Start time hour" type="java.lang.Integer"/>
-                                <Column editable="true" title="Start time minutes" type="java.lang.Integer"/>
-                                <Column editable="true" title="End time hour" type="java.lang.Integer"/>
-                                <Column editable="true" title="End time minutes" type="java.lang.Integer"/>
+                                <Column editable="true" title="Start time (h)" type="java.lang.Integer"/>
+                                <Column editable="true" title="Start time (min)" type="java.lang.Integer"/>
+                                <Column editable="true" title="End time (h)" type="java.lang.Integer"/>
+                                <Column editable="true" title="End time (min)" type="java.lang.Integer"/>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                               <TableColumnModel selectionModel="0">
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="65" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="110" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
@@ -899,27 +899,27 @@
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="90" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="false">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>
                                 </Column>
-                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="false">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
                                   <Title/>
                                   <Editor/>
                                   <Renderer/>

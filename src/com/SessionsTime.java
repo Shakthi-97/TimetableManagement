@@ -133,7 +133,7 @@ public class SessionsTime extends javax.swing.JFrame {
             
             con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
           
-            insert = con.prepareStatement("select * From notavailable_session");
+            insert = con.prepareStatement("select n.session_ID, s.lec1, s.sub_code, s.grp_ID, n.working_day, n.notavailable_start_hr, n.notavailable_start_min, n.notavailable_end_hr, n.notavailable_end_min From notavailable_session n, session s WHERE n.session_ID = s.ses_id");
             
             ResultSet rs = insert.executeQuery();  
             ResultSetMetaData Rss = rs.getMetaData();
@@ -149,6 +149,9 @@ public class SessionsTime extends javax.swing.JFrame {
                 for(int a=1; a<=c; a++) {
                     
                     v2.add(rs.getString("session_ID"));
+                    v2.add(rs.getString("lec1"));
+                    v2.add(rs.getString("sub_code"));
+                    v2.add(rs.getString("grp_ID"));
                     v2.add(rs.getString("working_day"));
                     v2.add(rs.getInt("notavailable_start_hr"));
                     v2.add(rs.getInt("notavailable_start_min"));
@@ -592,7 +595,7 @@ public class SessionsTime extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Session ID", "Lecturer", "Subject Code", "Group ID", "Working day", "Start time hour", "Start time minutes", "End time hour", "End time minutes"
+                "Session ID", "Lecturer", "Subject Code", "Group ID", "Working day", "Start time (h)", "Start time (min)", "End time (h)", "End time (min)"
             }
         ) {
             Class[] types = new Class [] {
@@ -611,22 +614,18 @@ public class SessionsTime extends javax.swing.JFrame {
         jScrollPane1.setViewportView(sessiontab);
         if (sessiontab.getColumnModel().getColumnCount() > 0) {
             sessiontab.getColumnModel().getColumn(0).setResizable(false);
-            sessiontab.getColumnModel().getColumn(0).setPreferredWidth(70);
+            sessiontab.getColumnModel().getColumn(0).setPreferredWidth(65);
             sessiontab.getColumnModel().getColumn(1).setResizable(false);
-            sessiontab.getColumnModel().getColumn(1).setPreferredWidth(110);
+            sessiontab.getColumnModel().getColumn(1).setPreferredWidth(90);
             sessiontab.getColumnModel().getColumn(2).setResizable(false);
             sessiontab.getColumnModel().getColumn(2).setPreferredWidth(90);
             sessiontab.getColumnModel().getColumn(3).setResizable(false);
             sessiontab.getColumnModel().getColumn(3).setPreferredWidth(80);
             sessiontab.getColumnModel().getColumn(4).setResizable(false);
-            sessiontab.getColumnModel().getColumn(4).setPreferredWidth(90);
-            sessiontab.getColumnModel().getColumn(5).setResizable(false);
+            sessiontab.getColumnModel().getColumn(4).setPreferredWidth(70);
             sessiontab.getColumnModel().getColumn(5).setPreferredWidth(50);
-            sessiontab.getColumnModel().getColumn(6).setResizable(false);
             sessiontab.getColumnModel().getColumn(6).setPreferredWidth(50);
-            sessiontab.getColumnModel().getColumn(7).setResizable(false);
             sessiontab.getColumnModel().getColumn(7).setPreferredWidth(50);
-            sessiontab.getColumnModel().getColumn(8).setResizable(false);
             sessiontab.getColumnModel().getColumn(8).setPreferredWidth(50);
         }
 
@@ -892,6 +891,7 @@ public class SessionsTime extends javax.swing.JFrame {
             Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(SessionsTime.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Not available time for the session has been already inserted before");
         }
     }//GEN-LAST:event_btn_NotAvailable_AddActionPerformed
 
@@ -1015,7 +1015,7 @@ public class SessionsTime extends javax.swing.JFrame {
         Object o = sessiontab.getValueAt(j, 0);
         txtsessionid.setSelectedItem(o);
         
-        String day = model.getValueAt(j, 1).toString();
+        String day = model.getValueAt(j, 4).toString();
         switch(day){
             case "Monday":
                 txtday.setSelectedIndex(1);
@@ -1040,11 +1040,11 @@ public class SessionsTime extends javax.swing.JFrame {
                 break;
         }
         
-        txtstarthour.setValue(model.getValueAt(j, 2));
-        txtstartminute.setValue(model.getValueAt(j, 3));
+        txtstarthour.setValue(model.getValueAt(j, 5));
+        txtstartminute.setValue(model.getValueAt(j, 6));
         
-        txtendhour.setValue(model.getValueAt(j, 4));
-        txtendminutes.setValue(model.getValueAt(j, 5));
+        txtendhour.setValue(model.getValueAt(j, 7));
+        txtendminutes.setValue(model.getValueAt(j, 8));
     }//GEN-LAST:event_sessiontabMouseClicked
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
