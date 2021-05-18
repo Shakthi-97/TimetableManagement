@@ -888,9 +888,6 @@ public class Lecturer extends javax.swing.JFrame {
         //get the lenght of the String
         int length =  EmployeeID.length();
 
-        //Integer length =  phonenumber.length();
-        //String mobile = length.toString();
-
         char c = evt.getKeyChar();
 
         //check for number 0 - 10
