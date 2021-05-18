@@ -580,8 +580,7 @@ public class Subjects extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this,"Select the Semester");
             rd_seme1.requestFocus();
-           // rd_seme2.requestFocus();
-                 
+                
             return false;
         }
  
@@ -607,6 +606,8 @@ public class Subjects extends javax.swing.JFrame {
     private void btn_addsubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addsubActionPerformed
         // TODO add your handling code here:
      
+            // Function for radio button action
+        
             String OfferedYear = cmb_yr.getSelectedItem().toString();
          
             String OfferedSemester = "";
@@ -888,26 +889,22 @@ public class Subjects extends javax.swing.JFrame {
 
     private void spinner_lecStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spinner_lecStateChanged
         // TODO add your handling code here:
-        
-          //  Integer LecHrs = (Integer)spinner_lec.getValue();               
+                   
     }//GEN-LAST:event_spinner_lecStateChanged
 
     private void spinner_tuteStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spinner_tuteStateChanged
         // TODO add your handling code here:
-        
-           // Integer TuteHrs = (Integer)spinner_tute.getValue();          
+                
     }//GEN-LAST:event_spinner_tuteStateChanged
 
     private void spinner_labStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spinner_labStateChanged
         // TODO add your handling code here:
         
-          //  Integer LabHrs = (Integer)spinner_lab.getValue();        
     }//GEN-LAST:event_spinner_labStateChanged
 
     private void spinner_evalStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spinner_evalStateChanged
         // TODO add your handling code here:
         
-          //  Integer EvaluationHrs = (Integer)spinner_eval.getValue();
     }//GEN-LAST:event_spinner_evalStateChanged
 
     private void rd_seme2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rd_seme2ActionPerformed
