@@ -1230,6 +1230,7 @@ public class AddSession extends javax.swing.JFrame {
     private void text_search1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_text_search1KeyPressed
         // TODO add your handling code here:
         
+        // Filtering the data by row wise
          DefaultTableModel Df = (DefaultTableModel)JTable.getModel();
          TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(Df);
          JTable.setRowSorter(tr); 
@@ -1258,6 +1259,7 @@ public class AddSession extends javax.swing.JFrame {
     private void text_search1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_text_search1FocusGained
         // TODO add your handling code here:
         
+        // Adding place holder for search
         if(text_search1.getText().equals("SEARCH HERE....")){
             
             text_search1.setText(null);
