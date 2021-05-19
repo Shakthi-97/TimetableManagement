@@ -218,8 +218,6 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jScrollPane38 = new javax.swing.JScrollPane();
-        RSS33 = new javax.swing.JTextArea();
         jScrollPane7 = new javax.swing.JScrollPane();
         RSS34 = new javax.swing.JTextArea();
         jScrollPane39 = new javax.swing.JScrollPane();
@@ -230,8 +228,6 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         RSS37 = new javax.swing.JTextArea();
         jScrollPane42 = new javax.swing.JScrollPane();
         RSS38 = new javax.swing.JTextArea();
-        jScrollPane45 = new javax.swing.JScrollPane();
-        RSS41 = new javax.swing.JTextArea();
         jScrollPane46 = new javax.swing.JScrollPane();
         RSS42 = new javax.swing.JTextArea();
         jScrollPane47 = new javax.swing.JScrollPane();
@@ -250,12 +246,8 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         RSS53 = new javax.swing.JTextArea();
         jScrollPane58 = new javax.swing.JScrollPane();
         RSS54 = new javax.swing.JTextArea();
-        jScrollPane59 = new javax.swing.JScrollPane();
-        RSS55 = new javax.swing.JTextArea();
         jScrollPane60 = new javax.swing.JScrollPane();
         RSS56 = new javax.swing.JTextArea();
-        jScrollPane61 = new javax.swing.JScrollPane();
-        RSS57 = new javax.swing.JTextArea();
         jScrollPane62 = new javax.swing.JScrollPane();
         RSS58 = new javax.swing.JTextArea();
         jScrollPane63 = new javax.swing.JScrollPane();
@@ -267,6 +259,21 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         jScrollPane66 = new javax.swing.JScrollPane();
         RSS62 = new javax.swing.JTextArea();
         change4 = new javax.swing.JButton();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jScrollPane67 = new javax.swing.JScrollPane();
+        RSS63 = new javax.swing.JTextArea();
+        jScrollPane68 = new javax.swing.JScrollPane();
+        RSS64 = new javax.swing.JTextArea();
+        jScrollPane59 = new javax.swing.JScrollPane();
+        RSS55 = new javax.swing.JTextArea();
+        jScrollPane101 = new javax.swing.JScrollPane();
+        RSS97 = new javax.swing.JTextArea();
+        jScrollPane102 = new javax.swing.JScrollPane();
+        RSS98 = new javax.swing.JTextArea();
         jLabel9 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
@@ -753,7 +760,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                     .addComponent(jScrollPane97, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane98, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane100, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Lecturer", jPanel4);
@@ -1187,7 +1194,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                     .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Student", jPanel5);
@@ -1232,13 +1239,6 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel33.setText("Friday");
 
-        RSS33.setColumns(20);
-        RSS33.setLineWrap(true);
-        RSS33.setRows(5);
-        RSS33.setText("  8.30");
-        RSS33.setWrapStyleWord(true);
-        jScrollPane38.setViewportView(RSS33);
-
         RSS34.setColumns(20);
         RSS34.setLineWrap(true);
         RSS34.setRows(5);
@@ -1268,13 +1268,6 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         RSS38.setRows(5);
         RSS38.setWrapStyleWord(true);
         jScrollPane42.setViewportView(RSS38);
-
-        RSS41.setColumns(20);
-        RSS41.setLineWrap(true);
-        RSS41.setRows(5);
-        RSS41.setText("  9.30");
-        RSS41.setWrapStyleWord(true);
-        jScrollPane45.setViewportView(RSS41);
 
         RSS42.setColumns(20);
         RSS42.setLineWrap(true);
@@ -1330,25 +1323,11 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         RSS54.setWrapStyleWord(true);
         jScrollPane58.setViewportView(RSS54);
 
-        RSS55.setColumns(20);
-        RSS55.setLineWrap(true);
-        RSS55.setRows(5);
-        RSS55.setText(" 10.30");
-        RSS55.setWrapStyleWord(true);
-        jScrollPane59.setViewportView(RSS55);
-
         RSS56.setColumns(20);
         RSS56.setLineWrap(true);
         RSS56.setRows(5);
         RSS56.setWrapStyleWord(true);
         jScrollPane60.setViewportView(RSS56);
-
-        RSS57.setColumns(20);
-        RSS57.setLineWrap(true);
-        RSS57.setRows(5);
-        RSS57.setText(" 11.30");
-        RSS57.setWrapStyleWord(true);
-        jScrollPane61.setViewportView(RSS57);
 
         RSS58.setColumns(20);
         RSS58.setLineWrap(true);
@@ -1390,6 +1369,51 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             }
         });
 
+        jLabel34.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel34.setText("8.00");
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel35.setText("10.00");
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel45.setText("12.00");
+
+        jLabel46.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel46.setText("2.00");
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel47.setText("4.00");
+
+        RSS63.setColumns(20);
+        RSS63.setLineWrap(true);
+        RSS63.setRows(5);
+        RSS63.setWrapStyleWord(true);
+        jScrollPane67.setViewportView(RSS63);
+
+        RSS64.setColumns(20);
+        RSS64.setLineWrap(true);
+        RSS64.setRows(5);
+        RSS64.setWrapStyleWord(true);
+        jScrollPane68.setViewportView(RSS64);
+
+        RSS55.setColumns(20);
+        RSS55.setLineWrap(true);
+        RSS55.setRows(5);
+        RSS55.setWrapStyleWord(true);
+        jScrollPane59.setViewportView(RSS55);
+
+        RSS97.setColumns(20);
+        RSS97.setLineWrap(true);
+        RSS97.setRows(5);
+        RSS97.setWrapStyleWord(true);
+        jScrollPane101.setViewportView(RSS97);
+
+        RSS98.setColumns(20);
+        RSS98.setLineWrap(true);
+        RSS98.setRows(5);
+        RSS98.setWrapStyleWord(true);
+        jScrollPane102.setViewportView(RSS98);
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -1398,74 +1422,104 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
-                                .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane63, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                            .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane64, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                            .addComponent(jScrollPane57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane40, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane41, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                            .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane42, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE)
-                            .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGap(106, 106, 106))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(jPanel6Layout.createSequentialGroup()
                                     .addComponent(jLabel19)
                                     .addGap(12, 12, 12)
                                     .addComponent(SS2, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(jLabel28)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel28)))
+                                .addComponent(jLabel46)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                                .addComponent(jLabel31)
-                                .addGap(68, 68, 68)
-                                .addComponent(jLabel32)
-                                .addGap(85, 85, 85)
-                                .addComponent(jLabel33)
-                                .addGap(169, 169, 169))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGap(79, 79, 79)
+                                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel31)
+                                        .addGap(68, 68, 68))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                    .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jScrollPane48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jScrollPane57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                    .addComponent(jScrollPane68, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                                        .addGap(12, 12, 12)
+                                                        .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGap(47, 47, 47)
+                                        .addComponent(jLabel32)
+                                        .addGap(130, 130, 130)
+                                        .addComponent(jLabel33))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jScrollPane65, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                        .addGap(1, 1, 1)
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane102, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(25, 25, 25))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGap(92, 92, 92)
                                 .addComponent(change4)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel35)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel34)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel45)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane42, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                            .addComponent(jScrollPane50, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jScrollPane55, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(25, 25, 25))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel47)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane67, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane101, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(177, 177, 177))))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1487,46 +1541,74 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                                     .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(jLabel34)))))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel35)))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(11, 11, 11))))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(6, 6, 6)
+                                .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel45)
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel46)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane101, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane68, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane59, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane67, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane102, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel47)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Location", jPanel6);
@@ -1600,7 +1682,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1620,8 +1702,19 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
       Connection con;
       PreparedStatement insert;
       PreparedStatement insert2;
-       PreparedStatement insert3;
-    PreparedStatement insert4;
+      PreparedStatement insert3;
+      PreparedStatement insert4;
+      PreparedStatement insert5;
+      PreparedStatement insert6;
+      PreparedStatement insert7;
+      PreparedStatement insert8;
+      PreparedStatement insert9;
+      PreparedStatement insert10;
+      PreparedStatement insert11;
+      PreparedStatement insert12;
+      PreparedStatement insert13;
+      PreparedStatement insert14;
+      PreparedStatement insert15;
    
 // ******************************************* Retrieve room name into the combo box from room table ***************************      
       private void load_room_name(){
@@ -1865,12 +1958,32 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             Class.forName("com.mysql.jdbc.Driver");
             
             con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            
+            //monday, 8.00
             insert = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='8' WHERE a.room_name=?");
+            //tuesday, 8.00
             insert2 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' WHERE a.room_name=?");
+            //wednesday, 8.00
             insert3 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
+            //thursday, 8.00
             insert4 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='10' WHERE a.room_name=?");
-  
+            //friday, 8.00
+            insert5 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='8' WHERE a.room_name=?");
+           
+            insert6 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
+            
+            insert7 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
+            //wednesday, 8.30
+            insert8 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='10' WHERE a.room_name=?");
+            insert9 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='8' WHERE a.room_name=?");
+            insert10 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' WHERE a.room_name=?");
+            insert11 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
+            insert12= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='10' WHERE a.room_name=?");
+            insert13= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='8' WHERE a.room_name=?");
+            insert14 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' WHERE a.room_name=?");
+            insert15= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
+                 
+                    
+                    
                      
                 
             
@@ -1878,6 +1991,18 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             insert2.setString(1, temp);  
             insert3.setString(1, temp); 
             insert4.setString(1, temp); 
+            insert5.setString(1, temp);  
+            insert6.setString(1, temp);  
+            insert7.setString(1, temp); 
+            insert8.setString(1, temp);
+            insert9.setString(1, temp);  
+            insert10.setString(1, temp);  
+            insert11.setString(1, temp); 
+            insert12.setString(1, temp);  
+            insert13.setString(1, temp);  
+            insert14.setString(1, temp); 
+            insert15.setString(1, temp);
+            
             
             
             ResultSet rs = insert.executeQuery();
@@ -1912,6 +2037,26 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                  String selectedsession4 = (rs4.getString("lec1")+"     "+rs4.getString("extra_lec")+"     "+rs4.getString("ses_tag")+"     "+rs4.getString("subject")+"     "+rs4.getString("sub_code")+"     "+rs4.getString("grp_ID")+"     "+rs4.getString("no_Stds")+"     "+rs4.getString("duration")+"     "+rs4.getString("room_name"));
                  
                  RSS56.setText(selectedsession4);
+         
+            }
+            
+            
+              ResultSet rs5 = insert5.executeQuery();
+            
+            if(rs5.next()) {
+                 String selectedsession5 = (rs5.getString("lec1")+"     "+rs5.getString("extra_lec")+"     "+rs5.getString("ses_tag")+"     "+rs5.getString("subject")+"     "+rs5.getString("sub_code")+"     "+rs5.getString("grp_ID")+"     "+rs5.getString("no_Stds")+"     "+rs5.getString("duration")+"     "+rs5.getString("room_name"));
+                 
+                 RSS42.setText(selectedsession5);
+         
+            }
+            
+            
+              ResultSet rs6 = insert6.executeQuery();
+            
+            if(rs6.next()) {
+                 String selectedsession6 = (rs6.getString("lec1")+"     "+rs6.getString("extra_lec")+"     "+rs6.getString("ses_tag")+"     "+rs6.getString("subject")+"     "+rs6.getString("sub_code")+"     "+rs6.getString("grp_ID")+"     "+rs6.getString("no_Stds")+"     "+rs6.getString("duration")+"     "+rs6.getString("room_name"));
+                 
+                 RSS36.setText(selectedsession6);
          
             }
             
@@ -2045,14 +2190,12 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JTextArea RSS30;
     private javax.swing.JTextArea RSS31;
     private javax.swing.JTextArea RSS32;
-    private javax.swing.JTextArea RSS33;
     private javax.swing.JTextArea RSS34;
     private javax.swing.JTextArea RSS35;
     private javax.swing.JTextArea RSS36;
     private javax.swing.JTextArea RSS37;
     private javax.swing.JTextArea RSS38;
     private javax.swing.JTextArea RSS4;
-    private javax.swing.JTextArea RSS41;
     private javax.swing.JTextArea RSS42;
     private javax.swing.JTextArea RSS43;
     private javax.swing.JTextArea RSS44;
@@ -2065,13 +2208,14 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JTextArea RSS54;
     private javax.swing.JTextArea RSS55;
     private javax.swing.JTextArea RSS56;
-    private javax.swing.JTextArea RSS57;
     private javax.swing.JTextArea RSS58;
     private javax.swing.JTextArea RSS59;
     private javax.swing.JTextArea RSS6;
     private javax.swing.JTextArea RSS60;
     private javax.swing.JTextArea RSS61;
     private javax.swing.JTextArea RSS62;
+    private javax.swing.JTextArea RSS63;
+    private javax.swing.JTextArea RSS64;
     private javax.swing.JTextArea RSS65;
     private javax.swing.JTextArea RSS66;
     private javax.swing.JTextArea RSS67;
@@ -2107,6 +2251,8 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JTextArea RSS94;
     private javax.swing.JTextArea RSS95;
     private javax.swing.JTextArea RSS96;
+    private javax.swing.JTextArea RSS97;
+    private javax.swing.JTextArea RSS98;
     private javax.swing.JComboBox<String> SS1;
     private javax.swing.JComboBox<String> SS2;
     private javax.swing.JComboBox<String> SS3;
@@ -2132,6 +2278,8 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
@@ -2141,6 +2289,9 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -2151,6 +2302,8 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane100;
+    private javax.swing.JScrollPane jScrollPane101;
+    private javax.swing.JScrollPane jScrollPane102;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
@@ -2178,13 +2331,11 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane35;
     private javax.swing.JScrollPane jScrollPane36;
     private javax.swing.JScrollPane jScrollPane37;
-    private javax.swing.JScrollPane jScrollPane38;
     private javax.swing.JScrollPane jScrollPane39;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane40;
     private javax.swing.JScrollPane jScrollPane41;
     private javax.swing.JScrollPane jScrollPane42;
-    private javax.swing.JScrollPane jScrollPane45;
     private javax.swing.JScrollPane jScrollPane46;
     private javax.swing.JScrollPane jScrollPane47;
     private javax.swing.JScrollPane jScrollPane48;
@@ -2197,12 +2348,13 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane59;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane60;
-    private javax.swing.JScrollPane jScrollPane61;
     private javax.swing.JScrollPane jScrollPane62;
     private javax.swing.JScrollPane jScrollPane63;
     private javax.swing.JScrollPane jScrollPane64;
     private javax.swing.JScrollPane jScrollPane65;
     private javax.swing.JScrollPane jScrollPane66;
+    private javax.swing.JScrollPane jScrollPane67;
+    private javax.swing.JScrollPane jScrollPane68;
     private javax.swing.JScrollPane jScrollPane69;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane70;
