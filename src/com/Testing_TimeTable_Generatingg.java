@@ -1437,62 +1437,56 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addGap(79, 79, 79)
-                                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel31)
-                                        .addGap(68, 68, 68))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                                .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                                    .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jScrollPane48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jScrollPane57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                                    .addComponent(jScrollPane68, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                                        .addGap(12, 12, 12)
-                                                        .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addGap(47, 47, 47)
-                                        .addComponent(jLabel32)
-                                        .addGap(130, 130, 130)
-                                        .addComponent(jLabel33))
-                                    .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jScrollPane65, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                            .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                        .addGap(1, 1, 1)
-                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane102, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(25, 25, 25))
                             .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addComponent(change4)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(79, 79, 79)
+                                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel31)
+                                .addGap(68, 68, 68))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane48, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jScrollPane57, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(jPanel6Layout.createSequentialGroup()
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                            .addComponent(jScrollPane68, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
+                                                .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(47, 47, 47)
+                                .addComponent(jLabel32)
+                                .addGap(130, 130, 130)
+                                .addComponent(jLabel33))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane65, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane102, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(25, 25, 25))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -1520,16 +1514,19 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane101, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(177, 177, 177))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(change4)
+                .addGap(42, 42, 42))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(SS2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(change4))
-                .addGap(38, 38, 38)
+                    .addComponent(SS2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel33)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -1608,7 +1605,9 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel47)))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(change4)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Location", jPanel6);
@@ -1715,6 +1714,16 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
       PreparedStatement insert13;
       PreparedStatement insert14;
       PreparedStatement insert15;
+      PreparedStatement insert16;
+      PreparedStatement insert17;
+      PreparedStatement insert18;
+      PreparedStatement insert19;
+      PreparedStatement insert20;
+      PreparedStatement insert21;
+      PreparedStatement insert22;
+      PreparedStatement insert23;
+      PreparedStatement insert24;
+      PreparedStatement insert25;
    
 // ******************************************* Retrieve room name into the combo box from room table ***************************      
       private void load_room_name(){
@@ -1959,30 +1968,61 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             
             con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
             //monday, 8.00
-            insert = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='8' WHERE a.room_name=?");
+            insert = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour=8 WHERE a.room_name=?");
             //tuesday, 8.00
-            insert2 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' WHERE a.room_name=?");
+            insert2 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' AND st.start_time_hour=8 WHERE a.room_name=?");
             //wednesday, 8.00
-            insert3 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
+            insert3 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' AND st.start_time_hour=8 WHERE a.room_name=?");
             //thursday, 8.00
-            insert4 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='10' WHERE a.room_name=?");
+            insert4 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Thursday' AND st.start_time_hour=8 WHERE a.room_name=?");
             //friday, 8.00
-            insert5 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='8' WHERE a.room_name=?");
-           
-            insert6 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
+            insert5 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Friday' AND st.start_time_hour=8 WHERE a.room_name=?");
             
-            insert7 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
-            //wednesday, 8.30
-            insert8 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='10' WHERE a.room_name=?");
-            insert9 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='8' WHERE a.room_name=?");
-            insert10 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' WHERE a.room_name=?");
-            insert11 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
-            insert12= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='10' WHERE a.room_name=?");
-            insert13= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour='8' WHERE a.room_name=?");
-            insert14 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' WHERE a.room_name=?");
-            insert15= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' WHERE a.room_name=?");
+            //monday, 10.00
+            insert6 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour=10 WHERE a.room_name=?");
+            //tuesday, 10.00
+            insert7 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' AND st.start_time_hour=10 WHERE a.room_name=?");
+            //wednesday, 10.00
+            insert8 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' AND st.start_time_hour=10 WHERE a.room_name=?");
+            //thursday, 10.00
+            insert9 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Thursday' AND st.start_time_hour=10 WHERE a.room_name=?");
+            //friday, 10.00
+            insert10 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Friday' AND st.start_time_hour=10 WHERE a.room_name=?");
+            
+            //monday, 12.00
+            insert11 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday'  AND st.start_time_hour=12  WHERE a.room_name=?");
+            //tuesday, 12.00
+            insert12= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' AND st.start_time_hour=12 WHERE a.room_name=?");
+             //wednesday, 12.00
+            insert13= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' AND st.start_time_hour=12 WHERE a.room_name=?");
+            //thursday, 12.00
+            insert14 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Thursday'  AND st.start_time_hour=12 WHERE a.room_name=?");
+            //friday, 12.00
+            insert15= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Friday'  AND st.start_time_hour=12 WHERE a.room_name=?");
                  
-                    
+            //monday, 2.00
+            insert16 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday'  AND st.start_time_hour=2  WHERE a.room_name=?");
+            //tuesday, 2.00
+            insert17= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' AND st.start_time_hour=2 WHERE a.room_name=?");
+             //wednesday,2.00
+            insert18= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' AND st.start_time_hour=2 WHERE a.room_name=?");
+            //thursday, 2.00
+            insert19 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Thursday'  AND st.start_time_hour=2 WHERE a.room_name=?");
+            //friday, 2.00
+            insert20= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Friday'  AND st.start_time_hour=2 WHERE a.room_name=?");
+                 
+            //monday, 4.00
+            insert21 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday'  AND st.start_time_hour=4  WHERE a.room_name=?");
+            //tuesday, 4.00
+            insert22= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Tuesday' AND st.start_time_hour=4 WHERE a.room_name=?");
+             //wednesday,4.00
+            insert23= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Wednesday' AND st.start_time_hour=4 WHERE a.room_name=?");
+            //thursday, 4.00
+            insert24 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Thursday'  AND st.start_time_hour=4 WHERE a.room_name=?");
+            //friday, 4.00
+            insert25= con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Friday'  AND st.start_time_hour=4 WHERE a.room_name=?");
+                 
+                             
                     
                      
                 
@@ -2002,9 +2042,19 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             insert13.setString(1, temp);  
             insert14.setString(1, temp); 
             insert15.setString(1, temp);
+            insert16.setString(1, temp); 
+            insert17.setString(1, temp);  
+            insert18.setString(1, temp);  
+            insert19.setString(1, temp); 
+            insert20.setString(1, temp);
+            insert21.setString(1, temp); 
+            insert22.setString(1, temp);  
+            insert23.setString(1, temp);  
+            insert24.setString(1, temp); 
+            insert25.setString(1, temp);
             
             
-            
+           //monday 8.00 
             ResultSet rs = insert.executeQuery();
             
             if(rs.next()) {
@@ -2013,6 +2063,8 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                  RSS34.setText(selectedsession);
          
             }
+            
+            //tuesday 8.00
             ResultSet rs2 = insert2.executeQuery();
             
             if(rs2.next()) {
@@ -2022,6 +2074,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
          
             }
             
+            //wednesday 8.00
             ResultSet rs3 = insert3.executeQuery();
             
             if(rs3.next()) {
@@ -2031,32 +2084,235 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
          
             }
             
+             //thursday 8.00
              ResultSet rs4 = insert4.executeQuery();
             
             if(rs4.next()) {
                  String selectedsession4 = (rs4.getString("lec1")+"     "+rs4.getString("extra_lec")+"     "+rs4.getString("ses_tag")+"     "+rs4.getString("subject")+"     "+rs4.getString("sub_code")+"     "+rs4.getString("grp_ID")+"     "+rs4.getString("no_Stds")+"     "+rs4.getString("duration")+"     "+rs4.getString("room_name"));
                  
-                 RSS56.setText(selectedsession4);
+                 RSS37.setText(selectedsession4);
          
             }
             
-            
+            //friday 8.00
               ResultSet rs5 = insert5.executeQuery();
             
             if(rs5.next()) {
                  String selectedsession5 = (rs5.getString("lec1")+"     "+rs5.getString("extra_lec")+"     "+rs5.getString("ses_tag")+"     "+rs5.getString("subject")+"     "+rs5.getString("sub_code")+"     "+rs5.getString("grp_ID")+"     "+rs5.getString("no_Stds")+"     "+rs5.getString("duration")+"     "+rs5.getString("room_name"));
                  
-                 RSS42.setText(selectedsession5);
+                 RSS38.setText(selectedsession5);
          
             }
             
-            
+            //monday 10.00
               ResultSet rs6 = insert6.executeQuery();
             
             if(rs6.next()) {
                  String selectedsession6 = (rs6.getString("lec1")+"     "+rs6.getString("extra_lec")+"     "+rs6.getString("ses_tag")+"     "+rs6.getString("subject")+"     "+rs6.getString("sub_code")+"     "+rs6.getString("grp_ID")+"     "+rs6.getString("no_Stds")+"     "+rs6.getString("duration")+"     "+rs6.getString("room_name"));
                  
-                 RSS36.setText(selectedsession6);
+                 RSS42.setText(selectedsession6);
+         
+            }
+            
+            
+            //tuesday 10.00
+              ResultSet rs7 = insert7.executeQuery();
+            
+            if(rs7.next()) {
+                 String selectedsession7 = (rs7.getString("lec1")+"     "+rs7.getString("extra_lec")+"     "+rs7.getString("ses_tag")+"     "+rs7.getString("subject")+"     "+rs7.getString("sub_code")+"     "+rs7.getString("grp_ID")+"     "+rs7.getString("no_Stds")+"     "+rs7.getString("duration")+"     "+rs7.getString("room_name"));
+                 
+                 RSS43.setText(selectedsession7);
+         
+            }
+            
+            //wednesday 10.00
+            ResultSet rs8 = insert8.executeQuery();
+            
+            if(rs8.next()) {
+                 String selectedsession8 = (rs8.getString("lec1")+"     "+rs8.getString("extra_lec")+"     "+rs8.getString("ses_tag")+"     "+rs8.getString("subject")+"     "+rs8.getString("sub_code")+"     "+rs8.getString("grp_ID")+"     "+rs8.getString("no_Stds")+"     "+rs8.getString("duration")+"     "+rs8.getString("room_name"));
+                 
+                 RSS44.setText(selectedsession8);
+         
+            }
+            
+             //thursday 10.00
+            ResultSet rs9 = insert9.executeQuery();
+            
+            if(rs9.next()) {
+                 String selectedsession9 = (rs9.getString("lec1")+"     "+rs9.getString("extra_lec")+"     "+rs9.getString("ses_tag")+"     "+rs9.getString("subject")+"     "+rs9.getString("sub_code")+"     "+rs9.getString("grp_ID")+"     "+rs9.getString("no_Stds")+"     "+rs9.getString("duration")+"     "+rs9.getString("room_name"));
+                 
+                 RSS45.setText(selectedsession9);
+         
+            }
+            
+               //friday 10.00
+            ResultSet rs10 = insert10.executeQuery();
+            
+            if(rs10.next()) {
+                 String selectedsession10 = (rs10.getString("lec1")+"     "+rs10.getString("extra_lec")+"     "+rs10.getString("ses_tag")+"     "+rs10.getString("subject")+"     "+rs10.getString("sub_code")+"     "+rs10.getString("grp_ID")+"     "+rs10.getString("no_Stds")+"     "+rs10.getString("duration")+"     "+rs10.getString("room_name"));
+                 
+                 RSS46.setText(selectedsession10);
+         
+            }
+            
+            
+               //monday 12.00
+            ResultSet rs11 = insert11.executeQuery();
+            
+            if(rs11.next()) {
+                 String selectedsession11 = (rs11.getString("lec1")+"     "+rs11.getString("extra_lec")+"     "+rs11.getString("ses_tag")+"     "+rs11.getString("subject")+"     "+rs11.getString("sub_code")+"     "+rs11.getString("grp_ID")+"     "+rs11.getString("no_Stds")+"     "+rs11.getString("duration")+"     "+rs11.getString("room_name"));
+                 
+                 RSS56.setText(selectedsession11);
+         
+            }
+            
+            
+                //tuesday 12.00
+            ResultSet rs12 = insert12.executeQuery();
+            
+            if(rs12.next()) {
+                 String selectedsession12 = (rs12.getString("lec1")+"     "+rs12.getString("extra_lec")+"     "+rs12.getString("ses_tag")+"     "+rs12.getString("subject")+"     "+rs12.getString("sub_code")+"     "+rs12.getString("grp_ID")+"     "+rs12.getString("no_Stds")+"     "+rs12.getString("duration")+"     "+rs12.getString("room_name"));
+                 
+                 RSS59.setText(selectedsession12);
+         
+            }
+            
+                //wednesday 12.00
+            ResultSet rs13 = insert13.executeQuery();
+            
+            if(rs13.next()) {
+                 String selectedsession13 = (rs13.getString("lec1")+"     "+rs13.getString("extra_lec")+"     "+rs13.getString("ses_tag")+"     "+rs13.getString("subject")+"     "+rs13.getString("sub_code")+"     "+rs13.getString("grp_ID")+"     "+rs13.getString("no_Stds")+"     "+rs13.getString("duration")+"     "+rs13.getString("room_name"));
+                 
+                 RSS53.setText(selectedsession13);
+         
+            }
+            
+                //thursday 12.00
+            ResultSet rs14 = insert14.executeQuery();
+            
+            if(rs14.next()) {
+                 String selectedsession14 = (rs14.getString("lec1")+"     "+rs14.getString("extra_lec")+"     "+rs14.getString("ses_tag")+"     "+rs14.getString("subject")+"     "+rs14.getString("sub_code")+"     "+rs14.getString("grp_ID")+"     "+rs14.getString("no_Stds")+"     "+rs14.getString("duration")+"     "+rs14.getString("room_name"));
+                 
+                 RSS52.setText(selectedsession14);
+         
+            }
+            
+                //friday 12.00
+            ResultSet rs15 = insert15.executeQuery();
+            
+            if(rs15.next()) {
+                 String selectedsession15 = (rs15.getString("lec1")+"     "+rs15.getString("extra_lec")+"     "+rs15.getString("ses_tag")+"     "+rs15.getString("subject")+"     "+rs15.getString("sub_code")+"     "+rs15.getString("grp_ID")+"     "+rs15.getString("no_Stds")+"     "+rs15.getString("duration")+"     "+rs15.getString("room_name"));
+                 
+                 RSS51.setText(selectedsession15);
+         
+            }
+            
+            
+               //monday 2.00
+            ResultSet rs16 = insert16.executeQuery();
+            
+            if(rs16.next()) {
+                 String selectedsession16 = (rs16.getString("lec1")+"     "+rs16.getString("extra_lec")+"     "+rs16.getString("ses_tag")+"     "+rs16.getString("subject")+"     "+rs16.getString("sub_code")+"     "+rs16.getString("grp_ID")+"     "+rs16.getString("no_Stds")+"     "+rs16.getString("duration")+"     "+rs16.getString("room_name"));
+                 
+                 RSS58.setText(selectedsession16);
+         
+            }
+            
+              
+               //tuesday 2.00
+            ResultSet rs17 = insert17.executeQuery();
+            
+            if(rs17.next()) {
+                 String selectedsession17 = (rs17.getString("lec1")+"     "+rs17.getString("extra_lec")+"     "+rs17.getString("ses_tag")+"     "+rs17.getString("subject")+"     "+rs17.getString("sub_code")+"     "+rs17.getString("grp_ID")+"     "+rs17.getString("no_Stds")+"     "+rs17.getString("duration")+"     "+rs17.getString("room_name"));
+                 
+                 RSS60.setText(selectedsession17);
+         
+            }
+            
+            
+               
+               //wednesday 2.00
+            ResultSet rs18 = insert18.executeQuery();
+            
+            if(rs18.next()) {
+                 String selectedsession18 = (rs18.getString("lec1")+"     "+rs18.getString("extra_lec")+"     "+rs18.getString("ses_tag")+"     "+rs18.getString("subject")+"     "+rs18.getString("sub_code")+"     "+rs18.getString("grp_ID")+"     "+rs18.getString("no_Stds")+"     "+rs18.getString("duration")+"     "+rs18.getString("room_name"));
+                 
+                 RSS54.setText(selectedsession18);
+         
+            }
+            
+            
+                 //thursday 2.00
+            ResultSet rs19 = insert19.executeQuery();
+            
+            if(rs19.next()) {
+                 String selectedsession19 = (rs19.getString("lec1")+"     "+rs19.getString("extra_lec")+"     "+rs19.getString("ses_tag")+"     "+rs19.getString("subject")+"     "+rs19.getString("sub_code")+"     "+rs19.getString("grp_ID")+"     "+rs19.getString("no_Stds")+"     "+rs19.getString("duration")+"     "+rs19.getString("room_name"));
+                 
+                 RSS61.setText(selectedsession19);
+         
+            }
+            
+            
+              //friday 2.00
+            ResultSet rs20 = insert20.executeQuery();
+            
+            if(rs20.next()) {
+                 String selectedsession20 = (rs20.getString("lec1")+"     "+rs20.getString("extra_lec")+"     "+rs20.getString("ses_tag")+"     "+rs20.getString("subject")+"     "+rs20.getString("sub_code")+"     "+rs20.getString("grp_ID")+"     "+rs20.getString("no_Stds")+"     "+rs20.getString("duration")+"     "+rs20.getString("room_name"));
+                 
+                 RSS62.setText(selectedsession20);
+         
+            }
+            
+            
+              //monday 4.00
+            ResultSet rs21 = insert21.executeQuery();
+            
+            if(rs21.next()) {
+                 String selectedsession21 = (rs21.getString("lec1")+"     "+rs21.getString("extra_lec")+"     "+rs21.getString("ses_tag")+"     "+rs21.getString("subject")+"     "+rs21.getString("sub_code")+"     "+rs21.getString("grp_ID")+"     "+rs21.getString("no_Stds")+"     "+rs21.getString("duration")+"     "+rs21.getString("room_name"));
+                 
+                 RSS63.setText(selectedsession21);
+         
+            }
+            
+            
+               //tuesday 4.00
+            ResultSet rs22 = insert22.executeQuery();
+            
+            if(rs22.next()) {
+                 String selectedsession22 = (rs22.getString("lec1")+"     "+rs22.getString("extra_lec")+"     "+rs22.getString("ses_tag")+"     "+rs22.getString("subject")+"     "+rs22.getString("sub_code")+"     "+rs22.getString("grp_ID")+"     "+rs22.getString("no_Stds")+"     "+rs22.getString("duration")+"     "+rs22.getString("room_name"));
+                 
+                 RSS64.setText(selectedsession22);
+         
+            }
+            
+             //wednesday 4.00
+            ResultSet rs23 = insert23.executeQuery();
+            
+            if(rs23.next()) {
+                 String selectedsession23 = (rs23.getString("lec1")+"     "+rs23.getString("extra_lec")+"     "+rs23.getString("ses_tag")+"     "+rs23.getString("subject")+"     "+rs23.getString("sub_code")+"     "+rs23.getString("grp_ID")+"     "+rs23.getString("no_Stds")+"     "+rs23.getString("duration")+"     "+rs23.getString("room_name"));
+                 
+                 RSS55.setText(selectedsession23);
+         
+            }
+            
+            
+              //thursday 4.00
+            ResultSet rs24 = insert24.executeQuery();
+            
+            if(rs24.next()) {
+                 String selectedsession24 = (rs24.getString("lec1")+"     "+rs24.getString("extra_lec")+"     "+rs24.getString("ses_tag")+"     "+rs24.getString("subject")+"     "+rs24.getString("sub_code")+"     "+rs24.getString("grp_ID")+"     "+rs24.getString("no_Stds")+"     "+rs24.getString("duration")+"     "+rs24.getString("room_name"));
+                 
+                 RSS97.setText(selectedsession24);
+         
+            }
+            
+              //friday 4.00
+            ResultSet rs25 = insert25.executeQuery();
+            
+            if(rs25.next()) {
+                 String selectedsession25 = (rs25.getString("lec1")+"     "+rs25.getString("extra_lec")+"     "+rs25.getString("ses_tag")+"     "+rs25.getString("subject")+"     "+rs25.getString("sub_code")+"     "+rs25.getString("grp_ID")+"     "+rs25.getString("no_Stds")+"     "+rs25.getString("duration")+"     "+rs25.getString("room_name"));
+                 
+                 RSS98.setText(selectedsession25);
          
             }
             
