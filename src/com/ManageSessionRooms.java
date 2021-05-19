@@ -110,6 +110,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         NotAvailable_room = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         locationtimetab = new javax.swing.JTable();
+        allocate1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
@@ -299,11 +300,11 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
             },
             new String [] {
-                " ID", "Session ID", "Lecturer 1", "Lectutrer 2", "Extra Lecturer", "Session Tag", "Subject", "Subject Code", "Group ID", "Room Name"
+                "Session ID", "Lecturer 1", "Lectutrer 2", "Extra Lecturer", "Session Tag", "Subject", "Subject Code", "Group ID", "Room Name"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -534,7 +535,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         btn_NotAvailable_Add.setBackground(new java.awt.Color(0, 51, 0));
         btn_NotAvailable_Add.setForeground(new java.awt.Color(255, 255, 255));
-        btn_NotAvailable_Add.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\add.png")); // NOI18N
         btn_NotAvailable_Add.setText("Add");
         btn_NotAvailable_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -544,7 +544,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         btn_NotAvailable_Update.setBackground(new java.awt.Color(0, 51, 102));
         btn_NotAvailable_Update.setForeground(new java.awt.Color(255, 255, 255));
-        btn_NotAvailable_Update.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\edit.png")); // NOI18N
         btn_NotAvailable_Update.setText("Update");
         btn_NotAvailable_Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -554,7 +553,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         btn_NotAvailable_Delete.setBackground(new java.awt.Color(153, 0, 51));
         btn_NotAvailable_Delete.setForeground(new java.awt.Color(255, 255, 255));
-        btn_NotAvailable_Delete.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\delete.png")); // NOI18N
         btn_NotAvailable_Delete.setText("Delete");
         btn_NotAvailable_Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -719,6 +717,16 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Not Available Times", jPanel6);
 
+        allocate1.setBackground(new java.awt.Color(255, 51, 102));
+        allocate1.setForeground(new java.awt.Color(255, 255, 255));
+        allocate1.setText("Generate TimeTable");
+        allocate1.setAlignmentY(0.8F);
+        allocate1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                allocate1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -726,7 +734,9 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel7)
-                .addGap(166, 166, 166))
+                .addGap(38, 38, 38)
+                .addComponent(allocate1)
+                .addGap(41, 41, 41))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 865, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -735,9 +745,15 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(allocate1)
+                        .addGap(22, 22, 22)))
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -748,7 +764,6 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Georgia", 1, 10)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\home.png")); // NOI18N
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jButton4.setBorderPainted(false);
         jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -919,7 +934,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             
             con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
             
-            insert = con.prepareStatement("select room_name from room");
+            insert = con.prepareStatement("select room_name from room WHERE room_name NOT IN (SELECT room_name FROM allocate)");
+         
             
             ResultSet rs = insert.executeQuery();  
             
@@ -962,7 +978,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                     Class.forName("com.mysql.jdbc.Driver");
                     con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
                     //insert = con.prepareStatement("select * From allocate");
-                    insert = con.prepareStatement( "SELECT  a.ID, s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, a.room_name FROM session s, allocate a WHERE  s.ses_id = a.ses_id");
+                    insert = con.prepareStatement( "SELECT  s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, a.room_name FROM session s, allocate a WHERE  s.ses_id = a.ses_id");
                     ResultSet rs = insert.executeQuery();
                     ResultSetMetaData Rsm = rs.getMetaData();
                     l = Rsm.getColumnCount();
@@ -975,7 +991,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                     
                         for(int a = 1; a<=l; a++)
                         {
-                            v.add(rs.getString("ID"));
+                            
                             v.add(rs.getString("ses_id"));
                             v.add(rs.getString("lec1"));
                             v.add(rs.getString("lec2"));
@@ -1586,6 +1602,13 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NotAvailable_roomActionPerformed
 
+    private void allocate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allocate1ActionPerformed
+        // TODO add your handling code here:
+        Testing_TimeTable_Generatingg tt = new Testing_TimeTable_Generatingg();
+        tt.show();
+        dispose();
+    }//GEN-LAST:event_allocate1ActionPerformed
+
     
     
     
@@ -1660,6 +1683,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> SS;
     private javax.swing.JComboBox<String> SS1;
     private javax.swing.JButton allocate;
+    private javax.swing.JButton allocate1;
     private javax.swing.JButton btn_NotAvailable_Add;
     private javax.swing.JButton btn_NotAvailable_Delete;
     private javax.swing.JButton btn_NotAvailable_Update;
