@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableModel;
-import static jdk.nashorn.internal.scripts.JO.allocate;
+//import static jdk.nashorn.internal.scripts.JO.allocate;
 
 
 /**
@@ -68,55 +68,55 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
         jScrollPane119 = new javax.swing.JScrollPane();
-        RSS116 = new javax.swing.JTextArea();
+        RSS5 = new javax.swing.JTextArea();
         jScrollPane120 = new javax.swing.JScrollPane();
-        RSS117 = new javax.swing.JTextArea();
+        RSS10 = new javax.swing.JTextArea();
         jScrollPane121 = new javax.swing.JScrollPane();
-        RSS118 = new javax.swing.JTextArea();
+        RSS15 = new javax.swing.JTextArea();
         jScrollPane122 = new javax.swing.JScrollPane();
-        RSS119 = new javax.swing.JTextArea();
+        RSS20 = new javax.swing.JTextArea();
         jScrollPane123 = new javax.swing.JScrollPane();
-        RSS120 = new javax.swing.JTextArea();
+        RSS25 = new javax.swing.JTextArea();
         jScrollPane124 = new javax.swing.JScrollPane();
-        RSS121 = new javax.swing.JTextArea();
+        RSS24 = new javax.swing.JTextArea();
         jScrollPane125 = new javax.swing.JScrollPane();
-        RSS122 = new javax.swing.JTextArea();
+        RSS19 = new javax.swing.JTextArea();
         jScrollPane126 = new javax.swing.JScrollPane();
-        RSS123 = new javax.swing.JTextArea();
+        RSS14 = new javax.swing.JTextArea();
         jScrollPane127 = new javax.swing.JScrollPane();
-        RSS124 = new javax.swing.JTextArea();
+        RSS9 = new javax.swing.JTextArea();
         jScrollPane128 = new javax.swing.JScrollPane();
-        RSS125 = new javax.swing.JTextArea();
+        RSS4 = new javax.swing.JTextArea();
         jScrollPane129 = new javax.swing.JScrollPane();
-        RSS126 = new javax.swing.JTextArea();
+        RSS3 = new javax.swing.JTextArea();
         jScrollPane130 = new javax.swing.JScrollPane();
-        RSS127 = new javax.swing.JTextArea();
+        RSS8 = new javax.swing.JTextArea();
         jScrollPane131 = new javax.swing.JScrollPane();
-        RSS128 = new javax.swing.JTextArea();
+        RSS13 = new javax.swing.JTextArea();
         jScrollPane132 = new javax.swing.JScrollPane();
-        RSS129 = new javax.swing.JTextArea();
+        RSS18 = new javax.swing.JTextArea();
         jScrollPane133 = new javax.swing.JScrollPane();
-        RSS130 = new javax.swing.JTextArea();
+        RSS23 = new javax.swing.JTextArea();
         jScrollPane134 = new javax.swing.JScrollPane();
-        RSS131 = new javax.swing.JTextArea();
+        RSS22 = new javax.swing.JTextArea();
         jScrollPane135 = new javax.swing.JScrollPane();
-        RSS132 = new javax.swing.JTextArea();
+        RSS17 = new javax.swing.JTextArea();
         jScrollPane136 = new javax.swing.JScrollPane();
-        RSS133 = new javax.swing.JTextArea();
+        RSS12 = new javax.swing.JTextArea();
         jScrollPane137 = new javax.swing.JScrollPane();
-        RSS134 = new javax.swing.JTextArea();
+        RSS7 = new javax.swing.JTextArea();
         jScrollPane138 = new javax.swing.JScrollPane();
-        RSS135 = new javax.swing.JTextArea();
+        RSS2 = new javax.swing.JTextArea();
         jScrollPane139 = new javax.swing.JScrollPane();
-        RSS136 = new javax.swing.JTextArea();
+        RSS1 = new javax.swing.JTextArea();
         jScrollPane140 = new javax.swing.JScrollPane();
-        RSS137 = new javax.swing.JTextArea();
+        RSS6 = new javax.swing.JTextArea();
         jScrollPane141 = new javax.swing.JScrollPane();
-        RSS138 = new javax.swing.JTextArea();
+        RSS11 = new javax.swing.JTextArea();
         jScrollPane142 = new javax.swing.JScrollPane();
-        RSS139 = new javax.swing.JTextArea();
+        RSS16 = new javax.swing.JTextArea();
         jScrollPane143 = new javax.swing.JScrollPane();
-        RSS140 = new javax.swing.JTextArea();
+        RSS21 = new javax.swing.JTextArea();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
         jLabel67 = new javax.swing.JLabel();
@@ -353,155 +353,155 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         jLabel64.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel64.setText("Friday");
 
-        RSS116.setColumns(20);
-        RSS116.setLineWrap(true);
-        RSS116.setRows(5);
-        RSS116.setWrapStyleWord(true);
-        jScrollPane119.setViewportView(RSS116);
+        RSS5.setColumns(20);
+        RSS5.setLineWrap(true);
+        RSS5.setRows(5);
+        RSS5.setWrapStyleWord(true);
+        jScrollPane119.setViewportView(RSS5);
 
-        RSS117.setColumns(20);
-        RSS117.setLineWrap(true);
-        RSS117.setRows(5);
-        RSS117.setWrapStyleWord(true);
-        jScrollPane120.setViewportView(RSS117);
+        RSS10.setColumns(20);
+        RSS10.setLineWrap(true);
+        RSS10.setRows(5);
+        RSS10.setWrapStyleWord(true);
+        jScrollPane120.setViewportView(RSS10);
 
-        RSS118.setColumns(20);
-        RSS118.setLineWrap(true);
-        RSS118.setRows(5);
-        RSS118.setWrapStyleWord(true);
-        jScrollPane121.setViewportView(RSS118);
+        RSS15.setColumns(20);
+        RSS15.setLineWrap(true);
+        RSS15.setRows(5);
+        RSS15.setWrapStyleWord(true);
+        jScrollPane121.setViewportView(RSS15);
 
-        RSS119.setColumns(20);
-        RSS119.setLineWrap(true);
-        RSS119.setRows(5);
-        RSS119.setWrapStyleWord(true);
-        jScrollPane122.setViewportView(RSS119);
+        RSS20.setColumns(20);
+        RSS20.setLineWrap(true);
+        RSS20.setRows(5);
+        RSS20.setWrapStyleWord(true);
+        jScrollPane122.setViewportView(RSS20);
 
-        RSS120.setColumns(20);
-        RSS120.setLineWrap(true);
-        RSS120.setRows(5);
-        RSS120.setWrapStyleWord(true);
-        jScrollPane123.setViewportView(RSS120);
+        RSS25.setColumns(20);
+        RSS25.setLineWrap(true);
+        RSS25.setRows(5);
+        RSS25.setWrapStyleWord(true);
+        jScrollPane123.setViewportView(RSS25);
 
-        RSS121.setColumns(20);
-        RSS121.setLineWrap(true);
-        RSS121.setRows(5);
-        RSS121.setWrapStyleWord(true);
-        jScrollPane124.setViewportView(RSS121);
+        RSS24.setColumns(20);
+        RSS24.setLineWrap(true);
+        RSS24.setRows(5);
+        RSS24.setWrapStyleWord(true);
+        jScrollPane124.setViewportView(RSS24);
 
-        RSS122.setColumns(20);
-        RSS122.setLineWrap(true);
-        RSS122.setRows(5);
-        RSS122.setWrapStyleWord(true);
-        jScrollPane125.setViewportView(RSS122);
+        RSS19.setColumns(20);
+        RSS19.setLineWrap(true);
+        RSS19.setRows(5);
+        RSS19.setWrapStyleWord(true);
+        jScrollPane125.setViewportView(RSS19);
 
-        RSS123.setColumns(20);
-        RSS123.setLineWrap(true);
-        RSS123.setRows(5);
-        RSS123.setWrapStyleWord(true);
-        jScrollPane126.setViewportView(RSS123);
+        RSS14.setColumns(20);
+        RSS14.setLineWrap(true);
+        RSS14.setRows(5);
+        RSS14.setWrapStyleWord(true);
+        jScrollPane126.setViewportView(RSS14);
 
-        RSS124.setColumns(20);
-        RSS124.setLineWrap(true);
-        RSS124.setRows(5);
-        RSS124.setWrapStyleWord(true);
-        jScrollPane127.setViewportView(RSS124);
+        RSS9.setColumns(20);
+        RSS9.setLineWrap(true);
+        RSS9.setRows(5);
+        RSS9.setWrapStyleWord(true);
+        jScrollPane127.setViewportView(RSS9);
 
-        RSS125.setColumns(20);
-        RSS125.setLineWrap(true);
-        RSS125.setRows(5);
-        RSS125.setWrapStyleWord(true);
-        jScrollPane128.setViewportView(RSS125);
+        RSS4.setColumns(20);
+        RSS4.setLineWrap(true);
+        RSS4.setRows(5);
+        RSS4.setWrapStyleWord(true);
+        jScrollPane128.setViewportView(RSS4);
 
-        RSS126.setColumns(20);
-        RSS126.setLineWrap(true);
-        RSS126.setRows(5);
-        RSS126.setWrapStyleWord(true);
-        jScrollPane129.setViewportView(RSS126);
+        RSS3.setColumns(20);
+        RSS3.setLineWrap(true);
+        RSS3.setRows(5);
+        RSS3.setWrapStyleWord(true);
+        jScrollPane129.setViewportView(RSS3);
 
-        RSS127.setColumns(20);
-        RSS127.setLineWrap(true);
-        RSS127.setRows(5);
-        RSS127.setWrapStyleWord(true);
-        jScrollPane130.setViewportView(RSS127);
+        RSS8.setColumns(20);
+        RSS8.setLineWrap(true);
+        RSS8.setRows(5);
+        RSS8.setWrapStyleWord(true);
+        jScrollPane130.setViewportView(RSS8);
 
-        RSS128.setColumns(20);
-        RSS128.setLineWrap(true);
-        RSS128.setRows(5);
-        RSS128.setWrapStyleWord(true);
-        jScrollPane131.setViewportView(RSS128);
+        RSS13.setColumns(20);
+        RSS13.setLineWrap(true);
+        RSS13.setRows(5);
+        RSS13.setWrapStyleWord(true);
+        jScrollPane131.setViewportView(RSS13);
 
-        RSS129.setColumns(20);
-        RSS129.setLineWrap(true);
-        RSS129.setRows(5);
-        RSS129.setWrapStyleWord(true);
-        jScrollPane132.setViewportView(RSS129);
+        RSS18.setColumns(20);
+        RSS18.setLineWrap(true);
+        RSS18.setRows(5);
+        RSS18.setWrapStyleWord(true);
+        jScrollPane132.setViewportView(RSS18);
 
-        RSS130.setColumns(20);
-        RSS130.setLineWrap(true);
-        RSS130.setRows(5);
-        RSS130.setWrapStyleWord(true);
-        jScrollPane133.setViewportView(RSS130);
+        RSS23.setColumns(20);
+        RSS23.setLineWrap(true);
+        RSS23.setRows(5);
+        RSS23.setWrapStyleWord(true);
+        jScrollPane133.setViewportView(RSS23);
 
-        RSS131.setColumns(20);
-        RSS131.setLineWrap(true);
-        RSS131.setRows(5);
-        RSS131.setWrapStyleWord(true);
-        jScrollPane134.setViewportView(RSS131);
+        RSS22.setColumns(20);
+        RSS22.setLineWrap(true);
+        RSS22.setRows(5);
+        RSS22.setWrapStyleWord(true);
+        jScrollPane134.setViewportView(RSS22);
 
-        RSS132.setColumns(20);
-        RSS132.setLineWrap(true);
-        RSS132.setRows(5);
-        RSS132.setWrapStyleWord(true);
-        jScrollPane135.setViewportView(RSS132);
+        RSS17.setColumns(20);
+        RSS17.setLineWrap(true);
+        RSS17.setRows(5);
+        RSS17.setWrapStyleWord(true);
+        jScrollPane135.setViewportView(RSS17);
 
-        RSS133.setColumns(20);
-        RSS133.setLineWrap(true);
-        RSS133.setRows(5);
-        RSS133.setWrapStyleWord(true);
-        jScrollPane136.setViewportView(RSS133);
+        RSS12.setColumns(20);
+        RSS12.setLineWrap(true);
+        RSS12.setRows(5);
+        RSS12.setWrapStyleWord(true);
+        jScrollPane136.setViewportView(RSS12);
 
-        RSS134.setColumns(20);
-        RSS134.setLineWrap(true);
-        RSS134.setRows(5);
-        RSS134.setWrapStyleWord(true);
-        jScrollPane137.setViewportView(RSS134);
+        RSS7.setColumns(20);
+        RSS7.setLineWrap(true);
+        RSS7.setRows(5);
+        RSS7.setWrapStyleWord(true);
+        jScrollPane137.setViewportView(RSS7);
 
-        RSS135.setColumns(20);
-        RSS135.setLineWrap(true);
-        RSS135.setRows(5);
-        RSS135.setWrapStyleWord(true);
-        jScrollPane138.setViewportView(RSS135);
+        RSS2.setColumns(20);
+        RSS2.setLineWrap(true);
+        RSS2.setRows(5);
+        RSS2.setWrapStyleWord(true);
+        jScrollPane138.setViewportView(RSS2);
 
-        RSS136.setColumns(20);
-        RSS136.setLineWrap(true);
-        RSS136.setRows(5);
-        RSS136.setWrapStyleWord(true);
-        jScrollPane139.setViewportView(RSS136);
+        RSS1.setColumns(20);
+        RSS1.setLineWrap(true);
+        RSS1.setRows(5);
+        RSS1.setWrapStyleWord(true);
+        jScrollPane139.setViewportView(RSS1);
 
-        RSS137.setColumns(20);
-        RSS137.setLineWrap(true);
-        RSS137.setRows(5);
-        RSS137.setWrapStyleWord(true);
-        jScrollPane140.setViewportView(RSS137);
+        RSS6.setColumns(20);
+        RSS6.setLineWrap(true);
+        RSS6.setRows(5);
+        RSS6.setWrapStyleWord(true);
+        jScrollPane140.setViewportView(RSS6);
 
-        RSS138.setColumns(20);
-        RSS138.setLineWrap(true);
-        RSS138.setRows(5);
-        RSS138.setWrapStyleWord(true);
-        jScrollPane141.setViewportView(RSS138);
+        RSS11.setColumns(20);
+        RSS11.setLineWrap(true);
+        RSS11.setRows(5);
+        RSS11.setWrapStyleWord(true);
+        jScrollPane141.setViewportView(RSS11);
 
-        RSS139.setColumns(20);
-        RSS139.setLineWrap(true);
-        RSS139.setRows(5);
-        RSS139.setWrapStyleWord(true);
-        jScrollPane142.setViewportView(RSS139);
+        RSS16.setColumns(20);
+        RSS16.setLineWrap(true);
+        RSS16.setRows(5);
+        RSS16.setWrapStyleWord(true);
+        jScrollPane142.setViewportView(RSS16);
 
-        RSS140.setColumns(20);
-        RSS140.setLineWrap(true);
-        RSS140.setRows(5);
-        RSS140.setWrapStyleWord(true);
-        jScrollPane143.setViewportView(RSS140);
+        RSS21.setColumns(20);
+        RSS21.setLineWrap(true);
+        RSS21.setRows(5);
+        RSS21.setWrapStyleWord(true);
+        jScrollPane143.setViewportView(RSS21);
 
         jLabel65.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel65.setText("4.00");
@@ -522,107 +522,96 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(260, 260, 260)
+                .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel63)
+                .addGap(121, 121, 121)
+                .addComponent(jLabel64)
+                .addGap(87, 87, 87))
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel36)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel59))
                 .addGap(12, 12, 12)
-                .addComponent(SS3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(657, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(change2)
-                .addGap(19, 19, 19))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(17, 17, 17)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addComponent(jLabel59)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(SS3, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(257, 257, 257)
+                        .addComponent(jLabel62)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(change2))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel69)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane139, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel66)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jScrollPane142, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGap(79, 79, 79)
-                                    .addComponent(jLabel61, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel62)
-                                    .addGap(68, 68, 68))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addComponent(jScrollPane138, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jScrollPane129, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jScrollPane136, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                                .addComponent(jScrollPane137, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jScrollPane130, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jScrollPane131, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jScrollPane135, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                                .addComponent(jScrollPane134, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                                    .addGap(12, 12, 12)
-                                                    .addComponent(jScrollPane132, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jScrollPane133, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGap(47, 47, 47)
-                                    .addComponent(jLabel63)
-                                    .addGap(130, 130, 130)
-                                    .addComponent(jLabel64))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jScrollPane127, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane128, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane126, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                        .addComponent(jScrollPane125, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(1, 1, 1)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jScrollPane123, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane122, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addComponent(jLabel68)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jScrollPane140, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addComponent(jLabel69)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jScrollPane139, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
                                     .addComponent(jLabel67)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jScrollPane141, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jScrollPane119, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                                .addComponent(jScrollPane120, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                                .addComponent(jScrollPane121, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addComponent(jLabel65)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jScrollPane143, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane124, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(152, 152, 152)))
-                    .addGap(17, 17, 17)))
+                                    .addComponent(jLabel65))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane141, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane140, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jScrollPane143, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane142, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jScrollPane134, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane133, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane124, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jScrollPane137, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane136, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane135, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane138, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane129, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane128, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jScrollPane130, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jScrollPane131, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jScrollPane126, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                                    .addComponent(jScrollPane127, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addComponent(jScrollPane132, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(12, 12, 12)
+                                                .addComponent(jScrollPane125, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane123, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane122, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane121, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane120, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane119, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -631,90 +620,88 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel36)
                     .addComponent(SS3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 329, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel64)
+                            .addComponent(jLabel61)
+                            .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel63)
+                            .addComponent(jLabel59)
+                            .addComponent(jLabel62))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane139, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane129, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane128, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane119, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane138, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel69)
+                        .addGap(27, 27, 27)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane140, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane130, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jScrollPane137, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel68)
+                                .addGap(24, 24, 24)))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane141, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane136, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane131, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel67)
+                                .addGap(12, 12, 12))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane120, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane127, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane126, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane121, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane135, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(jScrollPane134, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane142, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(jLabel66)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane143, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel65)
+                                .addGap(18, 18, 18))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane132, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane133, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane125, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane124, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(jScrollPane122, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane123, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addComponent(change2)
-                .addGap(28, 28, 28))
-            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel4Layout.createSequentialGroup()
-                    .addGap(67, 67, 67)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel64)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel59)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel61, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jLabel63, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel62, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jScrollPane119, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jScrollPane138, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane129, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane128, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane139, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGap(21, 21, 21)
-                                    .addComponent(jLabel69)))))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jScrollPane140, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane137, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane130, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane127, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane120, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
-                            .addGap(22, 22, 22)
-                            .addComponent(jLabel68)))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jScrollPane126, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane131, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane136, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jScrollPane141, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jScrollPane125, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addComponent(jScrollPane135, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jScrollPane132, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jScrollPane142, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGap(11, 11, 11))))
-                                .addGroup(jPanel4Layout.createSequentialGroup()
-                                    .addComponent(jScrollPane121, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(6, 6, 6)
-                                    .addComponent(jScrollPane122, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addGap(19, 19, 19)
-                            .addComponent(jLabel67)
-                            .addGap(37, 37, 37)
-                            .addComponent(jLabel66)
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane124, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane134, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane133, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane143, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane123, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                            .addGap(14, 14, 14)
-                            .addComponent(jLabel65)))
-                    .addGap(68, 68, 68)))
+                .addGap(19, 19, 19))
         );
 
         jTabbedPane1.addTab("Lecturer", jPanel4);
@@ -1526,7 +1513,6 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(jLabel46)
                         .addGap(0, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jScrollPane101, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1656,6 +1642,32 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
       PreparedStatement insert23;
       PreparedStatement insert24;
       PreparedStatement insert25;
+      
+      PreparedStatement insert26;
+      PreparedStatement insert27;
+      PreparedStatement insert28;
+      PreparedStatement insert29;
+      PreparedStatement insert30;
+      PreparedStatement insert31;
+      PreparedStatement insert32;
+      PreparedStatement insert33;
+      PreparedStatement insert34;
+      PreparedStatement insert35;
+      PreparedStatement insert36;
+      PreparedStatement insert37;
+      PreparedStatement insert38;
+      PreparedStatement insert39;
+      PreparedStatement insert40;
+      PreparedStatement insert41;
+      PreparedStatement insert42;
+      PreparedStatement insert43;
+      PreparedStatement insert44;
+      PreparedStatement insert45;
+      PreparedStatement insert46;
+      PreparedStatement insert47;
+      PreparedStatement insert48;
+      PreparedStatement insert49;
+      PreparedStatement insert50;
    
 // ******************************************* Retrieve room name into the combo box from room table ***************************      
       private void load_room_name(){
@@ -1883,6 +1895,368 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
 
     private void SS3PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SS3PopupMenuWillBecomeInvisible
         // TODO add your handling code here:
+        
+       String temp = (String) SS3.getSelectedItem(); 
+       
+               try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //monday, 8.00
+            insert26 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday'AND st.start_time_hour=8 WHERE s.lec1=?");
+            //tuesday, 8.00
+            insert27 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Tuesday'AND st.start_time_hour=8 WHERE s.lec1=?");
+            //wednesday, 8.00
+            insert28 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Wednesday'AND st.start_time_hour=8 WHERE s.lec1=?");
+            //thursday, 8.00
+            insert29 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Thursday'AND st.start_time_hour=8 WHERE s.lec1=?");
+            //friday, 8.00
+            insert30 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Friday'AND st.start_time_hour=8 WHERE s.lec1=?");
+            
+            //monday, 10.00
+            insert31 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday'AND st.start_time_hour=10 WHERE s.lec1=?");
+            //tuesday, 10.00
+            insert32 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Tuesday'AND st.start_time_hour=10 WHERE s.lec1=?");
+            //wednesday, 10.00
+            insert33 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Wednesday'AND st.start_time_hour=10 WHERE s.lec1=?");
+            //thursday, 10.00
+            insert34 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Thursday'AND st.start_time_hour=10 WHERE s.lec1=?");
+            //friday, 10.00
+            insert35 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Friday'AND st.start_time_hour=10 WHERE s.lec1=?");
+            
+            //monday, 12.00
+            insert36 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday'AND st.start_time_hour=12 WHERE s.lec1=?");
+            //tuesday, 12.00
+            insert37 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Tuesday'AND st.start_time_hour=12 WHERE s.lec1=?");
+             //wednesday, 12.00
+            insert38 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Wednesday'AND st.start_time_hour=12 WHERE s.lec1=?");
+            //thursday, 12.00
+            insert39 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Thursday'AND st.start_time_hour=12 WHERE s.lec1=?");
+            //friday, 12.00
+            insert40 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Friday'AND st.start_time_hour=12 WHERE s.lec1=?");
+                 
+            //monday, 2.00
+            insert41 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday'AND st.start_time_hour=2 WHERE s.lec1=?");
+            //tuesday, 2.00
+            insert42 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Tuesday'AND st.start_time_hour=2 WHERE s.lec1=?");
+             //wednesday,2.00
+            insert43 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Wednesday'AND st.start_time_hour=2 WHERE s.lec1=?");
+            //thursday, 2.00
+            insert44 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Thursday'AND st.start_time_hour=2 WHERE s.lec1=?");
+            //friday, 2.00
+            insert45 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Friday'AND st.start_time_hour=2 WHERE s.lec1=?");
+                 
+            //monday, 4.00
+            insert46 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday'AND st.start_time_hour=4 WHERE s.lec1=?");
+            //tuesday, 4.00
+            insert47 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Tuesday'AND st.start_time_hour=4 WHERE s.lec1=?");
+             //wednesday,4.00
+            insert48 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Wednesday'AND st.start_time_hour=4 WHERE s.lec1=?");
+            //thursday, 4.00
+            insert49 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Thursday'AND st.start_time_hour=4 WHERE s.lec1=?");
+            //friday, 4.00
+            insert50 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Friday'AND st.start_time_hour=4 WHERE s.lec1=?");
+                 
+                             
+                    
+                    
+            
+            insert26.setString(1, temp);  
+            insert27.setString(1, temp);  
+            insert28.setString(1, temp); 
+            insert29.setString(1, temp); 
+            insert30.setString(1, temp);  
+            insert31.setString(1, temp);  
+            insert32.setString(1, temp); 
+            insert33.setString(1, temp);
+            insert34.setString(1, temp);  
+            insert35.setString(1, temp);  
+            insert36.setString(1, temp); 
+            insert37.setString(1, temp);  
+            insert38.setString(1, temp);  
+            insert39.setString(1, temp); 
+            insert40.setString(1, temp);
+            insert41.setString(1, temp); 
+            insert42.setString(1, temp);  
+            insert43.setString(1, temp);  
+            insert44.setString(1, temp); 
+            insert45.setString(1, temp);
+            insert46.setString(1, temp); 
+            insert47.setString(1, temp);  
+            insert48.setString(1, temp);  
+            insert49.setString(1, temp); 
+            insert50.setString(1, temp);
+            
+            
+           //monday 8.00 
+            ResultSet rs = insert26.executeQuery();
+            
+            if(rs.next()) {
+                 String selectedsession = (rs.getString("ses_id")+""+(",")+"  "+rs.getString("lec1")+""+(",")+"  "+rs.getString("lec2")+""+(",")+"  "+rs.getString("extra_lec")+""+(",")+"  "+rs.getString("ses_tag")+""+(",")+"  "+rs.getString("subject")+""+(",")+"  "+rs.getString("sub_code")+""+(",")+"  "+rs.getString("grp_ID")+""+(",")+"  "+rs.getString("no_Stds"));
+                 
+                 RSS1.setText(selectedsession);
+         
+            }
+            
+            //tuesday 8.00
+            ResultSet rs2 = insert27.executeQuery();
+            
+            if(rs2.next()) {
+                 String selectedsession2 = (rs2.getString("ses_id")+""+(",")+"  "+rs2.getString("lec1")+""+(",")+"  "+rs2.getString("lec2")+""+(",")+"  "+rs2.getString("extra_lec")+""+(",")+"  "+rs2.getString("ses_tag")+""+(",")+"  "+rs2.getString("subject")+""+(",")+"  "+rs2.getString("sub_code")+""+(",")+"  "+rs2.getString("grp_ID")+""+(",")+"  "+rs2.getString("no_Stds"));
+                 
+                 RSS2.setText(selectedsession2);
+         
+            }
+            
+            //wednesday 8.00
+            ResultSet rs3 = insert28.executeQuery();
+            
+            if(rs3.next()) {
+                 String selectedsession3 = (rs3.getString("ses_id")+""+(",")+"  "+rs3.getString("lec1")+""+(",")+"  "+rs3.getString("lec2")+""+(",")+"  "+rs3.getString("extra_lec")+""+(",")+" "+rs3.getString("ses_tag")+""+(",")+"   "+rs3.getString("subject")+""+(",")+"   "+rs3.getString("sub_code")+""+(",")+"  "+rs3.getString("grp_ID")+""+(",")+"    "+rs3.getString("no_Stds"));
+                 
+                 RSS3.setText(selectedsession3);
+         
+            }
+            
+             //thursday 8.00
+             ResultSet rs4 = insert29.executeQuery();
+            
+            if(rs4.next()) {
+                 String selectedsession4 = (rs4.getString("ses_id")+""+(",")+"  "+rs4.getString("lec1")+""+(",")+"  "+rs4.getString("lec2")+""+(",")+"  "+rs4.getString("extra_lec")+""+(",")+" "+rs4.getString("ses_tag")+""+(",")+"   "+rs4.getString("subject")+""+(",")+"   "+rs4.getString("sub_code")+""+(",")+"  "+rs4.getString("grp_ID")+""+(",")+"    "+rs4.getString("no_Stds"));
+                 
+                 RSS4.setText(selectedsession4);
+         
+            }
+            
+            //friday 8.00
+              ResultSet rs5 = insert30.executeQuery();
+            
+            if(rs5.next()) {
+                 String selectedsession5 = (rs5.getString("ses_id")+""+(",")+"  "+rs5.getString("lec1")+""+(",")+"  "+rs5.getString("lec2")+""+(",")+"  "+rs5.getString("extra_lec")+""+(",")+" "+rs5.getString("ses_tag")+""+(",")+"   "+rs5.getString("subject")+""+(",")+"   "+rs5.getString("sub_code")+""+(",")+"  "+rs5.getString("grp_ID")+""+(",")+"    "+rs5.getString("no_Stds"));
+                 
+                 RSS5.setText(selectedsession5);
+         
+            }
+            
+            //monday 10.00
+              ResultSet rs6 = insert31.executeQuery();
+            
+            if(rs6.next()) {
+                 String selectedsession6 = (rs6.getString("ses_id")+""+(",")+"  "+rs6.getString("lec1")+""+(",")+"  "+rs6.getString("lec2")+""+(",")+"  "+rs6.getString("extra_lec")+""+(",")+" "+rs6.getString("ses_tag")+""+(",")+"   "+rs6.getString("subject")+""+(",")+"   "+rs6.getString("sub_code")+""+(",")+"  "+rs6.getString("grp_ID")+""+(",")+"    "+rs6.getString("no_Stds"));
+                 
+                 RSS6.setText(selectedsession6);
+         
+            }
+            
+            
+            //tuesday 10.00
+              ResultSet rs7 = insert32.executeQuery();
+            
+            if(rs7.next()) {
+                 String selectedsession7 = (rs7.getString("ses_id")+""+(",")+"  "+rs7.getString("lec1")+""+(",")+"  "+rs7.getString("lec2")+""+(",")+"  "+rs7.getString("extra_lec")+""+(",")+" "+rs7.getString("ses_tag")+""+(",")+"   "+rs7.getString("subject")+""+(",")+"   "+rs7.getString("sub_code")+""+(",")+"  "+rs7.getString("grp_ID")+""+(",")+"    "+rs7.getString("no_Stds"));
+                 
+                 RSS7.setText(selectedsession7);
+         
+            }
+            
+            //wednesday 10.00
+            ResultSet rs8 = insert33.executeQuery();
+            
+            if(rs8.next()) {
+                 String selectedsession8 = (rs8.getString("ses_id")+""+(",")+"  "+rs8.getString("lec1")+""+(",")+"  "+rs8.getString("lec2")+""+(",")+"  "+rs8.getString("extra_lec")+""+(",")+" "+rs8.getString("ses_tag")+""+(",")+"   "+rs8.getString("subject")+""+(",")+"   "+rs8.getString("sub_code")+""+(",")+"  "+rs8.getString("grp_ID")+""+(",")+"    "+rs8.getString("no_Stds"));
+                 
+                 RSS8.setText(selectedsession8);
+         
+            }
+            
+             //thursday 10.00
+            ResultSet rs9 = insert34.executeQuery();
+            
+            if(rs9.next()) {
+                 String selectedsession9 = (rs9.getString("ses_id")+""+(",")+"  "+rs9.getString("lec1")+""+(",")+"  "+rs9.getString("lec2")+""+(",")+"  "+rs9.getString("extra_lec")+""+(",")+" "+rs9.getString("ses_tag")+""+(",")+"   "+rs9.getString("subject")+""+(",")+"   "+rs9.getString("sub_code")+""+(",")+"  "+rs9.getString("grp_ID")+""+(",")+"    "+rs9.getString("no_Stds"));
+                 
+                 RSS9.setText(selectedsession9);
+         
+            }
+            
+               //friday 10.00
+            ResultSet rs10 = insert35.executeQuery();
+            
+            if(rs10.next()) {
+                 String selectedsession10 = (rs10.getString("ses_id")+""+(",")+"    "+rs10.getString("lec1")+""+(",")+" "+rs10.getString("lec2")+""+(",")+" "+rs10.getString("extra_lec")+""+(",")+"    "+rs10.getString("ses_tag")+""+(",")+"  "+rs10.getString("subject")+""+(",")+"  "+rs10.getString("sub_code")+""+(",")+" "+rs10.getString("grp_ID")+""+(",")+"   "+rs10.getString("no_Stds"));
+                 
+                 RSS10.setText(selectedsession10);
+         
+            }
+            
+            
+               //monday 12.00
+            ResultSet rs11 = insert36.executeQuery();
+            
+            if(rs11.next()) {
+                 String selectedsession11 = (rs11.getString("ses_id")+""+(",")+"    "+rs11.getString("lec1")+""+(",")+" "+rs11.getString("lec2")+""+(",")+" "+rs11.getString("extra_lec")+""+(",")+"    "+rs11.getString("ses_tag")+""+(",")+"  "+rs11.getString("subject")+""+(",")+"  "+rs11.getString("sub_code")+""+(",")+" "+rs11.getString("grp_ID")+""+(",")+"   "+rs11.getString("no_Stds"));
+                 
+                 RSS11.setText(selectedsession11);
+         
+            }
+            
+            
+                //tuesday 12.00
+            ResultSet rs12 = insert37.executeQuery();
+            
+            if(rs12.next()) {
+                 String selectedsession12 = (rs12.getString("ses_id")+""+(",")+"    "+rs12.getString("lec1")+""+(",")+" "+rs12.getString("lec2")+""+(",")+" "+rs12.getString("extra_lec")+""+(",")+"    "+rs12.getString("ses_tag")+""+(",")+"  "+rs12.getString("subject")+""+(",")+"  "+rs12.getString("sub_code")+""+(",")+" "+rs12.getString("grp_ID")+""+(",")+"   "+rs12.getString("no_Stds"));
+                 
+                 RSS12.setText(selectedsession12);
+         
+            }
+            
+                //wednesday 12.00
+            ResultSet rs13 = insert38.executeQuery();
+            
+            if(rs13.next()) {
+                 String selectedsession13 = (rs13.getString("ses_id")+""+(",")+"    "+rs13.getString("lec1")+""+(",")+" "+rs13.getString("lec2")+""+(",")+" "+rs13.getString("extra_lec")+""+(",")+"    "+rs13.getString("ses_tag")+""+(",")+"  "+rs13.getString("subject")+""+(",")+"  "+rs13.getString("sub_code")+""+(",")+" "+rs13.getString("grp_ID")+""+(",")+"   "+rs13.getString("no_Stds"));
+                 
+                 RSS13.setText(selectedsession13);
+         
+            }
+            
+                //thursday 12.00
+            ResultSet rs14 = insert39.executeQuery();
+            
+            if(rs14.next()) {
+                 String selectedsession14 = (rs14.getString("ses_id")+""+(",")+"    "+rs14.getString("lec1")+""+(",")+" "+rs14.getString("lec2")+""+(",")+" "+rs14.getString("extra_lec")+""+(",")+"    "+rs14.getString("ses_tag")+""+(",")+"  "+rs14.getString("subject")+""+(",")+"  "+rs14.getString("sub_code")+""+(",")+" "+rs14.getString("grp_ID")+""+(",")+"   "+rs14.getString("no_Stds"));
+                 
+                 RSS14.setText(selectedsession14);
+         
+            }
+            
+                //friday 12.00
+            ResultSet rs15 = insert40.executeQuery();
+            
+            if(rs15.next()) {
+                 String selectedsession15 = (rs15.getString("ses_id")+""+(",")+"    "+rs15.getString("lec1")+""+(",")+" "+rs15.getString("lec2")+""+(",")+" "+rs15.getString("extra_lec")+""+(",")+"    "+rs15.getString("ses_tag")+""+(",")+"  "+rs15.getString("subject")+""+(",")+"  "+rs15.getString("sub_code")+""+(",")+" "+rs15.getString("grp_ID")+""+(",")+"   "+rs15.getString("no_Stds"));
+                 
+                 RSS15.setText(selectedsession15);
+         
+            }
+            
+            
+               //monday 2.00
+            ResultSet rs16 = insert41.executeQuery();
+            
+            if(rs16.next()) {
+                 String selectedsession16 = (rs16.getString("ses_id")+""+(",")+"    "+rs16.getString("lec1")+""+(",")+" "+rs16.getString("lec2")+""+(",")+" "+rs16.getString("extra_lec")+""+(",")+"    "+rs16.getString("ses_tag")+""+(",")+"  "+rs16.getString("subject")+""+(",")+"  "+rs16.getString("sub_code")+""+(",")+" "+rs16.getString("grp_ID")+""+(",")+"   "+rs16.getString("no_Stds"));
+                 
+                 RSS16.setText(selectedsession16);
+         
+            }
+            
+              
+               //tuesday 2.00
+            ResultSet rs17 = insert42.executeQuery();
+            
+            if(rs17.next()) {
+                 String selectedsession17 = (rs17.getString("ses_id")+""+(",")+"    "+rs17.getString("lec1")+""+(",")+" "+rs17.getString("lec2")+""+(",")+" "+rs17.getString("extra_lec")+""+(",")+"    "+rs17.getString("ses_tag")+""+(",")+"  "+rs17.getString("subject")+"   "+rs17.getString("sub_code")+""+(",")+" "+rs17.getString("grp_ID")+""+(",")+"   "+rs17.getString("no_Stds"));
+                 
+                 RSS17.setText(selectedsession17);
+         
+            }
+            
+            
+               
+               //wednesday 2.00
+            ResultSet rs18 = insert43.executeQuery();
+            
+            if(rs18.next()) {
+                 String selectedsession18 = (rs18.getString("ses_id")+""+(",")+"    "+rs18.getString("lec1")+""+(",")+" "+rs18.getString("lec2")+""+(",")+" "+rs18.getString("extra_lec")+""+(",")+"    "+rs18.getString("ses_tag")+""+(",")+"  "+rs18.getString("subject")+""+(",")+"  "+rs18.getString("sub_code")+""+(",")+" "+rs18.getString("grp_ID")+""+(",")+"   "+rs18.getString("no_Stds"));
+                 
+                 RSS18.setText(selectedsession18);
+         
+            }
+            
+            
+                 //thursday 2.00
+            ResultSet rs19 = insert44.executeQuery();
+            
+            if(rs19.next()) {
+                 String selectedsession19 = (rs19.getString("ses_id")+""+(",")+"    "+rs19.getString("lec1")+""+(",")+" "+rs19.getString("lec2")+""+(",")+" "+rs19.getString("extra_lec")+""+(",")+"    "+rs19.getString("ses_tag")+""+(",")+"  "+rs19.getString("subject")+""+(",")+"  "+rs19.getString("sub_code")+""+(",")+" "+rs19.getString("grp_ID")+""+(",")+"   "+rs19.getString("no_Stds"));
+                 
+                 RSS19.setText(selectedsession19);
+         
+            }
+            
+            
+              //friday 2.00
+            ResultSet rs20 = insert45.executeQuery();
+            
+            if(rs20.next()) {
+                 String selectedsession20 = (rs20.getString("ses_id")+""+(",")+"    "+rs20.getString("lec1")+""+(",")+" "+rs20.getString("lec2")+""+(",")+" "+rs20.getString("extra_lec")+""+(",")+"    "+rs20.getString("ses_tag")+""+(",")+"  "+rs20.getString("subject")+""+(",")+"  "+rs20.getString("sub_code")+""+(",")+" "+rs20.getString("grp_ID")+""+(",")+"   "+rs20.getString("no_Stds"));
+                 
+                 RSS20.setText(selectedsession20);
+         
+            }
+            
+            
+              //monday 4.00
+            ResultSet rs21 = insert46.executeQuery();
+            
+            if(rs21.next()) {
+                 String selectedsession21 = (rs21.getString("ses_id")+""+(",")+"    "+rs21.getString("lec1")+""+(",")+" "+rs21.getString("lec2")+""+(",")+" "+rs21.getString("extra_lec")+""+(",")+"    "+rs21.getString("ses_tag")+""+(",")+"  "+rs21.getString("subject")+""+(",")+"  "+rs21.getString("sub_code")+""+(",")+" "+rs21.getString("grp_ID")+""+(",")+"   "+rs21.getString("no_Stds"));
+                 
+                 RSS21.setText(selectedsession21);
+         
+            }
+            
+            
+               //tuesday 4.00
+            ResultSet rs22 = insert47.executeQuery();
+            
+            if(rs22.next()) {
+                 String selectedsession22 = (rs22.getString("ses_id")+""+(",")+"    "+rs22.getString("lec1")+""+(",")+" "+rs22.getString("lec2")+""+(",")+" "+rs22.getString("extra_lec")+""+(",")+"    "+rs22.getString("ses_tag")+""+(",")+"  "+rs22.getString("subject")+""+(",")+"  "+rs22.getString("sub_code")+""+(",")+" "+rs22.getString("grp_ID")+""+(",")+"   "+rs22.getString("no_Stds"));
+                 
+                 RSS22.setText(selectedsession22);
+         
+            }
+            
+             //wednesday 4.00
+            ResultSet rs23 = insert48.executeQuery();
+            
+            if(rs23.next()) {
+                 String selectedsession23 = (rs23.getString("ses_id")+""+(",")+"    "+rs23.getString("lec1")+""+(",")+" "+rs23.getString("lec2")+""+(",")+" "+rs23.getString("extra_lec")+""+(",")+"    "+rs23.getString("ses_tag")+""+(",")+"  "+rs23.getString("subject")+""+(",")+"  "+rs23.getString("sub_code")+""+(",")+" "+rs23.getString("grp_ID")+""+(",")+"   "+rs23.getString("no_Stds"));
+                 
+                 RSS23.setText(selectedsession23);
+         
+            }
+            
+            
+              //thursday 4.00
+            ResultSet rs24 = insert49.executeQuery();
+            
+            if(rs24.next()) {
+                 String selectedsession24 = (rs24.getString("ses_id")+""+(",")+"    "+rs24.getString("lec1")+""+(",")+" "+rs24.getString("lec2")+""+(",")+" "+rs24.getString("extra_lec")+""+(",")+"    "+rs24.getString("ses_tag")+""+(",")+"  "+rs24.getString("subject")+""+(",")+"  "+rs24.getString("sub_code")+""+(",")+" "+rs24.getString("grp_ID")+""+(",")+"   "+rs24.getString("no_Stds"));
+                 
+                 RSS24.setText(selectedsession24);
+         
+            }
+            
+              //friday 4.00
+            ResultSet rs25 = insert50.executeQuery();
+            
+            if(rs25.next()) {
+                 String selectedsession25 = (rs25.getString("ses_id")+""+(",")+"    "+rs25.getString("lec1")+""+(",")+" "+rs25.getString("lec2")+""+(",")+" "+rs25.getString("extra_lec")+""+(",")+"    "+rs25.getString("ses_tag")+""+(",")+"  "+rs25.getString("subject")+""+(",")+"  "+rs25.getString("sub_code")+""+(",")+" "+rs25.getString("grp_ID")+""+(",")+"   "+rs25.getString("no_Stds"));
+                 
+                 RSS25.setText(selectedsession25);
+         
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_SS3PopupMenuWillBecomeInvisible
 
     private void SS2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SS2PopupMenuWillBecomeInvisible
@@ -2352,6 +2726,8 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea RSS1;
+    private javax.swing.JTextArea RSS10;
     private javax.swing.JTextArea RSS100;
     private javax.swing.JTextArea RSS101;
     private javax.swing.JTextArea RSS102;
@@ -2362,43 +2738,36 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JTextArea RSS107;
     private javax.swing.JTextArea RSS108;
     private javax.swing.JTextArea RSS109;
+    private javax.swing.JTextArea RSS11;
     private javax.swing.JTextArea RSS110;
     private javax.swing.JTextArea RSS111;
     private javax.swing.JTextArea RSS112;
     private javax.swing.JTextArea RSS113;
     private javax.swing.JTextArea RSS114;
     private javax.swing.JTextArea RSS115;
-    private javax.swing.JTextArea RSS116;
-    private javax.swing.JTextArea RSS117;
-    private javax.swing.JTextArea RSS118;
-    private javax.swing.JTextArea RSS119;
-    private javax.swing.JTextArea RSS120;
-    private javax.swing.JTextArea RSS121;
-    private javax.swing.JTextArea RSS122;
-    private javax.swing.JTextArea RSS123;
-    private javax.swing.JTextArea RSS124;
-    private javax.swing.JTextArea RSS125;
-    private javax.swing.JTextArea RSS126;
-    private javax.swing.JTextArea RSS127;
-    private javax.swing.JTextArea RSS128;
-    private javax.swing.JTextArea RSS129;
-    private javax.swing.JTextArea RSS130;
-    private javax.swing.JTextArea RSS131;
-    private javax.swing.JTextArea RSS132;
-    private javax.swing.JTextArea RSS133;
-    private javax.swing.JTextArea RSS134;
-    private javax.swing.JTextArea RSS135;
-    private javax.swing.JTextArea RSS136;
-    private javax.swing.JTextArea RSS137;
-    private javax.swing.JTextArea RSS138;
-    private javax.swing.JTextArea RSS139;
-    private javax.swing.JTextArea RSS140;
+    private javax.swing.JTextArea RSS12;
+    private javax.swing.JTextArea RSS13;
+    private javax.swing.JTextArea RSS14;
+    private javax.swing.JTextArea RSS15;
+    private javax.swing.JTextArea RSS16;
+    private javax.swing.JTextArea RSS17;
+    private javax.swing.JTextArea RSS18;
+    private javax.swing.JTextArea RSS19;
+    private javax.swing.JTextArea RSS2;
+    private javax.swing.JTextArea RSS20;
+    private javax.swing.JTextArea RSS21;
+    private javax.swing.JTextArea RSS22;
+    private javax.swing.JTextArea RSS23;
+    private javax.swing.JTextArea RSS24;
+    private javax.swing.JTextArea RSS25;
+    private javax.swing.JTextArea RSS3;
     private javax.swing.JTextArea RSS34;
     private javax.swing.JTextArea RSS35;
     private javax.swing.JTextArea RSS36;
     private javax.swing.JTextArea RSS37;
     private javax.swing.JTextArea RSS38;
     private javax.swing.JTextArea RSS39;
+    private javax.swing.JTextArea RSS4;
     private javax.swing.JTextArea RSS40;
     private javax.swing.JTextArea RSS41;
     private javax.swing.JTextArea RSS42;
@@ -2409,6 +2778,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JTextArea RSS47;
     private javax.swing.JTextArea RSS48;
     private javax.swing.JTextArea RSS49;
+    private javax.swing.JTextArea RSS5;
     private javax.swing.JTextArea RSS50;
     private javax.swing.JTextArea RSS51;
     private javax.swing.JTextArea RSS52;
@@ -2419,11 +2789,15 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     private javax.swing.JTextArea RSS57;
     private javax.swing.JTextArea RSS58;
     private javax.swing.JTextArea RSS59;
+    private javax.swing.JTextArea RSS6;
     private javax.swing.JTextArea RSS60;
     private javax.swing.JTextArea RSS61;
     private javax.swing.JTextArea RSS62;
     private javax.swing.JTextArea RSS63;
     private javax.swing.JTextArea RSS64;
+    private javax.swing.JTextArea RSS7;
+    private javax.swing.JTextArea RSS8;
+    private javax.swing.JTextArea RSS9;
     private javax.swing.JTextArea RSS97;
     private javax.swing.JTextArea RSS98;
     private javax.swing.JTextArea RSS99;
