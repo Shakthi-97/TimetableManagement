@@ -1891,10 +1891,14 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_change2ActionPerformed
 
+    
+   // ******************************************* Generating Timetable for Lecturers *****************************************************     
+
+    
     private void SS3PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SS3PopupMenuWillBecomeInvisible
         // TODO add your handling code here:
         
-       String temp = (String) SS3.getSelectedItem(); 
+            String temp = (String) SS3.getSelectedItem(); 
        
                try {
             
@@ -2257,6 +2261,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         
     }//GEN-LAST:event_SS3PopupMenuWillBecomeInvisible
 
+    
     private void SS2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SS2PopupMenuWillBecomeInvisible
         // TODO add your handling code here:
         
