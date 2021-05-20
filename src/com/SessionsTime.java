@@ -194,14 +194,17 @@ public class SessionsTime extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         consecutive = new javax.swing.JTable();
+        jLabel13 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         parallel = new javax.swing.JTable();
+        jLabel14 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jButton9 = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         lapping = new javax.swing.JTable();
+        jLabel15 = new javax.swing.JLabel();
         NotAvailableTimes = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         form = new javax.swing.JPanel();
@@ -234,14 +237,11 @@ public class SessionsTime extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(89, 39, 74));
         jPanel1.setPreferredSize(new java.awt.Dimension(1200, 733));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\va.jpg")); // NOI18N
-
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ABC Institute Timetable Management System");
 
         home_btn.setBackground(new java.awt.Color(255, 255, 255));
-        home_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\home.png")); // NOI18N
         home_btn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         home_btn.setBorderPainted(false);
         home_btn.setPreferredSize(new java.awt.Dimension(20, 20));
@@ -280,27 +280,37 @@ public class SessionsTime extends javax.swing.JFrame {
         consecutive.setSelectionBackground(new java.awt.Color(89, 39, 74));
         jScrollPane2.setViewportView(consecutive);
 
+        jLabel13.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        jLabel13.setText("Select two sessions using the CTRL Button");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(47, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(425, 425, 425))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 947, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(342, 342, 342)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Consecutive", jPanel7);
@@ -328,6 +338,9 @@ public class SessionsTime extends javax.swing.JFrame {
         parallel.setSelectionBackground(new java.awt.Color(89, 39, 74));
         jScrollPane4.setViewportView(parallel);
 
+        jLabel14.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        jLabel14.setText("Select two sessions using the CTRL Button");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -339,14 +352,19 @@ public class SessionsTime extends javax.swing.JFrame {
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1018, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addGap(460, 460, 460)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(393, 393, 393)
+                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton7)
                 .addGap(21, 21, 21))
@@ -377,6 +395,9 @@ public class SessionsTime extends javax.swing.JFrame {
         lapping.setSelectionBackground(new java.awt.Color(89, 39, 74));
         jScrollPane5.setViewportView(lapping);
 
+        jLabel15.setFont(new java.awt.Font("Tahoma", 3, 12)); // NOI18N
+        jLabel15.setText("Select two sessions using the CTRL Button");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -388,14 +409,19 @@ public class SessionsTime extends javax.swing.JFrame {
                         .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 991, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 991, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(361, 361, 361)
+                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton9)
                 .addGap(18, 18, 18))
@@ -466,7 +492,6 @@ public class SessionsTime extends javax.swing.JFrame {
 
         btn_NotAvailable_Add.setBackground(new java.awt.Color(0, 51, 0));
         btn_NotAvailable_Add.setForeground(new java.awt.Color(255, 255, 255));
-        btn_NotAvailable_Add.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\add.png")); // NOI18N
         btn_NotAvailable_Add.setText("Add");
         btn_NotAvailable_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -476,7 +501,6 @@ public class SessionsTime extends javax.swing.JFrame {
 
         btn_NotAvailable_Update.setBackground(new java.awt.Color(0, 51, 102));
         btn_NotAvailable_Update.setForeground(new java.awt.Color(255, 255, 255));
-        btn_NotAvailable_Update.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\edit.png")); // NOI18N
         btn_NotAvailable_Update.setText("Update");
         btn_NotAvailable_Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -486,7 +510,6 @@ public class SessionsTime extends javax.swing.JFrame {
 
         btn_NotAvailable_Delete.setBackground(new java.awt.Color(153, 0, 51));
         btn_NotAvailable_Delete.setForeground(new java.awt.Color(255, 255, 255));
-        btn_NotAvailable_Delete.setIcon(new javax.swing.ImageIcon("C:\\Users\\mathu\\Downloads\\delete.png")); // NOI18N
         btn_NotAvailable_Delete.setText("Delete");
         btn_NotAvailable_Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -716,7 +739,7 @@ public class SessionsTime extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1139,6 +1162,9 @@ public class SessionsTime extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
