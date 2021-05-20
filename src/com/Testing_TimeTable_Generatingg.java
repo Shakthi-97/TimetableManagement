@@ -290,6 +290,8 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(89, 39, 74));
         jPanel2.setName(""); // NOI18N
 
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\va.jpg")); // NOI18N
+
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -711,6 +713,15 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         jLabel18.setText("Select Group");
 
         SS1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        SS1.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+                SS1PopupMenuWillBecomeInvisible(evt);
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+        });
         SS1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SS1ActionPerformed(evt);
@@ -920,7 +931,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jLabel18)
                         .addGap(12, 12, 12)
-                        .addComponent(SS1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(SS1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGap(0, 515, Short.MAX_VALUE)
@@ -1557,6 +1568,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Georgia", 1, 10)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\home.png")); // NOI18N
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jButton4.setBorderPainted(false);
         jButton4.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
@@ -1584,8 +1596,8 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap(27, Short.MAX_VALUE))
+            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1723,14 +1735,16 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             
             con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
             
-            insert = con.prepareStatement("select grp_ID from session");
+            insert = con.prepareStatement("select groupID,subGroupID from student");
             
             ResultSet rs = insert.executeQuery();  
             
             while(rs.next()) {
                 
-                String SelectStudent = rs.getString("grp_ID");
+                String SelectStudent = rs.getString("groupID");
                 SS1.addItem(SelectStudent);
+                String SelectStudent1 = rs.getString("subGroupID");
+                SS1.addItem(SelectStudent1);
                 
                  
             }
@@ -1794,62 +1808,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
          
          
          
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
+   
          
          
     
@@ -1864,10 +1823,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
 //GEN-FIRST:event_jButton1ActionPerformed
  
 //GEN-LAST:event_jButton1ActionPerformed
-
-    
-    
-    
+  
     
 
     private void consMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consMouseClicked
@@ -2261,10 +2217,18 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         
     }//GEN-LAST:event_SS3PopupMenuWillBecomeInvisible
 
+ 
     
+    
+    
+    
+    
+    
+    
+    
+    //******************************TT generation based on room_name******************************//
     private void SS2PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SS2PopupMenuWillBecomeInvisible
-        // TODO add your handling code here:
-        
+       
        String temp = (String) SS2.getSelectedItem();
         
         try {
@@ -2628,7 +2592,13 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_SS2PopupMenuWillBecomeInvisible
-
+//******************************TT generation based on room_name******************************//
+    
+    
+    
+    
+    
+    
     private void change4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_change4ActionPerformed
         // TODO add your handling code here:
           ManageSessionRooms ms = new ManageSessionRooms();
@@ -2644,6 +2614,11 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
     }//GEN-LAST:event_change3ActionPerformed
 
     private void SS1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SS1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_SS1ActionPerformed
+
+    private void SS1PopupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_SS1PopupMenuWillBecomeInvisible
         // TODO add your handling code here:
          String temp = (String) SS1.getSelectedItem();
         
@@ -2664,7 +2639,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             insert5 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Friday' AND st.start_time_hour=8 WHERE s.grp_ID=?");
             
             //monday, 10.00
-            insert6 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour=10 WHERE s.grp_ID=?=?");
+            insert6 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour=10 WHERE s.grp_ID=?");
             //tuesday, 10.00
             insert7 = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Tuesday' AND st.start_time_hour=10 WHERE s.grp_ID=?");
             //wednesday, 10.00
@@ -3006,7 +2981,7 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_SS1ActionPerformed
+    }//GEN-LAST:event_SS1PopupMenuWillBecomeInvisible
 
     
     
