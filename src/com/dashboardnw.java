@@ -12,6 +12,10 @@ import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import org.jfree.chart.ChartFactory;
@@ -34,6 +38,7 @@ public class dashboardnw extends javax.swing.JFrame {
      */
     public dashboardnw() {
         initComponents();
+        load_summary();
         
     }
 
@@ -65,6 +70,16 @@ public class dashboardnw extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        TE = new javax.swing.JTextField();
+        TR = new javax.swing.JTextField();
+        AR = new javax.swing.JTextField();
+        TS = new javax.swing.JTextField();
+        NE = new javax.swing.JTextField();
         bp = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -74,7 +89,6 @@ public class dashboardnw extends javax.swing.JFrame {
         setLocation(new java.awt.Point(0, 0));
         setLocationByPlatform(true);
         setModalExclusionType(java.awt.Dialog.ModalExclusionType.APPLICATION_EXCLUDE);
-        setPreferredSize(new java.awt.Dimension(1030, 725));
         setSize(new java.awt.Dimension(0, 0));
 
         jPanel2.setBackground(new java.awt.Color(14, 1, 47));
@@ -199,6 +213,9 @@ public class dashboardnw extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(204, 204, 255));
         jLabel1.setText("Analysis");
 
+        jButton10.setBackground(new java.awt.Color(0, 102, 102));
+        jButton10.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jButton10.setForeground(new java.awt.Color(255, 255, 255));
         jButton10.setText("Registered Students");
         jButton10.setToolTipText("Show Student Statistics");
         jButton10.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 3, true));
@@ -214,6 +231,9 @@ public class dashboardnw extends javax.swing.JFrame {
             }
         });
 
+        jButton11.setBackground(new java.awt.Color(0, 102, 102));
+        jButton11.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jButton11.setForeground(new java.awt.Color(255, 255, 255));
         jButton11.setText("Registered Subjects");
         jButton11.setToolTipText("Show Subject Statistics");
         jButton11.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 3, true));
@@ -224,6 +244,9 @@ public class dashboardnw extends javax.swing.JFrame {
             }
         });
 
+        jButton12.setBackground(new java.awt.Color(0, 102, 102));
+        jButton12.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jButton12.setForeground(new java.awt.Color(255, 255, 255));
         jButton12.setText("Registered Employee");
         jButton12.setToolTipText("Show Employee Statistics");
         jButton12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 3, true));
@@ -234,6 +257,9 @@ public class dashboardnw extends javax.swing.JFrame {
             }
         });
 
+        jButton13.setBackground(new java.awt.Color(0, 102, 102));
+        jButton13.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+        jButton13.setForeground(new java.awt.Color(255, 255, 255));
         jButton13.setText("Registered Rooms");
         jButton13.setToolTipText("Show Location Statistics");
         jButton13.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(240, 240, 240), 3, true));
@@ -246,26 +272,156 @@ public class dashboardnw extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("What's New?");
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel2.setText("Summary");
+
+        jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Total Employee");
+
+        jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Total Student Groups");
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Total Rooms");
+
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Not Available Rooms");
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("New Employee");
+
+        TE.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        TE.setForeground(new java.awt.Color(255, 0, 51));
+        TE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TE.setBorder(null);
+        TE.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        TE.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        TE.setSelectionColor(new java.awt.Color(255, 255, 255));
+        TE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TEActionPerformed(evt);
+            }
+        });
+
+        TR.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        TR.setForeground(new java.awt.Color(255, 0, 51));
+        TR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TR.setBorder(null);
+        TR.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        TR.setSelectionColor(new java.awt.Color(255, 255, 255));
+        TR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TRActionPerformed(evt);
+            }
+        });
+
+        AR.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        AR.setForeground(new java.awt.Color(255, 0, 51));
+        AR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AR.setBorder(null);
+        AR.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        AR.setSelectionColor(new java.awt.Color(255, 255, 255));
+        AR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ARActionPerformed(evt);
+            }
+        });
+
+        TS.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        TS.setForeground(new java.awt.Color(255, 0, 51));
+        TS.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        TS.setBorder(null);
+        TS.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        TS.setSelectionColor(new java.awt.Color(255, 255, 255));
+        TS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TSActionPerformed(evt);
+            }
+        });
+
+        NE.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        NE.setForeground(new java.awt.Color(255, 0, 51));
+        NE.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        NE.setBorder(null);
+        NE.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        NE.setSelectionColor(new java.awt.Color(255, 255, 255));
+        NE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NEActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(94, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(TS, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                            .addComponent(TE)
+                            .addComponent(TR))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(AR, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 19, Short.MAX_VALUE))
+                            .addComponent(NE))
+                        .addContainerGap())))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(TE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(TS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(TR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(AR, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(34, 34, 34)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(NE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(55, 55, 55))
         );
 
+        bp.setBackground(new java.awt.Color(255, 255, 255));
         bp.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -293,7 +449,7 @@ public class dashboardnw extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(bp, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(54, 54, 54)
+                        .addGap(30, 30, 30)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
@@ -356,7 +512,7 @@ public class dashboardnw extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1017, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 13, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -368,6 +524,10 @@ public class dashboardnw extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
       Connection con;
       PreparedStatement insert;
+      PreparedStatement insert1;
+      PreparedStatement insert2;
+      PreparedStatement insert3;
+      PreparedStatement insert4;
     
         
     
@@ -389,7 +549,89 @@ public class dashboardnw extends javax.swing.JFrame {
 
     
     
-    
+      // ******************************************* Retrieve details under summary ***************************      
+      private void load_summary(){
+        
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            
+            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+            insert = con.prepareStatement("select COUNT(id) from lecturer ");
+            insert1 = con.prepareStatement("select COUNT(id) from student ");
+            insert2 = con.prepareStatement("select COUNT(l_id) from room ");
+            insert3 = con.prepareStatement("select COUNT(room_name) from  notavailableroom");
+            insert4 = con.prepareStatement("SELECT emp_name FROM lecturer ORDER BY id DESC LIMIT 1 ");
+         
+            //get total no of emp into Text field
+            ResultSet rs = insert.executeQuery();  
+            
+            while(rs.next()) {
+                
+                String TotalEmp = rs.getString("COUNT(id)");
+          
+                TE.setText(TotalEmp);
+                 
+            }
+            
+            
+            //get total no of student groups into Text field
+            ResultSet rs2 = insert1.executeQuery();  
+            
+            while(rs2.next()) {
+                
+                String TotalStds = rs2.getString("COUNT(id)");
+          
+                TS.setText(TotalStds);
+                 
+            }
+            
+            
+             //get total no of rooms into Text field
+            ResultSet rs3 = insert2.executeQuery();  
+            
+            while(rs3.next()) {
+                
+                String TotalRooms = rs3.getString("COUNT(l_id)");
+          
+                TR.setText(TotalRooms);
+                 
+            }
+            
+            
+             //get total no of notavailable rooms into Text field
+            ResultSet rs4 = insert3.executeQuery();  
+            
+            while(rs4.next()) {
+                
+                String TotalRooms = rs4.getString("COUNT(room_name)");
+          
+                AR.setText(TotalRooms);
+                 
+            }
+            
+             //get last added/ new lecturer name into Text field
+            ResultSet rs5 = insert4.executeQuery();  
+            
+            while(rs5.next()) {
+                
+                String TotalNE = rs5.getString("emp_name");
+          
+                NE.setText(TotalNE);
+                 
+            }
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AddSession.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+ //***********************************************************************************************************************************   
+          
+      
     
     
     
@@ -593,6 +835,26 @@ public class dashboardnw extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void TEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TEActionPerformed
+
+    }//GEN-LAST:event_TEActionPerformed
+
+    private void TRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TRActionPerformed
+
+    private void ARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ARActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ARActionPerformed
+
+    private void TSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TSActionPerformed
+
+    private void NEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NEActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NEActionPerformed
+
     
     
     
@@ -649,6 +911,11 @@ public class dashboardnw extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AR;
+    private javax.swing.JTextField NE;
+    private javax.swing.JTextField TE;
+    private javax.swing.JTextField TR;
+    private javax.swing.JTextField TS;
     private javax.swing.JPanel bp;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
@@ -665,6 +932,11 @@ public class dashboardnw extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
