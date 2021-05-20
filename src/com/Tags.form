@@ -452,8 +452,8 @@
                         <StringItem index="0" value=""/>
                         <StringItem index="1" value="Lecture"/>
                         <StringItem index="2" value="Tutorial"/>
-                        <StringItem index="3" value="Labs"/>
-                        <StringItem index="4" value="Assessment"/>
+                        <StringItem index="3" value="Practical"/>
+                        <StringItem index="4" value="Evaluation"/>
                       </StringArray>
                     </Property>
                   </Properties>

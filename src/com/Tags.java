@@ -171,7 +171,7 @@ public class Tags extends javax.swing.JFrame {
 
         tag_Code.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "01", "02", "03", "04" }));
 
-        Relate_Tag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Lecture", "Tutorial", "Labs", "Assessment" }));
+        Relate_Tag.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Lecture", "Tutorial", "Practical", "Evaluation" }));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Related Tags");
