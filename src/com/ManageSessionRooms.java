@@ -42,8 +42,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         load_consecutive_roomname();
         table_consecutive();
         roomname_NotAvailable();
-        //roomtab.getColumnModel().getColumn(0).setPreferredWidth(20);
-        
+      
     }
 
     /**
@@ -148,6 +147,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(89, 39, 74));
         jPanel2.setName(""); // NOI18N
+
+        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\netbeans img\\va.jpg")); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
@@ -792,8 +793,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -812,7 +813,9 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -969,7 +972,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
       
       
 
-//************************************sessions view**********************************************************
+//************************************sessions (except consecutive sessions) view**********************************************************
     
         private void table_insert(){
             int l;
@@ -1178,7 +1181,7 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 //GEN-FIRST:event_jButton1ActionPerformed
  
 //GEN-LAST:event_jButton1ActionPerformed
-//*************************************************************************insert room for sessions********************//
+//*********************************************insert room for sessions******************************//
     private void allocateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_allocateActionPerformed
         // TODO add your handling code here:
         String select_session = SS.getSelectedItem().toString();
@@ -1227,11 +1230,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     
     
     
-    
-     //**********************************retrieve all the details into text area to double check based on session id of session table**************************//                                            
+//**********************************retrieve all the details into text area to double check based on session id of session table**************************//                                            
 
-    
-    
     private void txtdayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdayActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtdayActionPerformed
