@@ -728,7 +728,7 @@ public class dashboardnw extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // tag registration
-        Tagg tg = new Tagg();
+        Tags tg = new Tags();
         tg.show();
         dispose();
     }//GEN-LAST:event_jButton8ActionPerformed
@@ -818,7 +818,7 @@ public class dashboardnw extends javax.swing.JFrame {
     
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // student registration
-        Groupp grp = new Groupp();
+        Group grp = new Group();
         grp.show();
         dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
