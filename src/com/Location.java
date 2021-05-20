@@ -125,13 +125,6 @@ public class Location extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(loctab);
-        if (loctab.getColumnModel().getColumnCount() > 0) {
-            loctab.getColumnModel().getColumn(0).setHeaderValue("ID");
-            loctab.getColumnModel().getColumn(1).setHeaderValue("Building Name");
-            loctab.getColumnModel().getColumn(2).setHeaderValue("Room Name");
-            loctab.getColumnModel().getColumn(3).setHeaderValue("Room Type");
-            loctab.getColumnModel().getColumn(4).setHeaderValue("Capacity");
-        }
 
         locbox.setBackground(new java.awt.Color(255, 255, 255));
         locbox.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(89, 39, 74), 3, true));
@@ -470,8 +463,42 @@ public class Location extends javax.swing.JFrame {
     
       
       
+ //**************************************form validation ************************************************************
       
-      
+    private boolean validateFields(){
+        if(BN.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Building Name is empty");
+            
+            return false;
+        }
+        if(RN.getText().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this,"Room Name is empty");
+            
+            return false;
+        }
+        
+       
+        
+        if(cap.getValue().equals(0))
+        {
+            JOptionPane.showMessageDialog(this,"Can't be null");
+            
+            return false;
+        }
+        
+        
+       return true; 
+    }
+     
+ //**************************************form validation ************************************************************
+    
+    
+    
+    
+    
+    
       
         
     
@@ -479,11 +506,13 @@ public class Location extends javax.swing.JFrame {
       
     private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
         
-       try {
-           
+       
             DefaultTableModel Df = (DefaultTableModel)loctab.getModel();
-            Df.setRowCount(0);
-        
+            //Df.setRowCount(0);
+            
+        try {
+           
+            
             int dialogResult = JOptionPane.showConfirmDialog(null,"Alert-If you click YES all the records will be deleted \n Are you sure you want to clear?","Warning",JOptionPane.YES_NO_OPTION);
             
             if (dialogResult == JOptionPane.YES_OPTION) {
@@ -496,11 +525,7 @@ public class Location extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,"Cleared Succesfully");
                 table_insert();
             
-                BN.setText("");
-                RN.setText("");
-                Typelec.setText("");
-                cap.setValue(0);
-                BN.requestFocus();
+               
             
             }
          }
@@ -582,7 +607,7 @@ public class Location extends javax.swing.JFrame {
 //************************************insert**********************************************************
  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      
+     
         String Building_Name = BN.getText();
         String Room_Name = RN.getText();
         String room_type = "";
@@ -595,7 +620,7 @@ public class Location extends javax.swing.JFrame {
         Integer myInt = (Integer)cap.getValue();
         String spinner = myInt.toString();
         
-      
+      if(validateFields()){  
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
@@ -627,7 +652,7 @@ public class Location extends javax.swing.JFrame {
          catch (SQLException ex){
             Logger.getLogger(Location.class.getName()).log(Level.SEVERE, null, ex);
             
-        }
+        }}
     }//GEN-LAST:event_jButton1ActionPerformed
 //************************************insert**********************************************************
  
@@ -878,6 +903,7 @@ public class Location extends javax.swing.JFrame {
                 
                 BN.setText(rs.getString("building_name"));   
                 RN.setText(rs.getString("room_name"));
+                
                 if (room_type == "LectureHall"){
                     Typelec.setText(rs.getString("room_type"));
                 }
@@ -893,6 +919,15 @@ public class Location extends javax.swing.JFrame {
                    }*/
                 cap.setValue(rs.getInt("capacity"));
         
+            if(room_type.equals("Lecture Hall")){
+                Typelec.setSelected(true);
+                Typelab.setSelected(false);
+            }
+            
+            if(room_type.equals("Laboratory")){
+                Typelab.setSelected(true);
+                Typelec.setSelected(false);
+            }
             }
             
          
