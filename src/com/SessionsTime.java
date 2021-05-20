@@ -522,7 +522,7 @@ public class SessionsTime extends javax.swing.JFrame {
                             .addComponent(txtendhour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtstarthour, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(4, 4, 4)
-                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(formLayout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addGap(26, 26, 26)
@@ -534,7 +534,7 @@ public class SessionsTime extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(txtendminutes, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(formLayout.createSequentialGroup()
                         .addGap(37, 37, 37)
                         .addGroup(formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -728,7 +728,7 @@ public class SessionsTime extends javax.swing.JFrame {
                     .addComponent(home_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 31, Short.MAX_VALUE))
+                .addGap(0, 29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -875,7 +875,7 @@ public class SessionsTime extends javax.swing.JFrame {
             insert.executeUpdate();
             
             JOptionPane.showMessageDialog(this, "Successfully not available time inserted for the session");
-            table_update();
+            not_available_update();
             
             // To clear the rcords in the form
             txtsessionid.setSelectedIndex(0);
