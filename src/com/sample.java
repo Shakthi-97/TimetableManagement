@@ -157,8 +157,9 @@ public class sample extends javax.swing.JFrame {
             try{
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-              
+                //Connection con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                Connection con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
                 for(int i=0; i<Df.getRowCount(); i++){
                     sesid = Df.getValueAt(i, 0).toString();
                     lec1 = Df.getValueAt(i, 1).toString();
