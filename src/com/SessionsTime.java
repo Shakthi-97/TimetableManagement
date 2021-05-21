@@ -46,7 +46,9 @@ public class SessionsTime extends javax.swing.JFrame {
             try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("select * From session");
             
             ResultSet rs = insert.executeQuery();
@@ -99,8 +101,9 @@ public class SessionsTime extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            
+            //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("select ses_id from session");
             
             ResultSet rs = insert.executeQuery();  
@@ -131,8 +134,9 @@ public class SessionsTime extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-          
+            //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+  //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");        
             insert = con.prepareStatement("select n.session_ID, s.lec1, s.sub_code, s.grp_ID, n.working_day, n.notavailable_start_hr, n.notavailable_start_min, n.notavailable_end_hr, n.notavailable_end_min From notavailable_session n, session s WHERE n.session_ID = s.ses_id");
             
             ResultSet rs = insert.executeQuery();  
@@ -885,7 +889,9 @@ public class SessionsTime extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("insert into notavailable_session (session_ID,working_day,NotAvailable_start_hr,NotAvailable_start_min,NotAvailable_end_hr,NotAvailable_end_min)values(?,?,?,?,?,?)");
             
             insert.setString(1, session_id);
@@ -943,7 +949,9 @@ public class SessionsTime extends javax.swing.JFrame {
 
                 Class.forName("com.mysql.jdbc.Driver");
 
-                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
 
                 insert = con.prepareStatement("update notavailable_session set working_day=?, NotAvailable_start_hr=?, NotAvailable_start_min=?, NotAvailable_end_hr=?, NotAvailable_end_min=? where session_ID=? ");
 
@@ -957,7 +965,7 @@ public class SessionsTime extends javax.swing.JFrame {
                 insert.executeUpdate();
 
                 JOptionPane.showMessageDialog(this,"record of Not Available time for session is Updated");
-                table_update();
+                not_available_update();
 
                 // To clear the rcords in the form
                 txtsessionid.setSelectedIndex(0);
@@ -999,8 +1007,9 @@ public class SessionsTime extends javax.swing.JFrame {
 
                 Class.forName("com.mysql.jdbc.Driver");
 
-                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-
+                //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+//String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
                 insert = con.prepareStatement("delete from notavailable_session where session_ID=? ");
 
                 insert.setString(1, session_id);
@@ -1008,7 +1017,7 @@ public class SessionsTime extends javax.swing.JFrame {
                 insert.executeUpdate();
 
                 JOptionPane.showMessageDialog(this,"record of Not Available time for session is Deleted");
-                table_update();
+                not_available_update();
 
                 // To clear the rcords in the form
                 txtsessionid.setSelectedIndex(0);
