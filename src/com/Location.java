@@ -518,7 +518,10 @@ public class Location extends javax.swing.JFrame {
             if (dialogResult == JOptionPane.YES_OPTION) {
                     
                 Class.forName("com.mysql.jdbc.Driver");
-                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                  //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                  con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
+          
                 insert = con.prepareStatement("TRUNCATE TABLE room");
                 insert.executeUpdate();
             
@@ -559,7 +562,10 @@ public class Location extends javax.swing.JFrame {
              try{
                  
                     Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                      //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                     con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
+          
                     insert = con.prepareStatement("select * From room");
                     ResultSet rs = insert.executeQuery();
                     ResultSetMetaData Rsm = rs.getMetaData();
@@ -624,7 +630,10 @@ public class Location extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+             //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
+          
             insert = con.prepareStatement("insert into room (building_name,room_name,room_type,capacity) values(?,?,?,?)");
             insert.setString(1, Building_Name);
             insert.setString(2, Room_Name);
@@ -748,7 +757,10 @@ public class Location extends javax.swing.JFrame {
             String spinner = myInt.toString();
         
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
+          
             insert = con.prepareStatement("update room set building_name=?,room_name=?,room_type=?,capacity=? where l_id=?");
             insert.setString(1, Building_Name);
             insert.setString(2, Room_Name);
@@ -806,7 +818,10 @@ public class Location extends javax.swing.JFrame {
             if (dialogResult == JOptionPane.YES_OPTION) {
                 
             Class.forName("com.mysql.jdbc.Driver");
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
+          
             insert = con.prepareStatement("delete from room where l_id=? ");
             insert.setInt(1, l_id);
             insert.executeUpdate();
@@ -894,7 +909,10 @@ public class Location extends javax.swing.JFrame {
         try {
        
             Class.forName("com.mysql.jdbc.Driver");
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
+          
             insert = con.prepareStatement("select * From room where room_name =?");
             insert.setString(1, filter.getText());
             ResultSet rs = insert.executeQuery();  
