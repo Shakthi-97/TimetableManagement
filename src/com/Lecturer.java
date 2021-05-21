@@ -179,7 +179,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         btn_addlec.setBackground(new java.awt.Color(0, 51, 0));
         btn_addlec.setForeground(new java.awt.Color(255, 255, 255));
-        btn_addlec.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\add.png")); // NOI18N
+        btn_addlec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/add.png"))); // NOI18N
         btn_addlec.setText(" New Employee");
         btn_addlec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,7 +189,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         btnedit.setBackground(new java.awt.Color(0, 51, 102));
         btnedit.setForeground(new java.awt.Color(255, 255, 255));
-        btnedit.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\edit.png")); // NOI18N
+        btnedit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/edit.png"))); // NOI18N
         btnedit.setText("Edit");
         btnedit.setAlignmentY(0.8F);
         btnedit.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +200,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         btndelete.setBackground(new java.awt.Color(153, 0, 51));
         btndelete.setForeground(new java.awt.Color(255, 255, 255));
-        btndelete.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\delete.png")); // NOI18N
+        btndelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete.png"))); // NOI18N
         btndelete.setText("Delete");
         btndelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -273,7 +273,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         btnrank.setBackground(new java.awt.Color(0, 102, 204));
         btnrank.setForeground(new java.awt.Color(255, 255, 255));
-        btnrank.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\gen 1 white.png")); // NOI18N
+        btnrank.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/gen 1 white.png"))); // NOI18N
         btnrank.setText("Generate ");
         btnrank.setToolTipText("Click to Generate the Rank");
         btnrank.setAlignmentY(0.8F);
@@ -386,7 +386,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         clear_employee.setBackground(new java.awt.Color(204, 0, 0));
         clear_employee.setForeground(new java.awt.Color(255, 255, 255));
-        clear_employee.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\clear.png")); // NOI18N
+        clear_employee.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
         clear_employee.setText("Clear History");
         clear_employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -407,7 +407,7 @@ public class Lecturer extends javax.swing.JFrame {
 
         btn_search.setBackground(new java.awt.Color(89, 39, 74));
         btn_search.setForeground(new java.awt.Color(255, 255, 255));
-        btn_search.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\search white.png")); // NOI18N
+        btn_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/search white.png"))); // NOI18N
         btn_search.setText("Search");
         btn_search.setBorder(null);
         btn_search.addActionListener(new java.awt.event.ActionListener() {
@@ -487,9 +487,9 @@ public class Lecturer extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("ABC Institute Timetable Management System");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\va.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/va.jpg"))); // NOI18N
 
-        home_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\siva\\Downloads\\home (1).png")); // NOI18N
+        home_btn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home.png"))); // NOI18N
         home_btn.setPreferredSize(new java.awt.Dimension(20, 20));
         home_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
