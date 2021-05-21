@@ -556,7 +556,10 @@ public class dashboardnw extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select COUNT(id) from lecturer ");
             insert1 = con.prepareStatement("select COUNT(id) from student ");
@@ -644,7 +647,10 @@ public class dashboardnw extends javax.swing.JFrame {
       {
           
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             final String SQL = ("SELECT  semester, COUNT(*) FROM student GROUP BY semester");
             final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
             JFreeChart chart = ChartFactory.createBarChart("students count based on semester year","semester","No of students", dataset, PlotOrientation.VERTICAL, false, false, false);
@@ -675,7 +681,10 @@ public class dashboardnw extends javax.swing.JFrame {
       {
           
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             final String SQL = ("SELECT concat(offered_yr, offered_seme) AS batch , COUNT(*) FROM subjects GROUP BY batch");
             final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
             JFreeChart chart = ChartFactory.createBarChart("subjects count based on semester year","semester","No of subjects", dataset, PlotOrientation.VERTICAL, false, false, false);
@@ -744,7 +753,10 @@ public class dashboardnw extends javax.swing.JFrame {
       {
           
                 Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
                 final String SQL = ("SELECT  room_name, capacity FROM room GROUP BY room_name");
                 final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
                 JFreeChart chart = ChartFactory.createBarChart("Capacity of rooms","room_type","capacity", dataset, PlotOrientation.VERTICAL, false, false, false);
@@ -779,7 +791,10 @@ public class dashboardnw extends javax.swing.JFrame {
       {
           
                 Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
                 final String SQL = ("SELECT  faculty, COUNT(*) FROM lecturer GROUP BY faculty");
                 final CategoryDataset dataset = new JDBCCategoryDataset(con, SQL);
                 JFreeChart chart = ChartFactory.createBarChart("Employees count based on faculty","Faculty","No of employees", dataset, PlotOrientation.VERTICAL, false, false, false);
