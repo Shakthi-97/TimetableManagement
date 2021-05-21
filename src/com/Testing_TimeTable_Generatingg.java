@@ -1686,7 +1686,10 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select room_name from room");
             
@@ -1733,7 +1736,10 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select groupID,subGroupID from student");
             
@@ -1778,7 +1784,10 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select emp_name from lecturer");
             
@@ -1860,7 +1869,10 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             //monday, 8.00
             insert26 = con.prepareStatement("SELECT s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday'AND st.start_time_hour=8 WHERE s.lec1=?");
             //tuesday, 8.00
@@ -2235,7 +2247,10 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+           
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             //monday, 8.00
             insert = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID,s.no_Stds, s.duration, a.room_name FROM session s, allsessionrooms a JOIN session_time st ON a.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour=8 WHERE a.room_name=?");
             //tuesday, 8.00
@@ -2626,7 +2641,10 @@ public class Testing_TimeTable_Generatingg extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             //monday, 8.00
             insert = con.prepareStatement("SELECT   s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, s.no_Stds, s.duration FROM session s JOIN session_time st ON s.ses_id = st.session_id AND st.working_day='Monday' AND st.start_time_hour=8 WHERE s.grp_ID=?");
             //tuesday, 8.00
