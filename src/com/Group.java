@@ -502,8 +502,9 @@ public class Group extends javax.swing.JFrame {
             {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-
+                //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
                 insert = con.prepareStatement("delete from student where id =? ");
 
                 insert.setInt(1, id);
@@ -558,8 +559,9 @@ public class Group extends javax.swing.JFrame {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-
+            //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("update student set semester=?, programme=?, groupNo=?, groupID=?, subGroupNo=?, subGroupID=? where id=? ");
 
             insert.setString(1, semester);
@@ -611,7 +613,9 @@ public class Group extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("insert into student(semester,programme,groupNo,groupID,subGroupNo,subGroupID)values(?,?,?,?,?,?)");
 
             insert.setString(1, semester);
@@ -748,7 +752,9 @@ public class Group extends javax.swing.JFrame {
             {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
 
                 insert = con.prepareStatement("TRUNCATE TABLE student");
 
@@ -793,7 +799,9 @@ public class Group extends javax.swing.JFrame {
             try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("select * From student");
             
             ResultSet rs = insert.executeQuery();
