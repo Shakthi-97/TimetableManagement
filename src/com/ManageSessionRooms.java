@@ -827,7 +827,8 @@ public class ManageSessionRooms extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
       Connection con;
       PreparedStatement insert;
-    
+     
+         
       
    
       
@@ -839,8 +840,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
+      
             insert = con.prepareStatement("select ses_id from session WHERE ses_id NOT IN (SELECT ses_id FROM consecutive)");
             
             ResultSet rs = insert.executeQuery();  
@@ -870,7 +873,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select ses_id from consecutive");
             
@@ -904,7 +910,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+           
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select room_name from room WHERE room_name NOT IN (SELECT room_name FROM consroom)");
             
@@ -936,7 +945,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+           
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select room_name from room WHERE room_name NOT IN (SELECT room_name FROM allocate)");
          
@@ -980,7 +992,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
              try{
                  
                     Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                    
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
                     //insert = con.prepareStatement("select * From allocate");
                     insert = con.prepareStatement( "SELECT  s.ses_id, s.lec1, s.lec2, s.extra_lec, s.ses_tag, s.subject, s.sub_code, s.grp_ID, a.room_name FROM session s, allocate a WHERE  s.ses_id = a.ses_id");
                     ResultSet rs = insert.executeQuery();
@@ -1038,7 +1053,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
              try{
                  
                     Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                    
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
                     insert = con.prepareStatement("SELECT c.consec_ID, r.ses_id, c.lec1, c.lec2, c.extra_lec, c.ses_tag, c.subject, c.sub_code, c.grp_ID, c.no_Stds, c.duration, r.room_name FROM consecutive c, consroom r WHERE  c.ses_id = r.ses_id");
                     ResultSet rs = insert.executeQuery();
                     ResultSetMetaData Rsm = rs.getMetaData();
@@ -1095,7 +1113,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
           
             insert = con.prepareStatement("select * From notavailableroom");
             
@@ -1145,7 +1166,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select room_name from room");
             
@@ -1192,13 +1216,17 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            insert = con.prepareStatement("insert into allocate (ses_id,room_name) values(?,?) ");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
+            insert = con.prepareStatement("insert into allocate (ses_id,room_name) values(?,?)");
             insert.setString(1, select_session);
             insert.setString(2, select_room);
             
           
             insert.executeUpdate();
+          
             
             JOptionPane.showMessageDialog(this, "Successfully Added");
             table_insert();
@@ -1284,7 +1312,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             insert = con.prepareStatement("insert into notavailableroom (room_name,workingday,NotAvailable_start_hr,NotAvailable_start_min,NotAvailable_end_hr,NotAvailable_end_min)values(?,?,?,?,?,?)");
             
             insert.setString(1, room_name);
@@ -1338,7 +1369,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
                 Class.forName("com.mysql.jdbc.Driver");
 
-                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+               
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
 
                 insert = con.prepareStatement("delete from notavailableroom where room_name=? ");
 
@@ -1394,7 +1428,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
 
                 Class.forName("com.mysql.jdbc.Driver");
 
-                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
 
                 insert = con.prepareStatement("update notavailableroom set workingday=?, NotAvailable_start_hr=?, NotAvailable_start_min=?, NotAvailable_end_hr=?, NotAvailable_end_min=? where room_name=? ");
 
@@ -1482,13 +1519,17 @@ public class ManageSessionRooms extends javax.swing.JFrame {
         try{
             
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+           
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             insert = con.prepareStatement("insert into consroom (ses_id,room_name) values(?,?) ");
-            
+           
             insert.setString(1, select_session);
             insert.setString(2, select_room);
           
             insert.executeUpdate();
+           
             
             JOptionPane.showMessageDialog(this, "Successfully Added");
             table_consecutive();
@@ -1548,7 +1589,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select * from consecutive where ses_id=? ");
             insert.setString(1, temp);  
@@ -1579,7 +1623,10 @@ public class ManageSessionRooms extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+           
+              //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+          
             
             insert = con.prepareStatement("select * from session where ses_id=? ");
             insert.setString(1, temp);  
