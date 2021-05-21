@@ -371,7 +371,9 @@ public class Tags extends javax.swing.JFrame {
             try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            Connection con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("select * From tag");
             
             ResultSet rs = insert.executeQuery();
@@ -499,8 +501,9 @@ public class Tags extends javax.swing.JFrame {
                 {
                     Class.forName("com.mysql.cj.jdbc.Driver");
             
-                    con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-          
+                    //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+          //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                    con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
                     insert = con.prepareStatement("TRUNCATE TABLE tag");
                     
                     insert.executeUpdate();
@@ -543,8 +546,9 @@ public class Tags extends javax.swing.JFrame {
             {
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-
+                //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+//String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+                con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
                 insert = con.prepareStatement("delete from tag where id =? ");
 
                 insert.setInt(1, id);
@@ -590,8 +594,9 @@ public class Tags extends javax.swing.JFrame {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-
+            //con= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+//String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("update tag set tagName=?, tagCode=?, relateTag=? where id=? ");
 
             insert.setString(1, tagName);
@@ -628,7 +633,9 @@ public class Tags extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con = DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             insert = con.prepareStatement("insert into tag(tagName,tagCode,relateTag)values(?,?,?)");
 
             insert.setString(1, tagName);
