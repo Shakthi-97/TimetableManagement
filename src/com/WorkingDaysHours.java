@@ -46,8 +46,9 @@ public class WorkingDaysHours extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-          
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{​​​​university}​​​​?useSSL=true&requireSSL=true";
+            con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+
             insert = con1.prepareStatement("select * From working_days_hours");
             
             ResultSet rs = insert.executeQuery();  
@@ -728,8 +729,9 @@ public class WorkingDaysHours extends javax.swing.JFrame {
            
             Class.forName("com.mysql.jdbc.Driver");
             
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
-            
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{​​​​university}​​​​?useSSL=true&requireSSL=true";
+            con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+
             insert = con1.prepareStatement("insert into working_days_hours(TT_ID,no_working_days,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday,hours_time_per_day,minutes_time_per_day,time_slot)values(?,?,?,?,?,?,?,?,?,?,?,?)");
             
             insert.setString(1, tt_id);
@@ -792,7 +794,8 @@ public class WorkingDaysHours extends javax.swing.JFrame {
 
                 Class.forName("com.mysql.jdbc.Driver");
 
-                con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{​​​​university}​​​​?useSSL=true&requireSSL=true";
+                con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
 
                 insert = con1.prepareStatement("Truncate table working_days_hours");
 
@@ -831,7 +834,9 @@ public class WorkingDaysHours extends javax.swing.JFrame {
 
                 Class.forName("com.mysql.jdbc.Driver");
 
-                con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+                //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{​​​​university}​​​​?useSSL=true&requireSSL=true";
+                con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+
 
                 insert = con1.prepareStatement("delete from working_days_hours where TT_ID=? ");
 
@@ -938,8 +943,11 @@ public class WorkingDaysHours extends javax.swing.JFrame {
                 if (dialogResult == JOptionPane.YES_OPTION) {
                     
                     Class.forName("com.mysql.jdbc.Driver");
-            
-                    con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+
+                    //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{​​​​university}​​​​?useSSL=true&requireSSL=true";
+                    con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
+
+
             
                     insert = con1.prepareStatement("update working_days_hours set no_working_days=?, Monday=?, Tuesday=?, Wednesday=?, Thursday=?, Friday=?, Saturday=?, Sunday=?, hours_time_per_day=?, minutes_time_per_day=?, time_slot=? where TT_ID=? ");
             
