@@ -525,7 +525,9 @@ public class Subjects extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
           
             insert = con1.prepareStatement("select * From subjects");
             
@@ -631,7 +633,9 @@ public class Subjects extends javax.swing.JFrame {
            
             Class.forName("com.mysql.jdbc.Driver");
             
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             
             insert = con1.prepareStatement("insert into subjects(offered_yr,offered_seme,subject_name,subject_code,lec_hrs,tute_hrs,lab_hrs,evaluation_hrs)values(?,?,?,?,?,?,?,?)");
             
@@ -708,7 +712,9 @@ public class Subjects extends javax.swing.JFrame {
                          
             Class.forName("com.mysql.jdbc.Driver");
             
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
           
             insert = con1.prepareStatement("update subjects set offered_yr=?, offered_seme=?, subject_name=?, subject_code=?, lec_hrs=?, tute_hrs=?, lab_hrs=?, evaluation_hrs=? where id=? ");
             
@@ -768,7 +774,9 @@ public class Subjects extends javax.swing.JFrame {
                 
              Class.forName("com.mysql.jdbc.Driver");
             
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
           
             insert = con1.prepareStatement("delete from subjects where id=? ");
           
@@ -814,7 +822,9 @@ public class Subjects extends javax.swing.JFrame {
             
             Class.forName("com.mysql.jdbc.Driver");
             
-            con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //con1= DriverManager.getConnection("jdbc:mysql://localhost/university","root","");
+            //String url ="jdbc:mysql://timetable-40.mysql.database.azure.com:3306/{university}?useSSL=true&requireSSL=true";
+            con1= DriverManager.getConnection("jdbc:mysql://timetable-40.mysql.database.azure.com:3306/university?serverTimezone=UTC", "Janany@timetable-40", "pamathy@25");
             
             insert = con1.prepareStatement("Truncate table subjects");
             
